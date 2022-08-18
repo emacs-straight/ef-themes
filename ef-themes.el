@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.0.1
+;; Version: 0.1.0
 ;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -36,9 +36,8 @@
 
 
 
-(eval-when-compile
-  (require 'cl-lib)
-  (require 'subr-x))
+(require 'seq)
+(eval-when-compile (require 'subr-x))
 
 (defgroup ef-themes ()
   "Colorful and legible themes."
@@ -92,10 +91,49 @@
 (defun ef-themes-select (theme)
   "Load an Ef THEME using minibuffer completion.
 When called from Lisp, THEME is a symbol."
-  (interactive
-   (list (intern (ef-themes--select-prompt))))
+  (interactive (list (intern (ef-themes--select-prompt))))
   (mapc #'disable-theme (ef-themes--list-known-themes))
   (load-theme theme :no-confirm))
+
+(defun ef-themes--minus-current (&optional variant)
+  "Return list of Ef themes minus the current one.
+VARIANT is either `light' or `dark', which stand for
+`ef-themes-light-themes' and `ef-themes-dark-themes',
+respectively.  Else check against the return value of
+`ef-themes--list-known-themes'."
+  (let* ((list (when variant
+                 (if (eq variant 'dark)
+                     ef-themes-dark-themes
+                   ef-themes-light-themes)))
+         (sequence (or list (ef-themes--list-known-themes)))
+         (themes (copy-sequence sequence)))
+    (delete (ef-themes--current-theme) themes)))
+
+(defconst ef-themes-light-themes '(ef-day ef-light ef-spring ef-summer)
+  "List of symbols with the light Ef themes.")
+
+(defconst ef-themes-dark-themes '(ef-autumn ef-dark ef-night ef-winter)
+  "List of symbols with the dark Ef themes.")
+
+;;;###autoload
+(defun ef-themes-load-random (&optional variant)
+  "Load an Ef theme at random, excluding the current one.
+With optional VARIANT as either `light' or `dark', limit the set
+to the relevant themes.
+
+When called interactively, VARIANT is the prefix argument which
+prompts with completion for either `light' or `dark'."
+  (interactive
+   (list (when current-prefix-arg
+           (intern (completing-read "Random choice of Ef themes VARIANT: "
+                            '(light dark) nil t)))))
+  (let* ((themes (ef-themes--minus-current variant))
+         (n (random (length themes)))
+         (pick (nth n themes)))
+    (mapc #'disable-theme (ef-themes--list-known-themes))
+    (if (null pick)
+        (load-theme (car themes) :no-confim)
+      (load-theme pick :no-confim))))
 
 (defun ef-themes--preview-colors-render (buffer theme &rest _)
   "Render colors in BUFFER from THEME.
@@ -346,9 +384,9 @@ Helper function for `ef-themes-preview-colors'."
     `(diff-refine-added ((,c :background ,bg-added-refine :foreground ,fg-intense)))
     `(diff-refine-changed ((,c :background ,bg-changed-refine :foreground ,fg-intense)))
     `(diff-refine-removed ((,c :background ,bg-removed-refine :foreground ,fg-intense)))
-    `(diff-indicator-added ((,c :inherit (bold diff-added))))
-    `(diff-indicator-changed ((,c :inherit (bold diff-changed))))
-    `(diff-indicator-removed ((,c :inherit (bold diff-removed))))
+    `(diff-indicator-added ((,c :inherit success :background ,bg-added)))
+    `(diff-indicator-changed ((,c :inherit warning :background ,bg-changed)))
+    `(diff-indicator-removed ((,c :inherit error :background ,bg-removed)))
     `(diff-context (( )))
     `(diff-error ((,c :inherit error)))
     `(diff-file-header ((,c :inherit bold)))
@@ -633,6 +671,31 @@ Helper function for `ef-themes-preview-colors'."
     `(marginalia-type ((,c :foreground ,type)))
     `(marginalia-value ((,c :inherit shadow)))
     `(marginalia-version ((,c :foreground ,accent-1)))
+;;;; markdown-mode
+    `(markdown-blockquote-face ((,c :inherit font-lock-doc-face)))
+    `(markdown-bold-face ((,c :inherit bold)))
+    `(markdown-code-face ((,c :background ,bg-dim :extend t)))
+    `(markdown-gfm-checkbox-face ((,c :foreground ,warning)))
+    `(markdown-header-face (( )))
+    `(markdown-header-face-1 ((,c :inherit bold :height 1.7 :foreground ,rainbow-0)))
+    `(markdown-header-face-2 ((,c :inherit bold :height 1.6 :foreground ,rainbow-1)))
+    `(markdown-header-face-3 ((,c :inherit bold :height 1.5 :foreground ,rainbow-2)))
+    `(markdown-header-face-4 ((,c :inherit bold :height 1.4 :foreground ,rainbow-3)))
+    `(markdown-header-face-5 ((,c :inherit bold :height 1.3 :foreground ,rainbow-4)))
+    `(markdown-header-face-6 ((,c :inherit bold :height 1.2 :foreground ,rainbow-5)))
+    `(markdown-highlighting-face ((,c :background ,bg-info :foreground ,info)))
+    `(markdown-inline-code-face ((,c :foreground ,accent-1))) ; same as `org-code'
+    `(markdown-italic-face ((,c :inherit italic)))
+    `(markdown-language-keyword-face ((,c :background ,bg-alt)))
+    `(markdown-line-break-face ((,c :inherit nobreak-space)))
+    `(markdown-link-face ((,c :inherit link)))
+    `(markdown-markup-face ((,c :inherit shadow)))
+    `(markdown-metadata-key-face ((,c :inherit bold)))
+    `(markdown-metadata-value-face ((,c :foreground ,string)))
+    `(markdown-missing-link-face ((,c :inherit warning)))
+    `(markdown-pre-face ((,c :inherit markdown-code-face)))
+    `(markdown-table-face ((,c :foreground ,fg-alt))) ; same as `org-table'
+    `(markdown-url-face ((,c :foreground ,fg-alt)))
 ;;;; messages
     `(message-cited-text-1 ((,c :foreground ,mail-0)))
     `(message-cited-text-2 ((,c :foreground ,mail-1)))

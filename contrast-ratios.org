@@ -50,7 +50,7 @@ C1 and C2 are color values written in hexadecimal RGB."
 | green          | #2fa526 |    6.02 |    5.31 |    3.95 |
 | green-warmer   | #64aa0f |    6.72 |    5.94 |    4.41 |
 | green-cooler   | #00b672 |    7.31 |    6.46 |    4.80 |
-| green-faint    | #61ab78 |    7.00 |    6.19 |    4.60 |
+| green-faint    | #519068 |    5.10 |    4.51 |    3.35 |
 | yellow         | #c48502 |    6.17 |    5.45 |    4.05 |
 | yellow-warmer  | #e0832f |    6.87 |    6.07 |    4.51 |
 | yellow-cooler  | #df8f6f |    7.64 |    6.75 |    5.02 |
@@ -58,7 +58,7 @@ C1 and C2 are color values written in hexadecimal RGB."
 | blue           | #379cf6 |    6.68 |    5.90 |    4.38 |
 | blue-warmer    | #6a88ff |    6.06 |    5.35 |    3.98 |
 | blue-cooler    | #029fff |    6.82 |    6.03 |    4.48 |
-| blue-faint     | #7a94df |    6.57 |    5.80 |    4.31 |
+| blue-faint     | #6a84af |    5.10 |    4.50 |    3.34 |
 | magenta        | #d570af |    6.23 |    5.50 |    4.09 |
 | magenta-warmer | #e580ea |    7.93 |    7.00 |    5.20 |
 | magenta-cooler | #af8aff |    7.28 |    6.43 |    4.78 |
@@ -66,7 +66,7 @@ C1 and C2 are color values written in hexadecimal RGB."
 | cyan           | #4fb0cf |    7.78 |    6.87 |    5.10 |
 | cyan-warmer    | #6fafff |    8.52 |    7.53 |    5.59 |
 | cyan-cooler    | #3dbbb0 |    8.23 |    7.27 |    5.40 |
-| cyan-faint     | #92b4df |    9.04 |    7.99 |    5.93 |
+| cyan-faint     | #82a0af |    7.00 |    6.18 |    4.59 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f :: $4='(Λ $2 @1$4);%.2f :: $5='(Λ $2 @1$5);%.2f
 
 * ef-day
@@ -79,30 +79,30 @@ C1 and C2 are color values written in hexadecimal RGB."
 | fg-main        | #584141 |    8.68 |    8.04 |    7.17 |
 | fg-dim         | #63728f |    4.50 |    4.17 |    3.72 |
 | fg-alt         | #8f5f4a |    5.00 |    4.63 |    4.13 |
-| red            | #c42d2f |    5.18 |    4.80 |    4.28 |
-| red-warmer     | #d03003 |    4.75 |    4.40 |    3.93 |
+| red            | #ba2d2f |    5.57 |    5.15 |    4.60 |
+| red-warmer     | #ce3f00 |    4.50 |    4.17 |    3.72 |
 | red-cooler     | #cf2f4f |    4.67 |    4.33 |    3.86 |
 | red-faint      | #b05350 |    4.64 |    4.30 |    3.84 |
-| green          | #217a3c |    4.98 |    4.61 |    4.12 |
-| green-warmer   | #4a7d00 |    4.62 |    4.28 |    3.82 |
-| green-cooler   | #007f68 |    4.60 |    4.26 |    3.81 |
+| green          | #2a7a0c |    5.02 |    4.65 |    4.15 |
+| green-warmer   | #437000 |    5.48 |    5.08 |    4.53 |
+| green-cooler   | #0f7f5f |    4.62 |    4.28 |    3.82 |
 | green-faint    | #61756c |    4.57 |    4.23 |    3.78 |
-| yellow         | #a45f22 |    4.60 |    4.26 |    3.80 |
-| yellow-warmer  | #b6540f |    4.57 |    4.24 |    3.78 |
-| yellow-cooler  | #ae5a30 |    4.53 |    4.20 |    3.74 |
+| yellow         | #a45a22 |    4.80 |    4.44 |    3.97 |
+| yellow-warmer  | #b75515 |    4.51 |    4.18 |    3.73 |
+| yellow-cooler  | #aa4f30 |    5.04 |    4.67 |    4.16 |
 | yellow-faint   | #a05f5a |    4.56 |    4.22 |    3.77 |
 | blue           | #375cc6 |    5.56 |    5.15 |    4.59 |
 | blue-warmer    | #5f5fdf |    4.66 |    4.31 |    3.85 |
 | blue-cooler    | #265fbf |    5.62 |    5.20 |    4.64 |
-| blue-faint     | #6a65bf |    4.61 |    4.27 |    3.81 |
-| magenta        | #d5206f |    4.57 |    4.23 |    3.78 |
-| magenta-warmer | #cb26a0 |    4.51 |    4.18 |    3.73 |
-| magenta-cooler | #9435b4 |    5.69 |    5.27 |    4.70 |
+| blue-faint     | #4a659f |    5.34 |    4.94 |    4.41 |
+| magenta        | #ca3e54 |    4.51 |    4.17 |    3.72 |
+| magenta-warmer | #cb2f80 |    4.58 |    4.24 |    3.79 |
+| magenta-cooler | #8448aa |    5.59 |    5.18 |    4.62 |
 | magenta-faint  | #a04450 |    5.67 |    5.25 |    4.69 |
-| cyan           | #1f6fbf |    4.77 |    4.42 |    3.95 |
+| cyan           | #3f60af |    5.57 |    5.16 |    4.60 |
 | cyan-warmer    | #3f6faf |    4.75 |    4.40 |    3.93 |
 | cyan-cooler    | #0f7b8f |    4.59 |    4.25 |    3.79 |
-| cyan-faint     | #5f60bf |    4.98 |    4.62 |    4.12 |
+| cyan-faint     | #4f6f8f |    4.87 |    4.51 |    4.03 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f :: $4='(Λ $2 @1$4);%.2f :: $5='(Λ $2 @1$5);%.2f
 
 * ef-dark

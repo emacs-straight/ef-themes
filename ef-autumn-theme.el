@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.0.1
+;; Version: 0.1.0
 ;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -58,7 +58,7 @@
       (green           "#2fa526")
       (green-warmer    "#64aa0f")
       (green-cooler    "#00b672")
-      (green-faint     "#61ab78")
+      (green-faint     "#519068")
       (yellow          "#c48502")
       (yellow-warmer   "#e0832f")
       (yellow-cooler   "#df8f6f")
@@ -66,7 +66,7 @@
       (blue            "#379cf6")
       (blue-warmer     "#6a88ff")
       (blue-cooler     "#029fff")
-      (blue-faint      "#7a94df")
+      (blue-faint      "#6a84af")
       (magenta         "#d570af")
       (magenta-warmer  "#e580ea")
       (magenta-cooler  "#af8aff")
@@ -74,7 +74,7 @@
       (cyan            "#4fb0cf")
       (cyan-warmer     "#6fafff")
       (cyan-cooler     "#3dbbb0")
-      (cyan-faint      "#92b4df")
+      (cyan-faint      "#82a0af")
 
       ;; Basic hues for background values
       (bg-red      "#cd2f30")
@@ -85,17 +85,17 @@
       (bg-cyan     "#027080")
 
       ;; Diffs
-      (bg-added          "#20360f")
-      (bg-added-faint    "#102300")
-      (bg-added-refine   "#304b1f")
+      (bg-added          "#172c0f")
+      (bg-added-faint    "#0a1f00")
+      (bg-added-refine   "#203f10")
 
-      (bg-changed        "#424200")
-      (bg-changed-faint  "#2a2000")
-      (bg-changed-refine "#585800")
+      (bg-changed        "#323200")
+      (bg-changed-faint  "#281a00")
+      (bg-changed-refine "#484800")
 
-      (bg-removed        "#501a0a")
-      (bg-removed-faint  "#3a1200")
-      (bg-removed-refine "#721a16")
+      (bg-removed        "#46120a")
+      (bg-removed-faint  "#330a00")
+      (bg-removed-refine "#6a1a16")
 
       ;; Special hues
       (bg-mode-line  "#692a12") (fg-mode-line  "#feeeca")
@@ -108,7 +108,7 @@
       (bg-active     "#46423f")
       (bg-paren      "#7f2d40")
       (bg-err        "#361400") ; check with err
-      (bg-info       "#152500") ; check with info
+      (bg-info       "#152800") ; check with info
 
       (border        "#54444a")
       (cursor        "#ffaa33")
@@ -141,11 +141,11 @@
       (accent-2 cyan-cooler)
       (accent-3 magenta-cooler)
 
-      (mail-0 green-warmer)
-      (mail-1 red)
-      (mail-2 green-cooler)
-      (mail-3 yellow-warmer)
-      (mail-4 red-cooler)
+      (mail-0 yellow-warmer)
+      (mail-1 green-cooler)
+      (mail-2 red-warmer)
+      (mail-3 magenta)
+      (mail-4 green-warmer)
 
       (rainbow-0 yellow-warmer)
       (rainbow-1 green-warmer)
