@@ -6,8 +6,6 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.1.0
-;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: faces, theme, accessibility
 
 ;; This file is part of GNU Emacs.
@@ -43,12 +41,15 @@
 
   (defconst ef-summer-palette
     '(;; Basic tones
-      (bg-main  "#fff2f3")
-      (fg-main  "#5f456f")
-      (bg-dim   "#fbe3ef")
-      (fg-dim   "#68717f")
-      (bg-alt   "#efd0e4")
-      (fg-alt   "#af506f")
+      (bg-main     "#fff2f3")
+      (fg-main     "#5f456f")
+      (bg-dim      "#fbe3ef")
+      (fg-dim      "#68717f")
+      (bg-alt      "#efd0e4")
+      (fg-alt      "#af506f")
+
+      (bg-active   "#dfc0d4")
+      (bg-inactive "#f9ecf0")
 
       ;; Basic hues for foreground values
       (red             "#d3303a")
@@ -105,7 +106,6 @@
       (bg-hover-alt  "#aaeccf")
       (bg-hl-line    "#ffd6e5")
       (bg-region     "#eecfff")
-      (bg-active     "#dfc0d4")
       (bg-paren      "#9fc0ef")
       (bg-err        "#ffd0e6") ; check with err
       (bg-info       "#bbefda") ; check with info

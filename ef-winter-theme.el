@@ -6,8 +6,6 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.1.0
-;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: faces, theme, accessibility
 
 ;; This file is part of GNU Emacs.
@@ -43,12 +41,15 @@
 
   (defconst ef-winter-palette
     '(;; Basic tones
-      (bg-main  "#0f0b15")
-      (fg-main  "#b8c6d5")
-      (bg-dim   "#161926")
-      (fg-dim   "#807c9f")
-      (bg-alt   "#202234")
-      (fg-alt   "#bf8f8f")
+      (bg-main      "#0f0b15")
+      (fg-main      "#b8c6d5")
+      (bg-dim       "#161926")
+      (fg-dim       "#807c9f")
+      (bg-alt       "#202234")
+      (fg-alt       "#bf8f8f")
+
+      (bg-active    "#353554")
+      (bg-inactive  "#14121a")
 
       ;; Basic hues for foreground values
       (red             "#f47359")
@@ -105,7 +106,6 @@
       (bg-hover-alt  "#600f5a")
       (bg-hl-line    "#003045")
       (bg-region     "#342464")
-      (bg-active     "#353554")
       (bg-paren      "#2f608e")
       (bg-err        "#330d06") ; check with err
       (bg-info       "#0f2a10") ; check with info

@@ -4,9 +4,9 @@
 #+language:              en
 #+options:               ':t toc:nil author:t email:t num:t
 #+startup:               content
-#+macro:                 stable-version 0.1.0
-#+macro:                 release-date 2022-08-17
-#+macro:                 development-version 0.2.0-dev
+#+macro:                 stable-version 0.2.0
+#+macro:                 release-date 2022-08-18
+#+macro:                 development-version 0.3.0-dev
 #+export_file_name:      ef-themes.texi
 #+texinfo_filename:      ef-themes.info
 #+texinfo_dir_category:  Emacs misc features
@@ -149,10 +149,18 @@ Everything is in place to set up the package.
 :CUSTOM_ID: h:a6dd030c-6b6c-4992-83e8-3438b4607b51
 :END:
 
-+ No customisation options!  Either you like them or you don't.
++ No customization options that affect the style of individual
+  components (e.g. change the color of the mode line, remove bold,
+  etc.)!  Either you like them or you don't.  To change faces, it is
+  better to do it in user-level configurations (report the issue and we
+  can help with the relevant code).  Providing customizations that
+  refashion a wide set of themes is not maintainable.
 
 + Curated list of supported packages.  I will only cover what I use
-  and/or know is in a well-maintained state.
+  and/or know is in a well-maintained state.  Styling a package requires
+  a lot of work as one must (i) know how the package works, (ii) see all
+  its interfaces in action, (iii) make sure that the color combinations
+  look consistent with the rest of the theme.
 
 + Minimum contrast ratio of 4.5:1 against the main background (WCAG AA
   standard).  Use my =modus-themes= package (also built into Emacs 28 or
@@ -176,6 +184,149 @@ necessity.  The =modus-themes= are such because:
 The =ef-themes= can afford to be minimal because they do not have such a
 lofty accessibility target.
 
+* Loading a theme
+:PROPERTIES:
+:CUSTOM_ID: h:75d74aea-d17f-497f-a3b8-f0bf4c372de0
+:END:
+
+Emacs can load and maintain enabled multiple themes at once.  This
+typically leads to awkward styling and weird combinations.  The theme
+looks broken and the designer's intent is misunderstood.  Before loading
+one of the =ef-themes=, the user is encouraged to disable all others:
+
+#+begin_src emacs-lisp
+(mapc #'disable-theme custom-enabled-themes)
+#+end_src
+
+Then load the theme of choice.  For example:
+
+#+begin_src emacs-lisp
+(load-theme 'ef-summer :no-confirm)
+#+end_src
+
+The =:no-confirm= is optional.  It simply skips the step where Emacs
+asks the user whether they are sure about loading the theme.
+
+Consider adding code like the above to the user configuration file, such
+as =init.el=.
+
+* Commands to load an Ef theme
+:PROPERTIES:
+:CUSTOM_ID: h:58345e8c-2bec-459c-872c-a85a29e9fe97
+:END:
+
+#+vindex: ef-themes-post-load-hook
+The commands mentioned herein call ~ef-themes-post-load-hook~ at the
+end.  This is for advanced users who want to trigger some code after an
+Ef theme is loaded ([[#h:5b74bd9e-e7f2-46b3-af2e-7c45b2e69245][Use colors from the active Ef theme]]).
+
+#+findex: ef-themes-select
+The themes can also be loaded interactively ([[#h:75d74aea-d17f-497f-a3b8-f0bf4c372de0][Loading a theme]]).  The
+command ~ef-themes-select~ (call it with =M-x=) prompts with minibuffer
+completion for a theme among the collection of items we provide.  It
+then loads the selected theme.  Internally, ~ef-themes-select~ takes
+care to disable any other Ef theme, though it does not disable other
+themes.  This is by design to let users maintain theme blending when
+they want it.  Otherwise, the user is encouraged to disable all other
+themes and stick with the Ef themes:
+
+#+begin_src emacs-lisp
+(mapc #'disable-theme custom-enabled-themes)
+#+end_src
+
+#+findex: ef-themes-load-random
+The command ~ef-themes-load-random~ is for those who appreciate a bit of
+serendipity in their life.  When call interactively with =M-x= it loads
+a random theme from the Ef themes collection.  The selection excludes
+the current Ef theme.  Calling ~ef-themes-load-random~ with a prefix
+argument (=C-u= by default) makes the command limit the random selection
+to either light or dark themes.  The user is prompted with minibuffer
+completion to pick among the two sets.
+
+The ~ef-themes-load-random~ can also be called from Lisp (e.g. from the
+=init.el= file):
+
+#+begin_src emacs-lisp
+(ef-themes-load-random)
+#+end_src
+
+This has the effect of loading an Ef theme at random, as described
+above.  It is also possible to limit the set with either of those:
+
+#+begin_src emacs-lisp
+;; Load a light Ef theme at random
+(ef-themes-load-random 'light)
+
+;; Load a dark Ef theme at random
+(ef-themes-load-random 'dark)
+#+end_src
+
+The author of the Ef themes likes to check with their operating system
+to determine if the desktop environment outside of Emacs is using a
+light/dark theme and then loads an appropriate Ef theme at random:
+
+#+begin_src emacs-lisp
+;; Check GNOME's gsettings database for the dark theme preference.  If
+;; it is enabled, we want to load a dark Ef theme at random.  Otherwise
+;; we load a random light theme.
+(if (string-match-p
+     "dark"
+     (shell-command-to-string "gsettings get org.gnome.desktop.interface color-scheme"))
+    (ef-themes-load-random 'dark)
+  (ef-themes-load-random 'light))
+#+end_src
+
+* Preview theme colors
+:PROPERTIES:
+:CUSTOM_ID: h:8dd67bf5-879e-46e5-b277-5bac141f53d1
+:END:
+
+#+findex: ef-themes-preview-colors
+The command ~ef-themes-preview-colors~ uses minibuffer completion to
+select an item from the Ef themes and then produces a buffer with
+previews of its color palette entries.  The buffer has a naming scheme
+which reflects the given choice, like =ef-summer-preview-colors= for the
+~ef-summer~ theme.
+
+#+findex: ef-themes-preview-colors-current
+The command ~ef-themes-preview-colors-current~ skips the minibuffer
+selection process and just produces a preview for the current Ef theme.
+
+* Use colors from the active Ef theme
+:PROPERTIES:
+:CUSTOM_ID: h:5b74bd9e-e7f2-46b3-af2e-7c45b2e69245
+:END:
+
+#+findex: ef-themes-with-colors
+Advanced users may want to call color variables from the palette of the
+active Ef theme.  The macro ~ef-themes-with-colors~ supplies those to
+any form called inside of it.  For example:
+
+#+begin_src emacs-lisp
+(ef-themes-with-colors
+  (list bg-main fg-main bg-mode-line cursor))
+;; => ("#fff2f3" "#5f456f" "#ffa4dc" "#cf0090")
+#+end_src
+
+The above return value is for =ef-summer=.  Switching to another theme
+and evaluating this code anew will give us the relevant results for that
+theme.  The same with =ef-winter=:
+
+#+begin_src emacs-lisp
+(ef-themes-with-colors
+  (list bg-main fg-main bg-mode-line cursor))
+;; => ("#0f0b15" "#b8c6d5" "#5f1f5f" "#ff6ff0")
+#+end_src
+
+For the time being, we do not provide detailed instructions on how to
+use this macro.  We shall do so as the needs of users become more clear
+through the development process.
+
+The palette of each Ef theme is considered stable.  No removals shall be
+made.  Though please note that some tweaks to individual hues or color
+mapping are still possible.  At any rate, we will not outright break any
+code that uses ~ef-themes-with-colors~.
+
 * FAQ
 :PROPERTIES:
 :CUSTOM_ID: h:a6d5c6f1-84c5-4d74-ba39-b5ccda05497a
@@ -197,8 +348,9 @@ No.  For my workflow, accessibility is the most important quality.  The
 Because I think that users deserve "pretty" themes that (i) do make some
 considerations for legibility, and (ii) are not designed on a whimsy.
 
-In other words, the =ef-themes= are my answer to those who like my
-=modus-themes= but want something with a bit more flair.
+The =ef-themes= are my answer to those who (i) like my =modus-themes=,
+(ii) want something with a bit more flair, and (iii) are fine with a
+bit more relaxed accessibility target.
 
 * Acknowledgements
 :PROPERTIES:
@@ -211,7 +363,8 @@ matters.
 
 + Author/maintainer :: Protesilaos Stavrou.
 
-+ Ideas and/or user feedback :: Spike-Leung, Summer Emacs.
++ Ideas and/or user feedback :: Iris Garcia, Spike-Leung, Summer Emacs,
+  Zoltán Király.
 
 * GNU Free Documentation License
 :PROPERTIES:

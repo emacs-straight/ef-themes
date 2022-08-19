@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.1.0
+;; Version: 0.2.1
 ;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -48,6 +48,12 @@
 
 ;;; Commands and their helper functions
 
+(defconst ef-themes-light-themes '(ef-day ef-light ef-spring ef-summer)
+  "List of symbols with the light Ef themes.")
+
+(defconst ef-themes-dark-themes '(ef-autumn ef-dark ef-night ef-winter)
+  "List of symbols with the dark Ef themes.")
+
 (defun ef-themes--list-enabled-themes ()
   "Return list of `custom-enabled-themes' with ef- prefix."
   (seq-filter
@@ -55,8 +61,19 @@
      (string-prefix-p "ef-" (symbol-name theme)))
    custom-enabled-themes))
 
+(defun ef-themes--enable-themes ()
+  "Enable all Ef themes."
+  (mapc (lambda (theme)
+          (load-theme theme :no-confirm :no-enable))
+        (append ef-themes-light-themes
+                ef-themes-dark-themes)))
+
 (defun ef-themes--list-known-themes ()
   "Return list of `custom-known-themes' with ef- prefix."
+  (unless (seq-find (lambda (theme)
+                      (string-prefix-p "ef-" (symbol-name theme)))
+                    custom-known-themes)
+    (ef-themes--enable-themes))
   (seq-filter
    (lambda (theme)
      (string-prefix-p "ef-" (symbol-name theme)))
@@ -64,9 +81,8 @@
 
 (defun ef-themes--current-theme ()
   "Return first enabled Ef theme."
-  (if-let ((themes (ef-themes--list-enabled-themes)))
-      (car themes)
-    (user-error "No enabled Ef theme could be found")))
+  (when-let ((themes (ef-themes--list-enabled-themes)))
+    (car themes)))
 
 (defun ef-themes--palette (theme)
   "Return THEME palette as a symbol."
@@ -87,13 +103,26 @@
                    nil t nil
                    'ef-themes--select-theme-history))
 
+(defcustom ef-themes-post-load-hook nil
+  "Hook that runs after loading an Ef theme.
+This is used by the commands `ef-themes-select' and
+`ef-themes-load-random'."
+  :type 'hook
+  :group 'ef-themes)
+
+(defun ef-themes--load-theme (theme)
+  "Load THEME while disabling other Ef themes.
+Run `ef-themes-post-load-hook'."
+  (mapc #'disable-theme (ef-themes--list-known-themes))
+  (load-theme theme :no-confirm)
+  (run-hooks 'ef-themes-post-load-hook))
+
 ;;;###autoload
 (defun ef-themes-select (theme)
   "Load an Ef THEME using minibuffer completion.
 When called from Lisp, THEME is a symbol."
   (interactive (list (intern (ef-themes--select-prompt))))
-  (mapc #'disable-theme (ef-themes--list-known-themes))
-  (load-theme theme :no-confirm))
+  (ef-themes--load-theme theme))
 
 (defun ef-themes--minus-current (&optional variant)
   "Return list of Ef themes minus the current one.
@@ -109,12 +138,6 @@ respectively.  Else check against the return value of
          (themes (copy-sequence sequence)))
     (delete (ef-themes--current-theme) themes)))
 
-(defconst ef-themes-light-themes '(ef-day ef-light ef-spring ef-summer)
-  "List of symbols with the light Ef themes.")
-
-(defconst ef-themes-dark-themes '(ef-autumn ef-dark ef-night ef-winter)
-  "List of symbols with the dark Ef themes.")
-
 ;;;###autoload
 (defun ef-themes-load-random (&optional variant)
   "Load an Ef theme at random, excluding the current one.
@@ -126,14 +149,13 @@ prompts with completion for either `light' or `dark'."
   (interactive
    (list (when current-prefix-arg
            (intern (completing-read "Random choice of Ef themes VARIANT: "
-                            '(light dark) nil t)))))
+                                    '(light dark) nil t)))))
   (let* ((themes (ef-themes--minus-current variant))
          (n (random (length themes)))
          (pick (nth n themes)))
-    (mapc #'disable-theme (ef-themes--list-known-themes))
     (if (null pick)
-        (load-theme (car themes) :no-confim)
-      (load-theme pick :no-confim))))
+        (ef-themes--load-theme (car themes))
+      (ef-themes--load-theme pick))))
 
 (defun ef-themes--preview-colors-render (buffer theme &rest _)
   "Render colors in BUFFER from THEME.
@@ -199,6 +221,25 @@ Helper function for `ef-themes-preview-colors'."
   (ef-themes-preview-colors (ef-themes--current-theme)))
 
 ;;; Faces and variables
+
+;; This produces `ef-themes-height-0' and the like.
+(defmacro ef-themes--height (n)
+  "Write `defvar' for height level N."
+  `(defcustom ,(intern (format "ef-themes-height-%s" n)) ,(- 1.8 (* n 0.1))
+     ,(format "Height as floating point for %i level heading." n)
+     :type 'float))
+
+;; FIXME 2022-08-18: Why won't `dotimes' work with the macro?  (dotimes
+;; (n 8) ...) does not interpret the n as a number.
+(ef-themes--height 0)
+(ef-themes--height 1)
+(ef-themes--height 2)
+(ef-themes--height 3)
+(ef-themes--height 4)
+(ef-themes--height 5)
+(ef-themes--height 6)
+(ef-themes--height 7)
+(ef-themes--height 8)
 
 (defconst ef-themes-faces
   '(
@@ -327,7 +368,7 @@ Helper function for `ef-themes-preview-colors'."
     `(log-edit-unknown-header ((,c :inherit shadow)))
     `(log-view-commit-body (( )))
     `(log-view-file ((,c :inherit bold)))
-    `(log-view-message ((,c :background ,bg-dim :foreground ,fg-dim)))
+    `(log-view-message ((,c :foreground ,fg-dim)))
 ;;;; compilation
     `(compilation-column-number ((,c :inherit compilation-line-number)))
     `(compilation-error ((,c :inherit error)))
@@ -535,6 +576,17 @@ Helper function for `ef-themes-preview-colors'."
     `(gnus-header-name ((,c :inherit message-header-name)))
     `(gnus-header-newsgroups ((,c :inherit message-header-newsgroups)))
     `(gnus-header-subject ((,c :inherit message-header-subject)))
+;;;; info
+    `(Info-quoted ((,c :foreground ,accent-0))) ; the capitalization is canonical
+    `(info-header-node ((,c :inherit (shadow bold))))
+    `(info-index-match ((,c :inherit match)))
+    `(info-menu-header ((,c :inherit bold)))
+    `(info-menu-star ((,c :foreground ,red)))
+    `(info-node ((,c :inherit bold)))
+    `(info-title-1 ((,c :inherit bold :foreground ,rainbow-1 :height ,ef-themes-height-1)))
+    `(info-title-2 ((,c :inherit bold :foreground ,rainbow-2 :height ,ef-themes-height-2)))
+    `(info-title-3 ((,c :inherit bold :foreground ,rainbow-3 :height ,ef-themes-height-3)))
+    `(info-title-4 ((,c :inherit bold :foreground ,rainbow-4 :height ,ef-themes-height-4)))
 ;;;; isearch, occur, and the like
     `(isearch ((,c :background ,bg-yellow :foreground ,fg-intense)))
     `(isearch-fail ((,c :background ,bg-red :foreground ,fg-intense)))
@@ -674,19 +726,19 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; markdown-mode
     `(markdown-blockquote-face ((,c :inherit font-lock-doc-face)))
     `(markdown-bold-face ((,c :inherit bold)))
-    `(markdown-code-face ((,c :background ,bg-dim :extend t)))
+    `(markdown-code-face ((,c :background ,bg-inactive :extend t)))
     `(markdown-gfm-checkbox-face ((,c :foreground ,warning)))
     `(markdown-header-face (( )))
-    `(markdown-header-face-1 ((,c :inherit bold :height 1.7 :foreground ,rainbow-0)))
-    `(markdown-header-face-2 ((,c :inherit bold :height 1.6 :foreground ,rainbow-1)))
-    `(markdown-header-face-3 ((,c :inherit bold :height 1.5 :foreground ,rainbow-2)))
-    `(markdown-header-face-4 ((,c :inherit bold :height 1.4 :foreground ,rainbow-3)))
-    `(markdown-header-face-5 ((,c :inherit bold :height 1.3 :foreground ,rainbow-4)))
-    `(markdown-header-face-6 ((,c :inherit bold :height 1.2 :foreground ,rainbow-5)))
+    `(markdown-header-face-1 ((,c :inherit bold :foreground ,rainbow-0 :height ,ef-themes-height-1)))
+    `(markdown-header-face-2 ((,c :inherit bold :foreground ,rainbow-1 :height ,ef-themes-height-2)))
+    `(markdown-header-face-3 ((,c :inherit bold :foreground ,rainbow-2 :height ,ef-themes-height-3)))
+    `(markdown-header-face-4 ((,c :inherit bold :foreground ,rainbow-3 :height ,ef-themes-height-4)))
+    `(markdown-header-face-5 ((,c :inherit bold :foreground ,rainbow-4 :height ,ef-themes-height-5)))
+    `(markdown-header-face-6 ((,c :inherit bold :foreground ,rainbow-5 :height ,ef-themes-height-6)))
     `(markdown-highlighting-face ((,c :background ,bg-info :foreground ,info)))
     `(markdown-inline-code-face ((,c :foreground ,accent-1))) ; same as `org-code'
     `(markdown-italic-face ((,c :inherit italic)))
-    `(markdown-language-keyword-face ((,c :background ,bg-alt)))
+    `(markdown-language-keyword-face ((,c :background ,bg-dim)))
     `(markdown-line-break-face ((,c :inherit nobreak-space)))
     `(markdown-link-face ((,c :inherit link)))
     `(markdown-markup-face ((,c :inherit shadow)))
@@ -796,7 +848,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-clocking ((,c :background ,bg-alt :foreground ,red-warmer)))
     `(org-agenda-column-dateline ((,c :background ,bg-alt)))
     `(org-agenda-current-time ((,c :foreground ,variable)))
-    `(org-agenda-date ((,c :foreground ,date :height 1.4)))
+    `(org-agenda-date ((,c :foreground ,date :height ,ef-themes-height-3)))
     `(org-agenda-date-today ((,c :inherit org-agenda-date :underline t)))
     `(org-agenda-date-weekend ((,c :inherit org-agenda-date)))
     `(org-agenda-date-weekend-today ((,c :inherit org-agenda-date-today)))
@@ -808,12 +860,12 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-filter-regexp ((,c :inherit success)))
     `(org-agenda-filter-tags ((,c :inherit success)))
     `(org-agenda-restriction-lock ((,c :background ,bg-dim :foreground ,fg-dim)))
-    `(org-agenda-structure ((,c :foreground ,rainbow-0 :height 1.7)))
-    `(org-agenda-structure-filter ((,c :inherit (bold org-agenda-structure) :foreground ,rainbow-1)))
+    `(org-agenda-structure ((,c :height ,ef-themes-height-0)))
+    `(org-agenda-structure-filter ((,c :inherit (warning org-agenda-structure))))
     `(org-agenda-structure-secondary ((,c :foreground ,rainbow-1)))
     `(org-archived ((,c :background ,bg-alt :foreground ,fg-alt)))
-    `(org-block (( )))
-    `(org-block-begin-line ((,c :inherit shadow)))
+    `(org-block ((,c :background ,bg-inactive :extend t)))
+    `(org-block-begin-line ((,c :inherit shadow :background ,bg-dim :extend t)))
     `(org-block-end-line ((,c :inherit org-block-begin-line)))
     `(org-checkbox ((,c :foreground ,warning)))
     `(org-checkbox-statistics-done ((,c :inherit org-done)))
@@ -827,7 +879,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-dispatcher-highlight ((,c :inherit (bold secondary-selection))))
     `(org-document-info ((,c :foreground ,rainbow-1)))
     `(org-document-info-keyword ((,c :inherit shadow)))
-    `(org-document-title ((,c :foreground ,rainbow-0 :height 1.8)))
+    `(org-document-title ((,c :foreground ,rainbow-0 :height ,ef-themes-height-0)))
     `(org-done ((,c :foreground ,info)))
     `(org-drawer ((,c :inherit shadow)))
     `(org-ellipsis (( ))) ; inherits from the heading's color
@@ -839,14 +891,14 @@ Helper function for `ef-themes-preview-colors'."
     `(org-indent ((,c :inherit org-hide)))
     `(org-imminent-deadline ((,c :inherit bold :foreground ,err)))
     `(org-latex-and-related ((,c :foreground ,type)))
-    `(org-level-1 ((,c :inherit bold :foreground ,rainbow-1 :height 1.7)))
-    `(org-level-2 ((,c :inherit bold :foreground ,rainbow-2 :height 1.6)))
-    `(org-level-3 ((,c :inherit bold :foreground ,rainbow-3 :height 1.5)))
-    `(org-level-4 ((,c :inherit bold :foreground ,rainbow-4 :height 1.4)))
-    `(org-level-5 ((,c :inherit bold :foreground ,rainbow-5 :height 1.3)))
-    `(org-level-6 ((,c :inherit bold :foreground ,rainbow-6 :height 1.2)))
-    `(org-level-7 ((,c :inherit bold :foreground ,rainbow-7 :height 1.1)))
-    `(org-level-8 ((,c :inherit bold :foreground ,rainbow-8 :height 1.0)))
+    `(org-level-1 ((,c :inherit bold :foreground ,rainbow-1 :height ,ef-themes-height-1)))
+    `(org-level-2 ((,c :inherit bold :foreground ,rainbow-2 :height ,ef-themes-height-2)))
+    `(org-level-3 ((,c :inherit bold :foreground ,rainbow-3 :height ,ef-themes-height-3)))
+    `(org-level-4 ((,c :inherit bold :foreground ,rainbow-4 :height ,ef-themes-height-4)))
+    `(org-level-5 ((,c :inherit bold :foreground ,rainbow-5 :height ,ef-themes-height-5)))
+    `(org-level-6 ((,c :inherit bold :foreground ,rainbow-6 :height ,ef-themes-height-6)))
+    `(org-level-7 ((,c :inherit bold :foreground ,rainbow-7 :height ,ef-themes-height-7)))
+    `(org-level-8 ((,c :inherit bold :foreground ,rainbow-8 :height ,ef-themes-height-8)))
     `(org-link ((,c :inherit link)))
     `(org-list-dt ((,c :inherit bold)))
     `(org-macro ((,c :foreground ,accent-2)))
@@ -855,7 +907,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-mode-line-clock-overrun ((,c :inherit bold :foreground ,err)))
     `(org-priority ((,c :foreground ,magenta)))
     `(org-property-value ((,c :foreground ,fg-alt)))
-    `(org-quote (( )))
+    `(org-quote ((,c :inherit org-block)))
     `(org-scheduled ((,c :foreground ,warning)))
     `(org-scheduled-previously ((,c :inherit org-scheduled)))
     `(org-scheduled-today ((,c :inherit (bold org-scheduled))))
@@ -871,7 +923,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-upcoming-deadline ((,c :foreground ,warning)))
     `(org-upcoming-distant-deadline ((,c :inherit org-upcoming-deadline)))
     `(org-verbatim ((,c :foreground ,accent-0)))
-    `(org-verse (( )))
+    `(org-verse ((,c :inherit org-block)))
     `(org-warning ((,c :inherit warning)))
 ;;;; org-modern
     `(org-modern-block-keyword (( )))
@@ -885,14 +937,14 @@ Helper function for `ef-themes-preview-colors'."
     `(org-modern-time-inactive ((,c :inherit org-modern-date-inactive)))
     `(org-modern-todo ((,c :background ,bg-err :foreground ,err)))
 ;;;; outline-mode
-    `(outline-1 ((,c :inherit bold :foreground ,rainbow-1)))
-    `(outline-2 ((,c :inherit bold :foreground ,rainbow-2)))
-    `(outline-3 ((,c :inherit bold :foreground ,rainbow-3)))
-    `(outline-4 ((,c :inherit bold :foreground ,rainbow-4)))
-    `(outline-5 ((,c :inherit bold :foreground ,rainbow-5)))
-    `(outline-6 ((,c :inherit bold :foreground ,rainbow-6)))
-    `(outline-7 ((,c :inherit bold :foreground ,rainbow-7)))
-    `(outline-8 ((,c :inherit bold :foreground ,rainbow-8)))
+    `(outline-1 ((,c :inherit bold :foreground ,rainbow-1 :height ,ef-themes-height-1)))
+    `(outline-2 ((,c :inherit bold :foreground ,rainbow-2 :height ,ef-themes-height-2)))
+    `(outline-3 ((,c :inherit bold :foreground ,rainbow-3 :height ,ef-themes-height-3)))
+    `(outline-4 ((,c :inherit bold :foreground ,rainbow-4 :height ,ef-themes-height-4)))
+    `(outline-5 ((,c :inherit bold :foreground ,rainbow-5 :height ,ef-themes-height-5)))
+    `(outline-6 ((,c :inherit bold :foreground ,rainbow-6 :height ,ef-themes-height-6)))
+    `(outline-7 ((,c :inherit bold :foreground ,rainbow-7 :height ,ef-themes-height-7)))
+    `(outline-8 ((,c :inherit bold :foreground ,rainbow-8 :height ,ef-themes-height-8)))
 ;;;; outline-minor-faces
     `(outline-minor-0 (( )))
 ;;;; package (M-x list-packages)
@@ -1019,10 +1071,10 @@ Helper function for `ef-themes-preview-colors'."
     `(vertico-current ((,c :background ,bg-completion)))
 ;;;; wgrep
     `(wgrep-delete-face ((,c :inherit warning)))
-    `(wgrep-done-face ((,c :inherit success)))
+    `(wgrep-done-face ((,c :background ,bg-info :foreground ,info)))
     `(wgrep-face ((,c :inherit bold)))
     `(wgrep-file-face ((,c :foreground ,fg-alt)))
-    `(wgrep-reject-face ((,c :inherit error)))
+    `(wgrep-reject-face ((,c :background ,bg-err :foreground ,err)))
 ;;;; which-function-mode
     `(which-func ((,c :inherit bold :foreground ,fg-intense)))
 ;;;; whitespace-mode

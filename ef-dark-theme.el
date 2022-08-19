@@ -6,8 +6,6 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.1.0
-;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: faces, theme, accessibility
 
 ;; This file is part of GNU Emacs.
@@ -43,12 +41,15 @@
 
   (defconst ef-dark-palette
     '(;; Basic tones
-      (bg-main  "#000000")
-      (fg-main  "#d0d0d0")
-      (bg-dim   "#1a1a1a")
-      (fg-dim   "#857f8f")
-      (bg-alt   "#2b2b2b")
-      (fg-alt   "#89afef")
+      (bg-main     "#000000")
+      (fg-main     "#d0d0d0")
+      (bg-dim      "#1a1a1a")
+      (fg-dim      "#857f8f")
+      (bg-alt      "#2b2b2b")
+      (fg-alt      "#89afef")
+
+      (bg-active   "#3b3b3b")
+      (bg-inactive "#0c0c0c")
 
       ;; Basic hues for foreground values
       (red             "#ef6560")
@@ -105,7 +106,6 @@
       (bg-hover-alt  "#551f5a")
       (bg-hl-line    "#002435")
       (bg-region     "#25164a")
-      (bg-active     "#3b3b3b")
       (bg-paren      "#20577a")
       (bg-err        "#330d09") ; check with err
       (bg-info       "#002212") ; check with info
