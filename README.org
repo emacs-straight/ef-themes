@@ -4,9 +4,9 @@
 #+language:              en
 #+options:               ':t toc:nil author:t email:t num:t
 #+startup:               content
-#+macro:                 stable-version 0.2.0
-#+macro:                 release-date 2022-08-18
-#+macro:                 development-version 0.3.0-dev
+#+macro:                 stable-version 0.3.0
+#+macro:                 release-date 2022-08-20
+#+macro:                 development-version 0.4.0-dev
 #+export_file_name:      ef-themes.texi
 #+texinfo_filename:      ef-themes.info
 #+texinfo_dir_category:  Emacs misc features
@@ -126,13 +126,14 @@ Everything is in place to set up the package.
 
 ;; If you like two specific themes and want to switch between them, you
 ;; can specify them in `ef-themes-to-toggle' and then invoke the command
-;; `ef-themes-toggle':
+;; `ef-themes-toggle'.  All the themes are included in the variable
+;; `ef-themes-collection'.
 (setq ef-themes-to-toggle '(ef-summer ef-winter))
 
 ;; Make customisations that affect Emacs faces BEFORE loading a theme
 ;; (any change needs a theme re-load to take effect).
 
-(setq ef-themes-headings ; read the manual's entry of the doc string
+(setq ef-themes-headings ; read the manual's entry or the doc string
       '((0 . (variable-pitch light 1.9))
         (1 . (variable-pitch light 1.8))
         (2 . (variable-pitch regular 1.7))
@@ -171,8 +172,6 @@ Everything is in place to set up the package.
 :CUSTOM_ID: h:c8c3f312-692f-45d0-b490-78b501c99d41
 :END:
 
-[ Part of {{{development-version}}} ]
-
 Most items in the =ef-themes= collection are designed to use colors from
 many sides of the spectrum.  Those items generally are inappropriate for
 people with red-green color deficiency or deuteranopia.  We do,
@@ -197,8 +196,6 @@ change thus requires a theme re-load ([[#h:a6dd030c-6b6c-4992-83e8-3438b4607b51]
 :CUSTOM_ID: h:a58b8e21-0f8f-4763-9b47-185bf7e10043
 :END:
 
-[ Part of {{{development-version}}}. ]
-
 #+vindex: ef-themes-to-toggle
 #+findex: ef-themes-toggle
 The user option ~ef-themes-to-toggle~ expects two symbols that name
@@ -214,8 +211,6 @@ minibuffer completion or at random ([[#h:58345e8c-2bec-459c-872c-a85a29e9fe97][C
 :PROPERTIES:
 :CUSTOM_ID: h:a7a02817-e324-43e9-a7d8-fde024530af6
 :END:
-
-[ Part of {{{development-version}}} ]
 
 #+vindex: ef-themes-headings
 The user option ~ef-themes-headings~ provides support for individual
@@ -293,13 +288,13 @@ will retain the original aesthetic for that level.  For example:
 #+begin_src emacs-lisp
 (setq ef-themes-headings
       '((1 . t)           ; keep the default style
-              (2 . (variable-pitch 1.2))
-              (t . (variable-pitch)))) ; style for all other headings
+        (2 . (variable-pitch 1.2))
+        (t . (variable-pitch)))) ; style for all other headings
 
 (setq ef-themes-headings
       '((1 . (variable-pitch 1.6))
-              (2 . (1.3))
-              (t . t))) ; default style for all other levels
+        (2 . (1.3))
+        (t . t))) ; default style for all other levels
 #+end_src
 
 * Loading a theme
@@ -427,9 +422,9 @@ any form called inside of it.  For example:
 ;; => ("#fff2f3" "#5f456f" "#ffa4dc" "#cf0090")
 #+end_src
 
-The above return value is for =ef-summer=.  Switching to another theme
-and evaluating this code anew will give us the relevant results for that
-theme.  The same with =ef-winter=:
+The above return value is for =ef-summer= when that is the active Ef
+theme.  Switching to another theme and evaluating this code anew will
+give us the relevant results for that theme.  The same with =ef-winter=:
 
 #+begin_src emacs-lisp
 (ef-themes-with-colors
@@ -490,6 +485,16 @@ lofty accessibility target.
 :PROPERTIES:
 :CUSTOM_ID: h:a6d5c6f1-84c5-4d74-ba39-b5ccda05497a
 :END:
+
+** What does Ef mean?
+:PROPERTIES:
+:CUSTOM_ID: h:22a92ee8-eda6-4c29-b850-b2709a7239c0
+:END:
+
+"Ef" is a Greek word (ευ), commonly used as a prefix to denote that
+something is good, nice, and/or easy.  For example, eftopia (ευτοπία) is
+the opposite of dystopia (δυστοπία): a good place as opposed to a bad
+place.
 
 ** Will you stop using the modus-themes?
 :PROPERTIES:

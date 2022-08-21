@@ -56,7 +56,7 @@
       (red-warmer      "#d03003")
       (red-cooler      "#cf2f4f")
       (red-faint       "#b64850")
-      (green           "#14872f")
+      (green           "#1a870f")
       (green-warmer    "#4a7d00")
       (green-cooler    "#007f68")
       (green-faint     "#61756c")
@@ -98,6 +98,20 @@
       (bg-removed-faint  "#ffefef")
       (bg-removed-refine "#ffc0c0")
 
+      ;; Graphs
+      (red-graph-0-bg     "#ef7969")
+      (red-graph-1-bg     "#ffaab4")
+      (green-graph-0-bg   "#4faa09")
+      (green-graph-1-bg   "#8fef00")
+      (yellow-graph-0-bg  "#ffcf00")
+      (yellow-graph-1-bg  "#f9ff00")
+      (blue-graph-0-bg    "#7090ff")
+      (blue-graph-1-bg    "#9fc6ff")
+      (magenta-graph-0-bg "#e07fff")
+      (magenta-graph-1-bg "#fad0ff")
+      (cyan-graph-0-bg    "#70d3f0")
+      (cyan-graph-1-bg    "#afefff")
+
       ;; Special hues
       (bg-mode-line  "#90e8b0") (fg-mode-line  "#243228")
       (bg-accent     "#880044") (fg-accent     "#ffffff")
@@ -106,12 +120,12 @@
       (bg-hover-alt  "#feb5ff")
       (bg-hl-line    "#f9e0e5")
       (bg-region     "#d0e6ff")
-      (bg-paren      "#8fddb0")
+      (bg-paren      "#7fddd0")
       (bg-err        "#ffe8e0") ; check with err
       (bg-info       "#ccf5dd") ; check with info
 
       (border        "#b9d0c4")
-      (cursor        "#0077cc")
+      (cursor        "#bf0040")
       (fg-intense    "#000000")
 
       ;; Mappings
@@ -123,7 +137,7 @@
       (link-alt blue-cooler)
       (date cyan)
       (name green-cooler)
-      (keybind blue-cooler)
+      (keybind red-warmer)
 
       (builtin green)
       (comment yellow-faint)

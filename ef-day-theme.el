@@ -43,7 +43,7 @@
     '(;; Basic tones
       (bg-main     "#fff5ea")
       (fg-main     "#584141")
-      (bg-dim      "#f5eddf")
+      (bg-dim      "#f3ebdc")
       (fg-dim      "#63728f")
       (bg-alt      "#e9e0d8")
       (fg-alt      "#8f5f4a")
@@ -56,8 +56,8 @@
       (red-warmer      "#ce3f00")
       (red-cooler      "#cf2f4f")
       (red-faint       "#b05350")
-      (green           "#2a7a0c")
-      (green-warmer    "#437000")
+      (green           "#007a0a")
+      (green-warmer    "#5a7400")
       (green-cooler    "#0f7f5f")
       (green-faint     "#61756c")
       (yellow          "#a45a22")
@@ -98,6 +98,20 @@
       (bg-removed-faint  "#ffe5e5")
       (bg-removed-refine "#ffc0b0")
 
+      ;; Graphs
+      (red-graph-0-bg     "#ef7969")
+      (red-graph-1-bg     "#ffaab4")
+      (green-graph-0-bg   "#4faa09")
+      (green-graph-1-bg   "#8fef00")
+      (yellow-graph-0-bg  "#ffcf00")
+      (yellow-graph-1-bg  "#f9ff00")
+      (blue-graph-0-bg    "#7090ff")
+      (blue-graph-1-bg    "#9fc6ff")
+      (magenta-graph-0-bg "#e07fff")
+      (magenta-graph-1-bg "#fad0ff")
+      (cyan-graph-0-bg    "#70d3f0")
+      (cyan-graph-1-bg    "#afefff")
+
       ;; Special hues
       (bg-mode-line  "#ffaf72") (fg-mode-line  "#542f38")
       (bg-accent     "#106246") (fg-accent     "#ffffff")
@@ -111,13 +125,13 @@
       (bg-info       "#ddf5cc") ; check with info
 
       (border        "#ded0bb")
-      (cursor        "#b00f00")
+      (cursor        "#cf1f00")
       (fg-intense    "#000000")
 
       ;; Mappings
       (err red-warmer)
       (warning yellow-warmer)
-      (info green-warmer)
+      (info green)
 
       (link red)
       (link-alt green-warmer)
