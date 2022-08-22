@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.3.0
+;; Version: 0.3.3
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -265,15 +265,13 @@ sequence given SEQ-PRED, using SEQ-DEFAULT as a fallback."
 (defun ef-themes--enable-themes ()
   "Enable all Ef themes."
   (mapc (lambda (theme)
-          (load-theme theme :no-confirm :no-enable))
+          (unless (memq theme custom-known-themes)
+            (load-theme theme :no-confirm :no-enable)))
         ef-themes-collection))
 
 (defun ef-themes--list-known-themes ()
   "Return list of `custom-known-themes' with ef- prefix."
-  (unless (seq-find (lambda (theme)
-                      (string-prefix-p "ef-" (symbol-name theme)))
-                    custom-known-themes)
-    (ef-themes--enable-themes))
+  (ef-themes--enable-themes)
   (seq-filter
    (lambda (theme)
      (string-prefix-p "ef-" (symbol-name theme)))
@@ -564,7 +562,7 @@ Helper function for `ef-themes-preview-colors'."
     `(bongo-currently-playing-track ((,c :inherit bold)))
     `(bongo-elapsed-track-part ((,c :background ,bg-alt :underline t)))
     `(bongo-filled-seek-bar ((,c :background ,bg-hover)))
-    `(bongo-marked-track ((,c :inherit warning :background ,bg-dim)))
+    `(bongo-marked-track ((,c :inherit success :background ,bg-info)))
     `(bongo-marked-track-line ((,c :background ,bg-dim)))
     `(bongo-played-track ((,c :strike-through t)))
     `(bongo-track-length ((,c :inherit shadow)))
@@ -734,7 +732,7 @@ Helper function for `ef-themes-preview-colors'."
     `(ediff-odd-diff-C ((,c :inherit ediff-even-diff-C)))
 ;;;; eldoc
     ;; NOTE: see https://github.com/purcell/package-lint/issues/187
-    (list 'eldoc-highlight-function-argument `((,c :inherit bold :background ,bg-dim :foreground ,accent-0)))
+    (list 'eldoc-highlight-function-argument `((,c :inherit warning :background ,bg-warning)))
 ;;;; elfeed
     `(elfeed-log-date-face ((,c :inherit elfeed-search-date-face)))
     `(elfeed-log-debug-level-face ((,c :inherit elfeed-search-filter-face)))
@@ -771,6 +769,15 @@ Helper function for `ef-themes-preview-colors'."
     `(eshell-ls-symlink ((,c :inherit link)))
     `(eshell-ls-unreadable ((,c :inherit shadow)))
     `(eshell-prompt ((,c :inherit minibuffer-prompt)))
+;;;; eww
+    `(eww-invalid-certificate ((,c :foreground ,err)))
+    `(eww-valid-certificate ((,c :foreground ,info)))
+    `(eww-form-checkbox ((,c :inherit eww-form-text)))
+    `(eww-form-file ((,c :inherit eww-form-submit)))
+    `(eww-form-select ((,c :inherit eww-form-submit)))
+    `(eww-form-submit ((,c :box ,fg-dim :background ,bg-active :foreground ,fg-intense)))
+    `(eww-form-text ((,c :inherit widget-field)))
+    `(eww-form-textarea ((,c :inherit eww-form-text)))
 ;;;; font-lock
     `(font-lock-builtin-face ((,c :inherit bold :foreground ,builtin)))
     `(font-lock-comment-delimiter-face ((,c :inherit font-lock-comment-face)))
@@ -793,8 +800,8 @@ Helper function for `ef-themes-preview-colors'."
     `(git-commit-comment-heading ((,c :inherit (bold font-lock-comment-face))))
     `(git-commit-comment-file ((,c :inherit font-lock-comment-face :foreground ,name)))
     `(git-commit-keyword ((,c :foreground ,keyword)))
-    `(git-commit-nonempty-second-line ((,c :background ,bg-dim :foreground ,err)))
-    `(git-commit-overlong-summary ((,c :background ,bg-dim :foreground ,warning)))
+    `(git-commit-nonempty-second-line ((,c :background ,bg-err :foreground ,err)))
+    `(git-commit-overlong-summary ((,c :background ,bg-warning :foreground ,warning)))
     `(git-commit-summary ((,c :inherit bold :foreground ,accent-0)))
 ;;;; git-rebase
     `(git-rebase-comment-hash ((,c :inherit font-lock-comment-face :foreground ,constant)))
@@ -834,7 +841,7 @@ Helper function for `ef-themes-preview-colors'."
     ;; We need to fall back to `default' otherwise line numbers do not
     ;; scale when using `text-scale-adjust'.
     `(line-number ((,c :inherit (shadow default))))
-    `(line-number-current-line ((,c :inherit bold :foreground ,fg-intense)))
+    `(line-number-current-line ((,c :inherit (bold line-number) :foreground ,fg-intense)))
     `(line-number-major-tick ((,c :inherit line-number :background ,bg-alt :foreground ,info)))
     `(line-number-minor-tick ((,c :inherit line-number :background ,bg-dim :foreground ,warning)))
 ;;;; magit
@@ -1108,7 +1115,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-column-title ((,c :inherit (bold default) :underline t :background ,bg-alt)))
     `(org-date ((,c :foreground ,date)))
     `(org-date-selected ((,c :foreground ,date :inverse-video t)))
-    `(org-dispatcher-highlight ((,c :inherit (bold secondary-selection))))
+    `(org-dispatcher-highlight ((,c :inherit warning :background ,bg-warning)))
     `(org-document-info ((,c :foreground ,rainbow-1)))
     `(org-document-info-keyword ((,c :inherit shadow)))
     `(org-document-title ((,c :inherit ef-themes-heading-0)))
@@ -1167,16 +1174,16 @@ Helper function for `ef-themes-preview-colors'."
     `(org-habit-ready-face ((,c :background ,green-graph-0-bg :foreground "black"))) ; special case
     `(org-habit-ready-future-face ((,c :background ,green-graph-1-bg)))
 ;;;; org-modern
-    `(org-modern-block-keyword (( )))
-    `(org-modern-date-active ((,c :background ,bg-alt)))
-    `(org-modern-date-inactive ((,c :background ,bg-dim :foreground ,fg-dim)))
-    `(org-modern-done ((,c :background ,bg-info :foreground ,info)))
-    `(org-modern-priority ((,c :inherit org-priority :background ,bg-dim)))
+    `(org-modern-date-active ((,c :inherit org-modern-label :background ,bg-alt)))
+    `(org-modern-date-inactive ((,c :inherit org-modern-label :background ,bg-dim :foreground ,fg-dim)))
+    `(org-modern-done ((,c :inherit org-modern-label :background ,bg-info :foreground ,info)))
+    `(org-modern-label ((,c :height 0.9 :width condensed :weight regular :underline nil)))
+    `(org-modern-priority ((,c :inherit (org-modern-label org-priority) :background ,bg-dim)))
     `(org-modern-statistics ((,c :background ,bg-dim)))
-    `(org-modern-tag ((,c :inherit org-tag :background ,bg-dim)))
-    `(org-modern-time-active ((,c :background ,bg-active :foreground ,fg-intense)))
-    `(org-modern-time-inactive ((,c :inherit org-modern-date-inactive)))
-    `(org-modern-todo ((,c :background ,bg-err :foreground ,err)))
+    `(org-modern-tag ((,c :inherit (org-modern-label org-tag) :background ,bg-dim)))
+    `(org-modern-time-active ((,c :inherit org-modern-label :background ,bg-active :foreground ,fg-intense)))
+    `(org-modern-time-inactive ((,c :inherit (org-modern-label org-modern-date-inactive))))
+    `(org-modern-todo ((,c :inherit org-modern-label :background ,bg-err :foreground ,err)))
 ;;;; outline-mode
     `(outline-1 ((,c :inherit ef-themes-heading-1)))
     `(outline-2 ((,c :inherit ef-themes-heading-2)))
@@ -1252,6 +1259,15 @@ Helper function for `ef-themes-preview-colors'."
     `(show-paren-match ((,c :background ,bg-paren :foreground ,fg-intense)))
     `(show-paren-match-expression ((,c :background ,bg-alt)))
     `(show-paren-mismatch ((,c :background ,bg-red :foreground ,fg-intense)))
+;;;; shr
+    `(shr-code ((,c :foreground ,accent-1))) ; same as `org-code'
+    `(shr-h1 ((,c :inherit ef-themes-heading-1)))
+    `(shr-h2 ((,c :inherit ef-themes-heading-2)))
+    `(shr-h3 ((,c :inherit ef-themes-heading-3)))
+    `(shr-h4 ((,c :inherit ef-themes-heading-4)))
+    `(shr-h5 ((,c :inherit ef-themes-heading-5)))
+    `(shr-h6 ((,c :inherit ef-themes-heading-6)))
+    `(shr-selected-link ((,c :inherit link :background ,bg-dim)))
 ;;;; smerge
     `(smerge-base ((,c :inherit diff-changed)))
     `(smerge-lower ((,c :inherit diff-added)))
@@ -1290,14 +1306,14 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; textsec
     `(textsec-suspicious (( )))
 ;;;; transient
-    `(transient-active-infix ((,c :background ,bg-hover-alt :foreground ,fg-intense)))
+    `(transient-active-infix ((,c :background ,bg-active :foreground ,fg-intense)))
     `(transient-amaranth ((,c :inherit bold :foreground ,yellow-warmer)))
     ;; Placate the compiler for what is a spurious warning.  We also
     ;; have to do this with `eldoc-highlight-function-argument'.
-    (list 'transient-argument `((,c :inherit bold :background ,bg-dim :foreground ,accent-0)))
+    (list 'transient-argument `((,c :inherit warning :background ,bg-warning)))
     `(transient-blue ((,c :inherit bold :foreground ,blue-cooler)))
     `(transient-disabled-suffix ((,c :strike-through t)))
-    `(transient-enabled-suffix ((,c :background ,bg-dim :foreground ,accent-1)))
+    `(transient-enabled-suffix ((,c :inherit success :background ,bg-info)))
     `(transient-heading ((,c :inherit bold)))
     `(transient-inactive-argument ((,c :inherit shadow)))
     `(transient-inactive-value ((,c :inherit shadow)))
@@ -1310,7 +1326,7 @@ Helper function for `ef-themes-preview-colors'."
     `(transient-teal ((,c :inherit bold :foreground ,cyan-cooler)))
     `(transient-unreachable ((,c :inherit shadow)))
     `(transient-unreachable-key ((,c :inherit shadow)))
-    `(transient-value ((,c :background ,bg-dim :foreground ,accent-2)))
+    `(transient-value ((,c :inherit success :background ,bg-info)))
 ;;;; vc (vc-dir.el, vc-hooks.el)
     `(vc-dir-directory ((,c :foreground ,accent-0)))
     `(vc-dir-file ((,c :foreground ,name)))

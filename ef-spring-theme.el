@@ -71,7 +71,7 @@
       (magenta         "#d5206f")
       (magenta-warmer  "#cb26a0")
       (magenta-cooler  "#9435b4")
-      (magenta-faint   "#a04450")
+      (magenta-faint   "#a04360")
       (cyan            "#1f6fbf")
       (cyan-warmer     "#3f6faf")
       (cyan-cooler     "#0f7b8f")
@@ -122,6 +122,7 @@
       (bg-region     "#d0e6ff")
       (bg-paren      "#7fddd0")
       (bg-err        "#ffe8e0") ; check with err
+      (bg-warning    "#ffecba") ; check with warning
       (bg-info       "#ccf5dd") ; check with info
 
       (border        "#b9d0c4")
@@ -145,7 +146,7 @@
       (fnname green-warmer)
       (keyword green-cooler)
       (preprocessor magenta-warmer)
-      (docstring red-faint)
+      (docstring magenta-faint)
       (string yellow-warmer)
       (type magenta-cooler)
       (variable cyan)
