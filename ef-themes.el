@@ -209,7 +209,47 @@ will retain the original aesthetic for that level.  For example:
           :value-type ,ef-themes--headings-choice)
   :link '(info-link "(ef-themes) Option for headings"))
 
+(defcustom ef-themes-mixed-fonts nil
+  "Non-nil to enable inheritance from `fixed-pitch' in some faces.
+
+This is done to allow spacing-sensitive constructs, such as Org
+tables and code blocks, to remain monospaced when users opt for a
+proportionately spaced font as their default or when they use
+something like the command `variable-pitch-mode'.
+
+Users may need to explicitly configure the font family of
+`fixed-pitch' in order to get a consistent experience with their
+typography (also check the `fontaine' package on GNU ELPA (by
+Protesilaos))."
+  :group 'ef-themes
+  :package-version '(ef-themes . "0.4.0")
+  :type 'boolean
+  :link '(info-link "(ef-themes) Enable mixed fonts"))
+
+(defcustom ef-themes-variable-pitch-ui nil
+  "Use proportional fonts (`variable-pitch') in UI elements.
+This includes the mode line, header line, tab bar, and tab line.
+
+Users may need to explicitly configure the font family of
+`variable-pitch' in order to get a consistent experience with
+their typography (also check the `fontaine' package on GNU
+ELPA (by Protesilaos))."
+  :group 'ef-themes
+  :package-version '(ef-themes . "0.4.0")
+  :type 'boolean
+  :link '(info-link "(ef-themes) UI typeface"))
+
 ;;; Helpers for user options
+
+(defun ef-themes--fixed-pitch ()
+  "Conditional application of `fixed-pitch' inheritance."
+  (when ef-themes-mixed-fonts
+    (list :inherit 'fixed-pitch)))
+
+(defun ef-themes--variable-pitch-ui ()
+  "Conditional application of `variable-pitch' in the UI."
+  (when ef-themes-variable-pitch-ui
+    (list :inherit 'variable-pitch)))
 
 (defun ef-themes--key-cdr (key alist)
   "Get cdr of KEY in ALIST."
@@ -455,9 +495,20 @@ Helper function for `ef-themes-preview-colors'."
   :package-version '(ef-themes . "0.3.0")
   :group 'ef-themes-faces)
 
+(defface ef-themes-fixed-pitch nil
+  "Face for `fixed-pitch' if `ef-themes-mixed-fonts' is non-nil."
+  :package-version '(ef-themes . "0.4.0")
+  :group 'ef-themes-faces)
+
+(defface ef-themes-ui-variable-pitch nil
+  "Face for `variable-pitch' if `ef-themes-variable-pitch-ui' is non-nil."
+  :package-version '(ef-themes . "0.4.0")
+  :group 'ef-themes-faces)
+
 (defconst ef-themes-faces
   '(
 ;;;; internal faces
+    `(ef-themes-fixed-pitch ((,c ,@(ef-themes--fixed-pitch))))
     `(ef-themes-heading-0 ((,c ,@(ef-themes--heading 0) :foreground ,rainbow-0)))
     `(ef-themes-heading-1 ((,c ,@(ef-themes--heading 1) :foreground ,rainbow-1)))
     `(ef-themes-heading-2 ((,c ,@(ef-themes--heading 2) :foreground ,rainbow-2)))
@@ -467,7 +518,8 @@ Helper function for `ef-themes-preview-colors'."
     `(ef-themes-heading-6 ((,c ,@(ef-themes--heading 6) :foreground ,rainbow-6)))
     `(ef-themes-heading-7 ((,c ,@(ef-themes--heading 7) :foreground ,rainbow-7)))
     `(ef-themes-heading-8 ((,c ,@(ef-themes--heading 8) :foreground ,rainbow-8)))
-    `(ef-themes-key-binding ((,c :inherit bold :foreground ,keybind)))
+    `(ef-themes-key-binding ((,c :inherit (bold ef-themes-fixed-pitch) :foreground ,keybind)))
+    `(ef-themes-ui-variable-pitch ((,c ,@(ef-themes--variable-pitch-ui))))
 ;;;; all basic faces
     `(default ((,c :background ,bg-main :foreground ,fg-main)))
     `(cursor ((,c :background ,cursor)))
@@ -476,12 +528,13 @@ Helper function for `ef-themes-preview-colors'."
     `(comint-highlight-input ((,c :inherit bold)))
     `(comint-highlight-prompt ((,c :foreground ,accent-2)))
     `(minibuffer-prompt ((,c :foreground ,accent-2)))
+    `(elisp-shorthand-font-lock-face ((,c :inherit italic)))
     `(escape-glyph ((,c :foreground ,warning)))
     `(error ((,c :inherit bold :foreground ,err)))
     `(success ((,c :inherit bold :foreground ,info)))
     `(warning ((,c :inherit bold :foreground ,warning)))
     `(fringe ((,c :background unspecified)))
-    `(header-line ((,c :background ,bg-dim)))
+    `(header-line ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-dim)))
     `(header-line-highlight ((,c :inherit highlight)))
     `(help-argument-name ((,c :foreground ,accent-0)))
     `(help-key-binding ((,c :inherit bold :foreground ,keybind)))
@@ -657,9 +710,9 @@ Helper function for `ef-themes-preview-colors'."
     `(diff-context (( )))
     `(diff-error ((,c :inherit error)))
     `(diff-file-header ((,c :inherit bold)))
-    `(diff-function ((,c :inherit shadow)))
+    `(diff-function ((,c :background ,bg-alt)))
     `(diff-header (( )))
-    `(diff-hunk-header ((,c :inherit bold)))
+    `(diff-hunk-header ((,c :inherit bold :background ,bg-alt)))
     `(diff-index ((,c :inherit italic)))
     `(diff-nonexistent ((,c :inherit bold)))
 ;;;; dired
@@ -741,11 +794,11 @@ Helper function for `ef-themes-preview-colors'."
     `(elfeed-log-warn-level-face ((,c :inherit warning)))
     `(elfeed-search-date-face ((,c :foreground ,date)))
     `(elfeed-search-feed-face ((,c :foreground ,accent-1)))
-    `(elfeed-search-filter-face ((,c :inherit success)))
+    `(elfeed-search-filter-face ((,c :inherit bold)))
     `(elfeed-search-last-update-face ((,c :inherit bold :foreground ,date)))
     `(elfeed-search-tag-face ((,c :foreground ,accent-0)))
     `(elfeed-search-title-face ((,c :foreground ,fg-dim)))
-    `(elfeed-search-unread-count-face ((,c :inherit bold)))
+    `(elfeed-search-unread-count-face (( )))
     `(elfeed-search-unread-title-face ((,c :inherit bold :foreground ,fg-main)))
 ;;;; epa
     `(epa-field-body (( )))
@@ -816,7 +869,7 @@ Helper function for `ef-themes-preview-colors'."
     `(gnus-header-newsgroups ((,c :inherit message-header-newsgroups)))
     `(gnus-header-subject ((,c :inherit message-header-subject)))
 ;;;; info
-    `(Info-quoted ((,c :foreground ,accent-0))) ; the capitalization is canonical
+    `(Info-quoted ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-0))) ; the capitalization is canonical
     `(info-header-node ((,c :inherit (shadow bold))))
     `(info-index-match ((,c :inherit match)))
     `(info-menu-header ((,c :inherit bold)))
@@ -892,8 +945,8 @@ Helper function for `ef-themes-preview-colors'."
     `(magit-log-author ((,c :foreground ,name)))
     `(magit-log-date ((,c :foreground ,date)))
     `(magit-log-graph ((,c :inherit shadow)))
-    `(magit-mode-line-process ((,c :inherit success)))
-    `(magit-mode-line-process-error ((,c :inherit error)))
+    `(magit-mode-line-process ((,c :inherit bold)))
+    `(magit-mode-line-process-error ((,c :inherit bold-italic)))
     `(magit-process-ng ((,c :inherit error)))
     `(magit-process-ok ((,c :inherit success)))
     `(magit-reflog-amend ((,c :inherit warning)))
@@ -965,7 +1018,7 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; markdown-mode
     `(markdown-blockquote-face ((,c :inherit font-lock-doc-face)))
     `(markdown-bold-face ((,c :inherit bold)))
-    `(markdown-code-face ((,c :background ,bg-inactive :extend t)))
+    `(markdown-code-face ((,c :inherit ef-themes-fixed-pitch :background ,bg-inactive :extend t)))
     `(markdown-gfm-checkbox-face ((,c :foreground ,warning)))
     `(markdown-header-face (( )))
     `(markdown-header-face-1 ((,c :inherit ef-themes-heading-1)))
@@ -975,9 +1028,9 @@ Helper function for `ef-themes-preview-colors'."
     `(markdown-header-face-5 ((,c :inherit ef-themes-heading-5)))
     `(markdown-header-face-6 ((,c :inherit ef-themes-heading-6)))
     `(markdown-highlighting-face ((,c :background ,bg-info :foreground ,info)))
-    `(markdown-inline-code-face ((,c :foreground ,accent-1))) ; same as `org-code'
+    `(markdown-inline-code-face ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-1))) ; same as `org-code'
     `(markdown-italic-face ((,c :inherit italic)))
-    `(markdown-language-keyword-face ((,c :background ,bg-dim)))
+    `(markdown-language-keyword-face ((,c :inherit ef-themes-fixed-pitch :background ,bg-dim)))
     `(markdown-line-break-face ((,c :inherit nobreak-space)))
     `(markdown-link-face ((,c :inherit link)))
     `(markdown-markup-face ((,c :inherit shadow)))
@@ -985,7 +1038,7 @@ Helper function for `ef-themes-preview-colors'."
     `(markdown-metadata-value-face ((,c :foreground ,string)))
     `(markdown-missing-link-face ((,c :inherit warning)))
     `(markdown-pre-face ((,c :inherit markdown-code-face)))
-    `(markdown-table-face ((,c :foreground ,fg-alt))) ; same as `org-table'
+    `(markdown-table-face ((,c :inherit ef-themes-fixed-pitch :foreground ,fg-alt))) ; same as `org-table'
     `(markdown-url-face ((,c :foreground ,fg-alt)))
 ;;;; messages
     `(message-cited-text-1 ((,c :foreground ,mail-0)))
@@ -1002,12 +1055,12 @@ Helper function for `ef-themes-preview-colors'."
     `(message-mml ((,c :foreground ,info)))
     `(message-separator ((,c :background ,bg-alt)))
 ;;;; mode-line
-    `(mode-line ((,c :background ,bg-mode-line :foreground ,fg-mode-line)))
+    `(mode-line ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-mode-line :foreground ,fg-mode-line)))
     `(mode-line-active ((,c :inherit mode-line)))
     `(mode-line-buffer-id ((,c :inherit bold)))
     `(mode-line-emphasis ((,c :inherit bold-italic)))
     `(mode-line-highlight ((,c :inherit highlight)))
-    `(mode-line-inactive ((,c :background ,bg-alt :foreground ,fg-dim)))
+    `(mode-line-inactive ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-alt :foreground ,fg-dim)))
 ;;;; mu4e
     `(mu4e-attach-number-face ((,c :inherit bold :foreground ,fg-dim)))
     `(mu4e-cited-1-face ((,c :inherit message-cited-text-1)))
@@ -1033,7 +1086,7 @@ Helper function for `ef-themes-preview-colors'."
     `(mu4e-header-value-face ((,c :inherit message-header-other)))
     `(mu4e-highlight-face ((,c :inherit ef-themes-key-binding)))
     `(mu4e-link-face ((,c :inherit link)))
-    `(mu4e-modeline-face ((,c :foreground ,info)))
+    `(mu4e-modeline-face (( )))
     `(mu4e-moved-face ((,c :inherit italic :foreground ,warning)))
     `(mu4e-ok-face ((,c :inherit success)))
     `(mu4e-region-code ((,c :foreground ,builtin)))
@@ -1094,36 +1147,36 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-diary ((,c :inherit org-agenda-calendar-sexp)))
     `(org-agenda-dimmed-todo-face ((,c :inherit shadow)))
     `(org-agenda-done ((,c :inherit success)))
-    `(org-agenda-filter-category ((,c :inherit success)))
-    `(org-agenda-filter-effort ((,c :inherit success)))
-    `(org-agenda-filter-regexp ((,c :inherit success)))
-    `(org-agenda-filter-tags ((,c :inherit success)))
+    `(org-agenda-filter-category ((,c :inherit bold)))
+    `(org-agenda-filter-effort ((,c :inherit bold)))
+    `(org-agenda-filter-regexp ((,c :inherit bold)))
+    `(org-agenda-filter-tags ((,c :inherit bold)))
     `(org-agenda-restriction-lock ((,c :background ,bg-dim :foreground ,fg-dim)))
     `(org-agenda-structure ((,c :inherit ef-themes-heading-0)))
     `(org-agenda-structure-filter ((,c :inherit (warning org-agenda-structure))))
     `(org-agenda-structure-secondary ((,c :foreground ,rainbow-1)))
     `(org-archived ((,c :background ,bg-alt :foreground ,fg-alt)))
-    `(org-block ((,c :background ,bg-inactive :extend t)))
-    `(org-block-begin-line ((,c :inherit shadow :background ,bg-dim :extend t)))
+    `(org-block ((,c :inherit ef-themes-fixed-pitch :background ,bg-inactive :extend t)))
+    `(org-block-begin-line ((,c :inherit (shadow ef-themes-fixed-pitch) :background ,bg-dim :extend t)))
     `(org-block-end-line ((,c :inherit org-block-begin-line)))
     `(org-checkbox ((,c :foreground ,warning)))
     `(org-checkbox-statistics-done ((,c :inherit org-done)))
     `(org-checkbox-statistics-todo ((,c :inherit org-todo)))
     `(org-clock-overlay ((,c :background ,bg-alt :foreground ,red-cooler)))
-    `(org-code ((,c :foreground ,accent-1)))
+    `(org-code ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-1)))
     `(org-column ((,c :inherit default :background ,bg-alt)))
     `(org-column-title ((,c :inherit (bold default) :underline t :background ,bg-alt)))
-    `(org-date ((,c :foreground ,date)))
+    `(org-date ((,c :inherit ef-themes-fixed-pitch :foreground ,date)))
     `(org-date-selected ((,c :foreground ,date :inverse-video t)))
     `(org-dispatcher-highlight ((,c :inherit warning :background ,bg-warning)))
     `(org-document-info ((,c :foreground ,rainbow-1)))
     `(org-document-info-keyword ((,c :inherit shadow)))
     `(org-document-title ((,c :inherit ef-themes-heading-0)))
     `(org-done ((,c :foreground ,info)))
-    `(org-drawer ((,c :inherit shadow)))
+    `(org-drawer ((,c :inherit (shadow ef-themes-fixed-pitch))))
     `(org-ellipsis (( ))) ; inherits from the heading's color
     `(org-footnote ((,c :inherit link)))
-    `(org-formula ((,c :foreground ,fnname)))
+    `(org-formula ((,c :inherit ef-themes-fixed-pitch :foreground ,fnname)))
     `(org-headline-done ((,c :inherit org-done)))
     `(org-headline-todo ((,c :inherit org-todo)))
     `(org-hide ((,c :foreground ,bg-main)))
@@ -1140,19 +1193,19 @@ Helper function for `ef-themes-preview-colors'."
     `(org-level-8 ((,c :inherit ef-themes-heading-8)))
     `(org-link ((,c :inherit link)))
     `(org-list-dt ((,c :inherit bold)))
-    `(org-macro ((,c :foreground ,accent-2)))
-    `(org-meta-line ((,c :inherit shadow)))
+    `(org-macro ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-2)))
+    `(org-meta-line ((,c :inherit (shadow ef-themes-fixed-pitch))))
     `(org-mode-line-clock (( )))
     `(org-mode-line-clock-overrun ((,c :inherit bold :foreground ,err)))
     `(org-priority ((,c :foreground ,magenta)))
-    `(org-property-value ((,c :foreground ,fg-alt)))
+    `(org-property-value ((,c :inherit ef-themes-fixed-pitch :foreground ,fg-alt)))
     `(org-quote ((,c :inherit org-block)))
     `(org-scheduled ((,c :foreground ,warning)))
     `(org-scheduled-previously ((,c :inherit org-scheduled)))
     `(org-scheduled-today ((,c :inherit (bold org-scheduled))))
     `(org-sexp-date ((,c :foreground ,date)))
-    `(org-special-keyword ((,c :inherit shadow)))
-    `(org-table ((,c :foreground ,fg-alt)))
+    `(org-special-keyword ((,c :inherit (shadow ef-themes-fixed-pitch))))
+    `(org-table ((,c :inherit ef-themes-fixed-pitch :foreground ,fg-alt)))
     `(org-table-header ((,c :inherit (bold org-table))))
     `(org-tag ((,c :foreground ,fg-alt)))
     `(org-tag-group ((,c :inherit (bold org-tag))))
@@ -1161,7 +1214,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-todo ((,c :foreground ,err)))
     `(org-upcoming-deadline ((,c :foreground ,warning)))
     `(org-upcoming-distant-deadline ((,c :inherit org-upcoming-deadline)))
-    `(org-verbatim ((,c :foreground ,accent-0)))
+    `(org-verbatim ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-0)))
     `(org-verse ((,c :inherit org-block)))
     `(org-warning ((,c :inherit warning)))
 ;;;; org-habit
@@ -1179,7 +1232,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-modern-done ((,c :inherit org-modern-label :background ,bg-info :foreground ,info)))
     `(org-modern-label ((,c :height 0.9 :width condensed :weight regular :underline nil)))
     `(org-modern-priority ((,c :inherit (org-modern-label org-priority) :background ,bg-dim)))
-    `(org-modern-statistics ((,c :background ,bg-dim)))
+    `(org-modern-statistics ((,c :inherit org-modern-label :background ,bg-dim)))
     `(org-modern-tag ((,c :inherit (org-modern-label org-tag) :background ,bg-dim)))
     `(org-modern-time-active ((,c :inherit org-modern-label :background ,bg-active :foreground ,fg-intense)))
     `(org-modern-time-inactive ((,c :inherit (org-modern-label org-modern-date-inactive))))
@@ -1259,8 +1312,11 @@ Helper function for `ef-themes-preview-colors'."
     `(show-paren-match ((,c :background ,bg-paren :foreground ,fg-intense)))
     `(show-paren-match-expression ((,c :background ,bg-alt)))
     `(show-paren-mismatch ((,c :background ,bg-red :foreground ,fg-intense)))
+;;;; shell-script-mode (sh-mode)
+    `(sh-heredoc ((,c :inherit font-lock-doc-face)))
+    `(sh-quoted-exec ((,c :inherit font-lock-builtin-face)))
 ;;;; shr
-    `(shr-code ((,c :foreground ,accent-1))) ; same as `org-code'
+    `(shr-code ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-1))) ; same as `org-code'
     `(shr-h1 ((,c :inherit ef-themes-heading-1)))
     `(shr-h2 ((,c :inherit ef-themes-heading-2)))
     `(shr-h3 ((,c :inherit ef-themes-heading-3)))
@@ -1277,18 +1333,18 @@ Helper function for `ef-themes-preview-colors'."
     `(smerge-refined-removed ((,c :inherit diff-refine-removed)))
     `(smerge-upper ((,c :inherit diff-removed)))
 ;;;; tab-bar-mode
-    `(tab-bar ((,c :background ,bg-alt)))
-    `(tab-bar-tab-group-current ((,c :inherit bold :background ,bg-main :box (:line-width (2 . -2) :style flat-button) :foreground ,fg-alt)))
-    `(tab-bar-tab-group-inactive ((,c :background ,bg-alt :box (:line-width (2 . -2) :style flat-button) :foreground ,fg-alt)))
-    `(tab-bar-tab ((,c :inherit bold :box (:line-width (2 . -2) :style flat-button) :background ,bg-main :foreground ,fg-main)))
-    `(tab-bar-tab-inactive ((,c :box (:line-width (2 . -2) :style flat-button) :background ,bg-dim :foreground ,fg-dim)))
+    `(tab-bar ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-alt)))
+    `(tab-bar-tab-group-current ((,c :inherit bold :background ,bg-main :box (:line-width -2 :color ,bg-main) :foreground ,fg-alt)))
+    `(tab-bar-tab-group-inactive ((,c :background ,bg-alt :box (:line-width -2 :color ,bg-alt) :foreground ,fg-alt)))
+    `(tab-bar-tab ((,c :inherit bold :box (:line-width -2 :color ,bg-main) :background ,bg-main :foreground ,fg-main)))
+    `(tab-bar-tab-inactive ((,c :box (:line-width -2 :color ,bg-dim) :background ,bg-dim :foreground ,fg-dim)))
 ;;;; tab-line-mode
-    `(tab-line ((,c :background ,bg-alt :height 0.95)))
-    `(tab-line-close-highlight ((,c :foreground ,red)))
+    `(tab-line ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-alt :height 0.95)))
+    `(tab-line-close-highlight ((,c :foreground ,err)))
     `(tab-line-highlight ((,c :inherit highlight)))
     `(tab-line-tab (( )))
-    `(tab-line-tab-current ((,c :inherit bold :box (:line-width (2 . -2) :style flat-button) :background ,bg-main :foreground ,fg-main)))
-    `(tab-line-tab-inactive ((,c :box (:line-width (2 . -2) :style flat-button) :background ,bg-dim :foreground ,fg-dim)))
+    `(tab-line-tab-current ((,c :inherit bold :box (:line-width -2 :color ,bg-main) :background ,bg-main :foreground ,fg-main)))
+    `(tab-line-tab-inactive ((,c :box (:line-width -2 :color ,bg-dim) :background ,bg-dim :foreground ,fg-dim)))
     `(tab-line-tab-inactive-alternate ((,c :inherit tab-line-tab-inactive :foreground ,fg-alt)))
     `(tab-line-tab-modified ((,c :foreground ,warning)))
 ;;;; term

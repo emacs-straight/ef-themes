@@ -144,6 +144,10 @@ Everything is in place to set up the package.
         (7 . (variable-pitch 1.2))
         (t . (variable-pitch 1.1))))
 
+;; They are nil by default...
+(setq ef-themes-mixed-fonts t
+      ef-themes-variable-pitch-ui t)
+
 ;; Disable all other themes to avoid awkward blending:
 (mapc #'disable-theme custom-enabled-themes)
 
@@ -206,6 +210,63 @@ command.
 
 This is in addition to the other ways of loading a theme, either with
 minibuffer completion or at random ([[#h:58345e8c-2bec-459c-872c-a85a29e9fe97][Commands to load an Ef theme]]).
+
+** Enable mixed fonts
+:PROPERTIES:
+:CUSTOM_ID: h:621d3bb9-5967-4f97-b253-7470bba9168c
+:END:
+
+[ Part of {{{development-version}}} ]
+
+#+vindex: ef-themes-mixed-fonts
+The user option ~ef-themes-mixed-fonts~ controls whether strictly
+spacing-sensitive constructs inherit from ~fixed-pitch~ (a monospaced
+font family).
+
+By default (a nil value for this user option) no face inherits from
+~fixed-pitch~: they all use the default font family, regardless of
+whether it is monospaced or not.
+
+When ~ef-themes-mixed-fonts~ is set to a non-nil value, faces such as
+Org tables, inline code, code blocks, and the like, are rendered in a
+monospaced font at all times.  The user can thus set their default font
+family to a proportionately spaced font without worrying about breaking
+the alignment of relevant elements, or if they simply prefer the
+aesthetics of mixed mono and proportionately spaced font families.
+
+A temporary switch to a proportionately spaced font (known in Emacs as
+~variable-pitch~) can be enabled in the current buffer with the
+activation of the built-in ~variable-pitch-mode~.
+
+To get consistent typography, the user may need to edit the font family
+of the ~fixed-pitch~ face.  The =fontaine= package on GNU ELPA (by
+Protesilaos) can be helpful in that regard.
+
+** UI typeface
+:PROPERTIES:
+:CUSTOM_ID: h:7c3d1057-c4a7-43b3-b91b-9887264d4072
+:END:
+
+[ Part of {{{development-version}}} ]
+
+#+vindex: ef-themes-variable-pitch-ui
+The user option ~ef-themes-variable-pitch-ui~ controls whether the
+elements of the User Interface (UI) use a proportionately spaced font.
+By default (a nil value), all UI elements use the default font family.
+When this user option is set to a non-nil value, all UI elements will
+inherit the face ~variable-pitch~ instead thus rendering them in a
+proportionately spaced font.
+
+In this context, the UI elements are:
+
+- ~header-line~
+- ~mode-line~ (active and inactive)
+- ~tab-bar-mode~
+- ~tab-line-mode~
+
+To get consistent typography, the user may need to edit the font family
+of the ~variable-pitch~ face.  The =fontaine= package on GNU ELPA (by
+Protesilaos) can be helpful in that regard.
 
 ** Option for headings
 :PROPERTIES:
@@ -432,38 +493,294 @@ give us the relevant results for that theme.  The same with =ef-winter=:
 ;; => ("#0f0b15" "#b8c6d5" "#5f1f5f" "#ff6ff0")
 #+end_src
 
-For the time being, we do not provide detailed instructions on how to
-use this macro.  We shall do so as the needs of users become more clear
-through the development process.
+[[#h:152326a3-9356-4158-8adb-83c42c2ef117][Do-It-Yourself customizations]].
 
 The palette of each Ef theme is considered stable.  No removals shall be
 made.  Though please note that some tweaks to individual hues or color
 mapping are still possible.  At any rate, we will not outright break any
 code that uses ~ef-themes-with-colors~.
 
+* Do-It-Yourself customizations
+:PROPERTIES:
+:CUSTOM_ID: h:152326a3-9356-4158-8adb-83c42c2ef117
+:END:
+
+This section documents how the user can further tweak the Ef themes to
+their liking.
+
+** The general approach to DIY changes
+:PROPERTIES:
+:CUSTOM_ID: h:ec0adf54-c037-4c53-81b8-7eab2303794d
+:END:
+
+When the user wants to customize Emacs faces there are two
+considerations they need to make if they care about robustness:
+
+1. Do not hardcode color values, but instead use the relevant variables
+   from the Ef themes.
+2. Make the changes persist through theme changes between the Ef themes
+   collection.
+
+For point 1 we provide the ~ef-themes-with-colors~ macro, while for
+point 2 we have the ~ef-themes-post-load-hook~.
+
+[[#h:5b74bd9e-e7f2-46b3-af2e-7c45b2e69245][Use colors from the active Ef theme]].
+
+[[#h:58345e8c-2bec-459c-872c-a85a29e9fe97][Commands to load an Ef theme]].
+
+We need to wrap our code in the ~ef-themes-with-colors~ and declare it
+as a function which we then add to the hook.  Here we show the general
+approach of putting those pieces together.
+
+To customize faces we use the built-in ~custom-set-faces~.  The value it
+accepts has the same syntax as that found in =ef-themes.el=,
+specifically the ~ef-themes-faces~ constant.  It thus is easy to copy
+lines from there and tweak them.  Let's pick a couple of font-lock faces
+(used in all programming modes, among others):
+
+#+begin_src emacs-lisp
+(defun my-ef-themes-custom-faces ()
+  "My customizations on top of the Ef themes.
+This function is added to the `ef-themes-post-load-hook'."
+  (ef-themes-with-colors
+    (custom-set-faces
+     ;; These are the default specifications
+     `(font-lock-comment-face ((,c :inherit italic :foreground ,comment)))
+     `(font-lock-variable-name-face ((,c :foreground ,variable))))))
+
+;; Using the hook lets our changes persist when we use the commands
+;; `ef-themes-toggle', `ef-themes-select', and `ef-themes-load-random'.
+(add-hook 'ef-themes-post-load-hook #'my-ef-themes-custom-faces)
+#+end_src
+
+Each item in the Ef themes collection has its own color mapping.  So the
+color value of the =comment= variable will differ from theme-to-theme.
+For our purposes, we make variables look like comments and comments like
+variables:
+
+#+begin_src emacs-lisp
+(defun my-ef-themes-custom-faces ()
+  "My customizations on top of the Ef themes.
+This function is added to the `ef-themes-post-load-hook'."
+  (ef-themes-with-colors
+    (custom-set-faces
+     ;; These are the default specifications
+     `(font-lock-comment-face ((,c :foreground ,variable)))
+     `(font-lock-variable-name-face ((,c :inherit italic :foreground ,comment))))))
+
+;; Using the hook lets our changes persist when we use the commands
+;; `ef-themes-toggle', `ef-themes-select', and `ef-themes-load-random'.
+(add-hook 'ef-themes-post-load-hook #'my-ef-themes-custom-faces)
+#+end_src
+
+All changes take effect when a theme is loaded again.
+
+Please contact us if you have specific questions about this mechanism.
+We are willing to help and shall provide comprehensive documentation
+where necessary.
+
+* Supported packages or face groups
+:PROPERTIES:
+:CUSTOM_ID: h:c8d80daf-d039-40c4-bb74-e7814a9b4c79
+:END:
+
+The =ef-themes= will only ever support a curated list of packages based
+on my judgement ([[#h:ea2eedd7-a473-4826-9b83-31bf3ac2c5f7][Packages that are hard to support]]).  Nevertheless, the
+list of explicitly or implicitly supported packages already covers
+everything most users need.
+
+** Explicitly supported packages or face groups
+:PROPERTIES:
+:CUSTOM_ID: h:8e87733c-9fc9-45cd-9b9e-97b11f4f6c05
+:END:
+
+- all basic faces
+- all-the-icons
+- all-the-icons-dired
+- all-the-icons-ibuffer
+- ansi-color
+- bongo
+- bookmark
+- calendar and diary
+- change-log and log-view (part of VC)
+- chart
+- compilation
+- completions
+- custom (M-x customize)
+- denote
+- dictionary
+- diff-hl
+- diff-mode
+- dired
+- dired-subtree
+- diredfl
+- doom-modeline (incomplete, though likely is okay)
+- ediff
+- eldoc
+- elfeed
+- epa
+- eshell
+- eww [ Part of {{{development-version}}} ]
+- font-lock
+- git-commit
+- git-rebase
+- gnus (incomplete, though likely is okay)
+- info
+- isearch, occur, query-replace
+- keycast
+- line numbers (~display-line-numbers-mode~ and global variant)
+- magit
+- man
+- marginalia
+- markdown-mode
+- messages
+- mode-line
+- mu4e
+- notmuch
+- orderless
+- org
+- org-habit
+- org-modern
+- outline-mode
+- outline-minor-faces
+- package (M-x list-packages)
+- rainbow-delimiters
+- rcirc
+- regexp-builder (re-builder)
+- ruler-mode
+- shell-script-mode (sh-mode)
+- show-paren-mode
+- shr [ Part of {{{development-version}}} ]
+- smerge
+- tab-bar-mode
+- tab-line-mode
+- term
+- textsec
+- transient
+- vc (=vc-dir.el=, =vc-hooks.el=)
+- vertico
+- wgrep
+- which-function-mode
+- whitespace-mode
+- widget
+- woman
+
+** Implicitly support packages or face groups
+:PROPERTIES:
+:CUSTOM_ID: h:7d1acc40-a2ce-4e6d-a230-35ddffc00690
+:END:
+
+Those are known to work with the Ef themes either because their colors
+are appropriate or because they inherit from basic faces which the
+themes already cover:
+
+- apropos
+- consult
+- corfu
+- dim-autoload
+- embark
+- flycheck
+- flymake
+- flyspell
+- hl-todo
+- icomplete
+- ido
+- lin
+- multiple-cursors
+- paren-face
+- pulsar
+- tempel
+- which-key (seems okay, but may need explicit support)
+- xref
+
+** Packages that are hard to support
+:PROPERTIES:
+:CUSTOM_ID: h:ea2eedd7-a473-4826-9b83-31bf3ac2c5f7
+:END:
+
+These are difficult to support due to their (i) incompatibility with the
+design of the =ef-themes=, (ii) complexity or multitude of points of
+entry, (iii) external dependencies, (iv) existence of better
+alternatives in my opinion, or (v) inconsiderate use of color
+out-of-the-box and implicit unwillingness to be good Emacs citizens:
+
+- auctex :: it has a zillion dependencies; I don't know LaTeX.
+
+- avy :: its UI is prone to visual breakage and is hard to style
+  correctly.
+
+- calibredb :: has an external dependency that I don't use.
+
+- ctrlf :: use the built-in isearch or the ~consult-line~ command of
+  =consult=.
+
+- dired+ :: it is complex and makes inconsiderate use of color.
+
+- ein (Emacs IPython Notebook) :: external dependency that I don't use.
+
+- elfeed-goodies :: depends on =powerline=...
+
+- ement.el :: has an external dependency that I don't use. - helm :: it
+  is complex and makes inconsiderate use of color.  Prefer the
+  =vertico=, =consult=, and =embark= packages.
+
+- info+ :: it is complex and makes inconsiderate use of color.
+
+- ivy/counsel/swiper :: use the =vertico=, =consult=, and =embark=
+  packages which are designed to be compatible with standard Emacs
+  mechanisms and are modular.
+
+- lsp-mode :: has external dependencies that I don't use.
+
+- powerline :: requires too many shades of background and generally
+  violates our expectation of how the mode-line is supposed to look by
+  placing the designated default background in unexpected places.
+
+- selectrum :: use =vertico=.
+
+- solaire :: in principle, it is incompatible with practically every
+  theme that is not designed around it.  Emacs does not distinguish
+  between "UI" and "syntax" buffers.
+
+- spaceline :: same as =powerline=.
+
+- sx :: has an external dependency that I don't use.
+
+- telega :: has an external dependency that I don't use (I don't even
+  have a smartphone).
+
+- telephone-line :: same as =powerline=.
+
+- treemacs :: it has too many dependencies and does too many things.
+
+- web-mode :: I don't use all those Web technologies and cannot test
+  this properly without support from an expert.
+
+The above list is non-exhaustive though you get the idea.
+
 * Principles
 :PROPERTIES:
 :CUSTOM_ID: h:a6dd030c-6b6c-4992-83e8-3438b4607b51
 :END:
 
-+ No customization options that affect the style of individual
-  components (e.g. change the color of the mode line, remove bold,
-  etc.)!  Either you like them or you don't.  To change faces, it is
-  better to do it in user-level configurations (report the issue and we
-  can help with the relevant code).  Providing customizations that
++ No customization options that affect the coloration of individual
+  components !  Either you like them or you don't.  To change faces, it
+  is better to do it in user-level configurations (report the issue and
+  we can help with the relevant code).  Providing customizations that
   refashion a wide set of themes is not maintainable.
 
-+ Curated list of supported packages.  I will only cover what I use
-  and/or know is in a well-maintained state.  Styling a package requires
-  a lot of work as one must (i) know how the package works, (ii) see all
-  its interfaces in action, (iii) make sure that the color combinations
-  look consistent with the rest of the theme.
++ Curated list of supported faces ([[#h:c8d80daf-d039-40c4-bb74-e7814a9b4c79][Supported packages or face groups]]).
+  I will only cover what I use and/or know is in a well-maintained
+  state.  Styling a package requires a lot of work as one must (i) know
+  how the package works, (ii) see all its interfaces in action, (iii)
+  make sure that the color combinations look consistent with the rest of
+  the theme.
 
 + Minimum contrast ratio of 4.5:1 against the main background (WCAG AA
   standard).  Use my =modus-themes= package (also built into Emacs 28 or
   higher) if you need top-class accessibility.
 
-* Minimal VS maximal scope
+** Minimal VS maximal scope
 :PROPERTIES:
 :CUSTOM_ID: h:fb219b87-ab95-401a-a742-a2fc451bf9f7
 :END:
