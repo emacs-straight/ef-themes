@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.3.3
+;; Version: 0.3.4
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -319,17 +319,20 @@ sequence given SEQ-PRED, using SEQ-DEFAULT as a fallback."
 
 (defun ef-themes--current-theme ()
   "Return first enabled Ef theme."
-  (when-let* ((themes (ef-themes--list-enabled-themes)))
-    (car themes)))
+  (when-let* ((theme (car custom-enabled-themes)))
+    (if (memq theme (ef-themes--list-enabled-themes))
+        theme
+      (user-error "`%s' is not an Ef theme" theme))))
 
 (defun ef-themes--palette (theme)
   "Return THEME palette as a symbol."
-  (intern (format "%s-palette" theme)))
+  (when theme
+    (intern (format "%s-palette" theme))))
 
 (defun ef-themes--current-theme-palette ()
   "Return palette of active Ef theme, else produce `user-error'."
   (if-let* ((palette (ef-themes--palette (ef-themes--current-theme))))
-      palette
+      (symbol-value palette)
     (user-error "No enabled Ef theme could be found")))
 
 (defvar ef-themes--select-theme-history nil)
@@ -523,6 +526,8 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; all basic faces
     `(default ((,c :background ,bg-main :foreground ,fg-main)))
     `(cursor ((,c :background ,cursor)))
+    `(bold ((,c :weight bold)))
+    `(italic ((,c :slant italic)))
     `(bold-italic ((,c :inherit (bold italic))))
     `(region ((,c :background ,bg-region)))
     `(comint-highlight-input ((,c :inherit bold)))
@@ -1336,15 +1341,16 @@ Helper function for `ef-themes-preview-colors'."
     `(tab-bar ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-alt)))
     `(tab-bar-tab-group-current ((,c :inherit bold :background ,bg-main :box (:line-width -2 :color ,bg-main) :foreground ,fg-alt)))
     `(tab-bar-tab-group-inactive ((,c :background ,bg-alt :box (:line-width -2 :color ,bg-alt) :foreground ,fg-alt)))
-    `(tab-bar-tab ((,c :inherit bold :box (:line-width -2 :color ,bg-main) :background ,bg-main :foreground ,fg-main)))
-    `(tab-bar-tab-inactive ((,c :box (:line-width -2 :color ,bg-dim) :background ,bg-dim :foreground ,fg-dim)))
+    `(tab-bar-tab ((,c :inherit bold :box (:line-width -2 :color ,bg-main) :background ,bg-main)))
+    `(tab-bar-tab-inactive ((,c :box (:line-width -2 :color ,bg-active) :background ,bg-active)))
+    `(tab-bar-tab-ungrouped ((,c :inherit tab-bar-tab-inactive)))
 ;;;; tab-line-mode
     `(tab-line ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-alt :height 0.95)))
     `(tab-line-close-highlight ((,c :foreground ,err)))
     `(tab-line-highlight ((,c :inherit highlight)))
     `(tab-line-tab (( )))
-    `(tab-line-tab-current ((,c :inherit bold :box (:line-width -2 :color ,bg-main) :background ,bg-main :foreground ,fg-main)))
-    `(tab-line-tab-inactive ((,c :box (:line-width -2 :color ,bg-dim) :background ,bg-dim :foreground ,fg-dim)))
+    `(tab-line-tab-current ((,c :inherit bold :box (:line-width -2 :color ,bg-main) :background ,bg-main)))
+    `(tab-line-tab-inactive ((,c :box (:line-width -2 :color ,bg-active) :background ,bg-active)))
     `(tab-line-tab-inactive-alternate ((,c :inherit tab-line-tab-inactive :foreground ,fg-alt)))
     `(tab-line-tab-modified ((,c :foreground ,warning)))
 ;;;; term
@@ -1476,10 +1482,14 @@ Those are stored in `ef-themes-faces' and
   "Evaluate BODY with colors from current palette bound."
   (declare (indent 0))
   (let* ((sym (gensym))
-         (palette (ef-themes--current-theme-palette))
-         (colors (mapcar #'car (symbol-value palette))))
+         ;; NOTE 2022-08-23: We just give it a sample palette at this
+         ;; stage.  It only needs to collect each car.  Then we
+         ;; instantiate the actual theme's palette.  We have to do this
+         ;; otherwise the macro does not work properly when called from
+         ;; inside a function.
+         (colors (mapcar #'car (symbol-value 'ef-light-palette))))
     `(let* ((c '((class color) (min-colors 256)))
-            (,sym ,palette)
+            (,sym (ef-themes--current-theme-palette))
             ,@(mapcar (lambda (color)
                         (list color
                               `(let* ((value (car (alist-get ',color ,sym))))
