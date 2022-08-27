@@ -805,6 +805,10 @@ Helper function for `ef-themes-preview-colors'."
     `(elfeed-search-title-face ((,c :foreground ,fg-dim)))
     `(elfeed-search-unread-count-face (( )))
     `(elfeed-search-unread-title-face ((,c :inherit bold :foreground ,fg-main)))
+;;;; embark
+    `(embark-keybinding ((,c :inherit ef-themes-key-binding)))
+    `(embark-keybinding-repeat ((,c :inherit bold)))
+    `(embark-collect-marked ((,c :inherit success :background ,bg-info)))
 ;;;; epa
     `(epa-field-body (( )))
     `(epa-field-name ((,c :inherit bold :foreground ,fg-dim)))
@@ -898,7 +902,7 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; line numbers (display-line-numbers-mode and global variant)
     ;; We need to fall back to `default' otherwise line numbers do not
     ;; scale when using `text-scale-adjust'.
-    `(line-number ((,c :inherit (shadow default))))
+    `(line-number ((,c :inherit (ef-themes-fixed-pitch shadow default))))
     `(line-number-current-line ((,c :inherit (bold line-number) :foreground ,fg-intense)))
     `(line-number-major-tick ((,c :inherit line-number :background ,bg-alt :foreground ,info)))
     `(line-number-minor-tick ((,c :inherit line-number :background ,bg-dim :foreground ,warning)))
@@ -1121,8 +1125,8 @@ Helper function for `ef-themes-preview-colors'."
     `(notmuch-search-non-matching-authors ((,c :inherit shadow)))
     `(notmuch-search-subject ((,c :foreground ,fg-main)))
     `(notmuch-search-unread-face ((,c :inherit bold)))
-    `(notmuch-tag-added ((,c :underline t)))
-    `(notmuch-tag-deleted ((,c :strike-through t)))
+    `(notmuch-tag-added ((,c :underline ,info)))
+    `(notmuch-tag-deleted ((,c :strike-through ,err)))
     `(notmuch-tag-face ((,c :foreground ,accent-0)))
     `(notmuch-tag-flagged ((,c :foreground ,err)))
     `(notmuch-tag-unread ((,c :foreground ,accent-1)))
