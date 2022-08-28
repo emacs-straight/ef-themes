@@ -42,11 +42,11 @@
   (defconst ef-summer-palette
     '(;; Basic tones
       (bg-main     "#fff2f3")
-      (fg-main     "#5f456f")
+      (fg-main     "#4f4073")
       (bg-dim      "#fbe3ef")
-      (fg-dim      "#68717f")
+      (fg-dim      "#786e74")
       (bg-alt      "#efd0e4")
-      (fg-alt      "#af506f")
+      (fg-alt      "#af4988")
 
       (bg-active   "#dfc0d4")
       (bg-inactive "#f9ecf0")
@@ -134,11 +134,11 @@
       (warning yellow-warmer)
       (info green-cooler)
 
-      (link blue-warmer)
-      (link-alt cyan-warmer)
+      (link blue)
+      (link-alt green-cooler)
       (date cyan-cooler)
       (name magenta-warmer)
-      (keybind blue-cooler)
+      (keybind red-cooler)
 
       (builtin magenta)
       (comment yellow-faint)
@@ -161,6 +161,7 @@
       (mail-2 magenta-warmer)
       (mail-3 blue-warmer)
       (mail-4 magenta-cooler)
+      (mail-5 green-warmer)
 
       (rainbow-0 magenta-warmer)
       (rainbow-1 magenta-cooler)

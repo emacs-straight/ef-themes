@@ -134,11 +134,11 @@
       (warning yellow-warmer)
       (info green-cooler)
 
-      (link blue)
+      (link cyan)
       (link-alt magenta)
       (date cyan)
       (name blue-warmer)
-      (keybind blue-cooler)
+      (keybind green-cooler)
 
       (builtin green-cooler)
       (comment yellow-faint)
@@ -161,6 +161,7 @@
       (mail-2 green-cooler)
       (mail-3 yellow)
       (mail-4 magenta-cooler)
+      (mail-5 cyan)
 
       (rainbow-0 cyan-warmer)
       (rainbow-1 magenta-cooler)

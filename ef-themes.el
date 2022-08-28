@@ -656,7 +656,7 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; compilation
     `(compilation-column-number ((,c :inherit compilation-line-number)))
     `(compilation-error ((,c :inherit error)))
-    `(compilation-info ((,c :inherit success)))
+    `(compilation-info ((,c :inherit bold :foreground ,name)))
     `(compilation-line-number ((,c :inherit shadow)))
     `(compilation-mode-line-exit ((,c :inherit bold)))
     `(compilation-mode-line-fail ((,c :inherit error)))
@@ -666,6 +666,12 @@ Helper function for `ef-themes-preview-colors'."
     `(completions-annotations ((,c :inherit italic :foreground ,docstring)))
     `(completions-common-part ((,c :inherit bold :foreground ,accent-0)))
     `(completions-first-difference ((,c :inherit bold :foreground ,accent-1)))
+    `(completions-group-title ((,c :inherit bold :foreground ,name)))
+;;;; consult
+    `(consult-async-split ((,c :inherit warning)))
+    `(consult-key ((,c :inherit ef-themes-key-binding)))
+    `(consult-imenu-prefix ((,c :inherit shadow)))
+    `(consult-line-number ((,c :inherit shadow)))
 ;;;; custom (M-x customize)
     `(custom-button ((,c :box ,fg-dim :background ,bg-active :foreground ,fg-intense)))
     `(custom-button-mouse ((,c :inherit (highlight custom-button))))
@@ -809,6 +815,7 @@ Helper function for `ef-themes-preview-colors'."
     `(embark-keybinding ((,c :inherit ef-themes-key-binding)))
     `(embark-keybinding-repeat ((,c :inherit bold)))
     `(embark-collect-marked ((,c :inherit success :background ,bg-info)))
+    `(embark-collect-group-title ((,c :inherit bold :foreground ,name)))
 ;;;; epa
     `(epa-field-body (( )))
     `(epa-field-name ((,c :inherit bold :foreground ,fg-dim)))
@@ -1061,7 +1068,7 @@ Helper function for `ef-themes-preview-colors'."
     `(message-header-subject ((,c :inherit bold :foreground ,mail-2)))
     `(message-header-xheader ((,c :foreground ,mail-3)))
     `(message-header-other ((,c :foreground ,mail-4)))
-    `(message-mml ((,c :foreground ,info)))
+    `(message-mml ((,c :foreground ,mail-5)))
     `(message-separator ((,c :background ,bg-alt)))
 ;;;; mode-line
     `(mode-line ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-mode-line :foreground ,fg-mode-line)))
@@ -1110,8 +1117,8 @@ Helper function for `ef-themes-preview-colors'."
     `(mu4e-view-body-face (( )))
     `(mu4e-warning-face ((,c :inherit warning)))
 ;;;; notmuch
-    `(notmuch-crypto-decryption ((,c :inherit (shadow bold))))
-    `(notmuch-crypto-part-header ((,c :foreground ,magenta-cooler)))
+    `(notmuch-crypto-decryption ((,c :inherit bold)))
+    `(notmuch-crypto-part-header ((,c :foreground ,mail-5))) ; like `message-mml'
     `(notmuch-crypto-signature-bad ((,c :inherit error)))
     `(notmuch-crypto-signature-good ((,c :inherit success)))
     `(notmuch-crypto-signature-good-key ((,c :inherit success)))
@@ -1414,6 +1421,7 @@ Helper function for `ef-themes-preview-colors'."
     `(vc-up-to-date-state (( )))
 ;;;; vertico
     `(vertico-current ((,c :background ,bg-completion)))
+    `(vertico-group-title ((,c :inherit bold :foreground ,name)))
 ;;;; wgrep
     `(wgrep-delete-face ((,c :inherit warning)))
     `(wgrep-done-face ((,c :background ,bg-info :foreground ,info)))
