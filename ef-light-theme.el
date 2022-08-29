@@ -125,7 +125,7 @@
       (bg-warning    "#ffeabb") ; check with warning
       (bg-info       "#d0efda") ; check with info
 
-      (border        "#cecfff")
+      (border        "#c4cadf")
       (cursor        "#0033cc")
       (fg-intense    "#000000")
 
@@ -150,6 +150,9 @@
       (string blue-warmer)
       (type green-cooler)
       (variable cyan-cooler)
+
+      (rx-escape green-cooler) ; compare with `string'
+      (rx-construct magenta)
 
       (accent-0 blue-warmer)
       (accent-1 magenta-warmer)
