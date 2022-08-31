@@ -654,6 +654,24 @@ Helper function for `ef-themes-preview-colors'."
     `(log-view-commit-body (( )))
     `(log-view-file ((,c :inherit bold)))
     `(log-view-message ((,c :foreground ,fg-dim)))
+;;;; company-mode
+    `(company-echo-common ((,c :inherit bold :foreground ,accent-0)))
+    `(company-preview ((,c :background ,bg-dim :foreground ,fg-dim)))
+    `(company-preview-common ((,c :inherit company-echo-common)))
+    `(company-preview-search ((,c :inherit modus-themes-special-calm)))
+    `(company-scrollbar-bg ((,c :background ,bg-active)))
+    `(company-scrollbar-fg ((,c :background ,fg-main)))
+    `(company-template-field ((,c :background ,bg-active :foreground ,fg-intense)))
+    `(company-tooltip ((,c :background ,bg-dim)))
+    `(company-tooltip-annotation ((,c :inherit completions-annotations)))
+    `(company-tooltip-common ((,c :inherit company-echo-common)))
+    `(company-tooltip-deprecated ((,c :inherit company-tooltip :strike-through t)))
+    `(company-tooltip-mouse ((,c :inherit highlight)))
+    `(company-tooltip-scrollbar-thumb ((,c :background ,fg-alt)))
+    `(company-tooltip-scrollbar-track ((,c :background ,bg-alt)))
+    `(company-tooltip-search ((,c :inherit secondary-selection)))
+    `(company-tooltip-search-selection ((,c :inherit secondary-selection :underline t)))
+    `(company-tooltip-selection ((,c :background ,bg-completion)))
 ;;;; compilation
     `(compilation-column-number ((,c :inherit compilation-line-number)))
     `(compilation-error ((,c :inherit error)))
@@ -1500,7 +1518,7 @@ Those are stored in `ef-themes-faces' and
          ;; instantiate the actual theme's palette.  We have to do this
          ;; otherwise the macro does not work properly when called from
          ;; inside a function.
-         (colors (mapcar #'car (symbol-value 'ef-light-palette))))
+         (colors (mapcar #'car (ef-themes--current-theme-palette))))
     `(let* ((c '((class color) (min-colors 256)))
             (,sym (ef-themes--current-theme-palette))
             ,@(mapcar (lambda (color)
