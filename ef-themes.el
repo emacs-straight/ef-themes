@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.4.0
+;; Version: 0.4.2
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -319,10 +319,7 @@ sequence given SEQ-PRED, using SEQ-DEFAULT as a fallback."
 
 (defun ef-themes--current-theme ()
   "Return first enabled Ef theme."
-  (when-let* ((theme (car custom-enabled-themes)))
-    (if (memq theme (ef-themes--list-enabled-themes))
-        theme
-      (user-error "`%s' is not an Ef theme" theme))))
+  (car (ef-themes--list-enabled-themes)))
 
 (defun ef-themes--palette (theme)
   "Return THEME palette as a symbol."
@@ -615,6 +612,26 @@ Helper function for `ef-themes-preview-colors'."
     `(ansi-color-red ((,c :background ,red :foreground ,red)))
     `(ansi-color-white ((,c :background "gray65" :foreground "gray65")))
     `(ansi-color-yellow ((,c :background ,yellow :foreground ,yellow)))
+;;;; auctex and tex
+    `(font-latex-bold-face ((,c :inherit bold)))
+    `(font-latex-doctex-documentation-face ((,c :inherit font-lock-doc-face)))
+    `(font-latex-doctex-preprocessor-face ((,c :inherit font-lock-preprocessor-face)))
+    `(font-latex-italic-face ((,c :inherit italic)))
+    `(font-latex-math-face ((,c :inherit font-lock-constant-face)))
+    `(font-latex-script-char-face ((,c :inherit font-lock-builtin-face)))
+    `(font-latex-sectioning-5-face ((,c :inherit (bold ef-themes-variable-pitch) :foreground ,fg-alt)))
+    `(font-latex-sedate-face ((,c :inherit font-lock-keyword-face)))
+    `(font-latex-slide-title-face ((,c :inherit ef-themes-heading-0)))
+    `(font-latex-string-face ((,c :inherit font-lock-string-face)))
+    `(font-latex-underline-face ((,c :inherit underline)))
+    `(font-latex-verbatim-face ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-0)))
+    `(font-latex-warning-face ((,c :inherit font-lock-warning-face)))
+    `(tex-verbatim ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-0)))
+    ;; `(texinfo-heading ((,c :foreground ,magenta)))
+    `(TeX-error-description-error ((,c :inherit error)))
+    `(TeX-error-description-help ((,c :inherit success)))
+    `(TeX-error-description-tex-said ((,c :inherit success)))
+    `(TeX-error-description-warning ((,c :inherit warning)))
 ;;;; bongo
     `(bongo-album-title (( )))
     `(bongo-artist ((,c :foreground ,rainbow-0)))
@@ -792,6 +809,8 @@ Helper function for `ef-themes-preview-colors'."
     `(diredfl-symlink ((,c :inherit dired-symlink)))
     `(diredfl-tagged-autofile-name ((,c :inherit (diredfl-autofile-name dired-marked))))
     `(diredfl-write-priv ((,c :foreground ,rainbow-2)))
+;;;; dirvish
+    `(dirvish-hl-line ((,c :background ,bg-hl-line)))
 ;;;; doom-modeline
     ;; NOTE 2022-08-20: This is the only face that seems necessary.  All
     ;; others inherit from basic faces.

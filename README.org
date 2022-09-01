@@ -771,6 +771,7 @@ everything most users need.
 - all-the-icons-dired
 - all-the-icons-ibuffer
 - ansi-color
+- auctex [ Part of {{{development-version}}} ]
 - bongo
 - bookmark
 - calendar and diary
@@ -788,6 +789,7 @@ everything most users need.
 - dired
 - dired-subtree
 - diredfl
+- dirvish [ Part of {{{development-version}}} ]
 - doom-modeline (incomplete, though likely is okay)
 - ediff
 - eldoc
@@ -876,8 +878,6 @@ design of the =ef-themes=, (ii) complexity or multiple points of entry,
 (iii) external dependencies, (iv) existence of better alternatives in my
 opinion, or (v) inconsiderate use of color out-of-the-box and implicit
 unwillingness to be good Emacs citizens:
-
-- auctex :: it has a zillion dependencies; I don't know LaTeX.
 
 - avy :: its UI is prone to visual breakage and is hard to style
   correctly.
@@ -1089,12 +1089,12 @@ matters.
 
 + Author/maintainer :: Protesilaos Stavrou.
 
-+ Contributions to code or the manual :: Christopher League, Philip
-  Kaludercic.
++ Contributions to code or the manual :: Alex Lu, Christopher League,
+  Philip Kaludercic.
 
 + Ideas and/or user feedback :: Alan Schmitt, Anthony Chavez, Iris
-  Garcia, Jean-Philippe Gagné Guay, Spike-Leung, Steve Molitor, Summer
-  Emacs, Zoltán Király.
+  Garcia, Jean-Philippe Gagné Guay, Jonas Collberg, Spike-Leung, Steve
+  Molitor, Summer Emacs, Zoltán Király.
 
 * GNU Free Documentation License
 :PROPERTIES:
