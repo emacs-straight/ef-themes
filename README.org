@@ -805,6 +805,7 @@ everything most users need.
 - info
 - isearch, occur, query-replace
 - keycast
+- lin [ Part of {{{development-version}}} ]
 - line numbers (~display-line-numbers-mode~ and global variant)
 - magit
 - man
@@ -821,6 +822,8 @@ everything most users need.
 - outline-mode
 - outline-minor-faces
 - package (M-x list-packages)
+- pulsar [ Part of {{{development-version}}} ]
+- pulse [ Part of {{{development-version}}} ]
 - rainbow-delimiters
 - rcirc
 - regexp-builder (re-builder)
@@ -842,7 +845,7 @@ everything most users need.
 - widget
 - woman
 
-** Implicitly support packages or face groups
+** Implicitly supported packages or face groups
 :PROPERTIES:
 :CUSTOM_ID: h:7d1acc40-a2ce-4e6d-a230-35ddffc00690
 :END:
@@ -860,13 +863,15 @@ themes already cover:
 - hl-todo
 - icomplete
 - ido
-- lin
 - multiple-cursors
 - paren-face
-- pulsar
 - tempel
-- which-key (seems okay, but may need explicit support)
+- which-key
 - xref
+
+Note that "implicitly supported" does not mean that they always fit in
+perfectly.  If there are refinements we need to made, then we need to
+intervene ([[#h:8e87733c-9fc9-45cd-9b9e-97b11f4f6c05][Explicitly supported packages or face groups]]).
 
 ** Packages that are hard to support
 :PROPERTIES:
