@@ -640,7 +640,7 @@ Helper function for `ef-themes-preview-colors'."
     `(bongo-filled-seek-bar ((,c :background ,bg-hover)))
     `(bongo-marked-track ((,c :inherit success :background ,bg-info)))
     `(bongo-marked-track-line ((,c :background ,bg-dim)))
-    `(bongo-played-track ((,c :strike-through t)))
+    `(bongo-played-track ((,c :inherit shadow :strike-through t)))
     `(bongo-track-length ((,c :inherit shadow)))
     `(bongo-track-title ((,c :foreground ,rainbow-1)))
     `(bongo-unfilled-seek-bar ((,c :background ,bg-dim)))
@@ -922,6 +922,9 @@ Helper function for `ef-themes-preview-colors'."
     `(gnus-header-name ((,c :inherit message-header-name)))
     `(gnus-header-newsgroups ((,c :inherit message-header-newsgroups)))
     `(gnus-header-subject ((,c :inherit message-header-subject)))
+;;;; image-dired
+    `(image-dired-thumb-flagged ((,c :background ,err)))
+    `(image-dired-thumb-mark ((,c :background ,info)))
 ;;;; info
     `(Info-quoted ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-0))) ; the capitalization is canonical
     `(info-header-node ((,c :inherit (shadow bold))))
@@ -1424,6 +1427,10 @@ Helper function for `ef-themes-preview-colors'."
     `(tab-line-tab-inactive ((,c :box (:line-width -2 :color ,bg-active) :background ,bg-active)))
     `(tab-line-tab-inactive-alternate ((,c :inherit tab-line-tab-inactive :foreground ,fg-alt)))
     `(tab-line-tab-modified ((,c :foreground ,warning)))
+;;;; tempel
+    `(tempel-default ((,c :inherit italic :background ,bg-alt :foreground ,fg-alt)))
+    `(tempel-field ((,c :background ,bg-info :foreground ,info)))
+    `(tempel-form ((,c :background ,bg-err :foreground ,err)))
 ;;;; term
     `(term ((,c :background ,bg-main :foreground ,fg-main)))
     `(term-bold ((,c :inherit bold)))
