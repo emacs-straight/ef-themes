@@ -418,8 +418,12 @@ serendipity in their life.  When call interactively with =M-x= it loads
 a random theme from the Ef themes collection.  The selection excludes
 the current Ef theme.  Calling ~ef-themes-load-random~ with a prefix
 argument (=C-u= by default) makes the command limit the random selection
-to either light or dark themes.  The user is prompted with minibuffer
-completion to pick among the two sets.
+to either light or dark themes.  The user is prompted at the minibuffer
+to pick among the two sets.
+
+[ As part of {{{development-version}}} the choice between =light= and
+  =dark= sets in ~ef-themes-load-random~ is done using the function
+  ~read-multiple-choice~.  Before, it was ~completing-read~. ]
 
 The ~ef-themes-load-random~ can also be called from Lisp (e.g. from the
 =init.el= file):
@@ -751,6 +755,32 @@ The exact color values are taken from the active Ef theme."
 To find the names of the color variables, the user can rely on the
 commands for previewing the palette ([[#h:8dd67bf5-879e-46e5-b277-5bac141f53d1][Preview theme colors]]).
 
+** Tweak goto-address-mode faces
+:PROPERTIES:
+:CUSTOM_ID: h:d42f726c-44e5-4dd6-b77e-e6ca0bab3189
+:END:
+
+The built-in ~goto-address-mode~ uses heuristics to identify URLs and
+email addresses in the current buffer.  It then applies a face to them
+to change their style.  Some packages, such as =notmuch=, use this
+minor-mode automatically.
+
+The faces are not declared with ~defface~, meaning that it is better
+that the theme does not modify them.  The user is thus encouraged to
+consider including this in their setup:
+
+#+begin_src emacs-lisp
+(setq goto-address-url-face 'link
+      goto-address-url-mouse-face 'highlight
+      goto-address-mail-face 'link
+      goto-address-mail-mouse-face 'highlight)
+#+end_src
+
+My personal preference is to set ~goto-address-mail-face~ to nil,
+because it otherwise adds too much visual noise to the buffer (email
+addresses stand out more, due to the use of the uncommon =@= caharacter
+but also because they are often enclosed in angled brackets).
+
 * Supported packages or face groups
 :PROPERTIES:
 :CUSTOM_ID: h:c8d80daf-d039-40c4-bb74-e7814a9b4c79
@@ -790,7 +820,7 @@ everything most users need.
 - dired-subtree
 - diredfl
 - dirvish [ Part of {{{development-version}}} ]
-- doom-modeline (incomplete, though likely is okay)
+- doom-modeline [ Expanded as part of {{{development-version}}} ]
 - ediff
 - eldoc
 - elfeed
@@ -827,6 +857,7 @@ everything most users need.
 - pulse [ Part of {{{development-version}}} ]
 - rainbow-delimiters
 - rcirc
+- recursion-indicator [ Part of {{{development-version}}} ]
 - regexp-builder (re-builder)
 - ruler-mode
 - shell-script-mode (sh-mode)
@@ -899,9 +930,10 @@ unwillingness to be good Emacs citizens:
 
 - elfeed-goodies :: depends on =powerline=...
 
-- ement.el :: has an external dependency that I don't use. - helm :: it
-  is complex and makes inconsiderate use of color.  Prefer the
-  =vertico=, =consult=, and =embark= packages.
+- ement.el :: has an external dependency that I don't use.
+
+- helm :: it is complex and makes inconsiderate use of color.  Prefer
+  the =vertico=, =consult=, and =embark= packages.
 
 - info+ :: it is complex and makes inconsiderate use of color.
 

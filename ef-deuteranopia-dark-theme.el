@@ -139,6 +139,10 @@
       (cursor        "#ffff00")
       (fg-intense    "#ffffff")
 
+      (modeline-err     "#ffff00")
+      (modeline-warning "#ddb300")
+      (modeline-info    "#aaaaff")
+
       ;; Mappings
       (err yellow-warmer)
       (warning yellow)
