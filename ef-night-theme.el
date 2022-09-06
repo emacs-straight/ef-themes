@@ -145,7 +145,7 @@
       (warning yellow-warmer)
       (info green-cooler)
 
-      (link cyan)
+      (link cyan-warmer)
       (link-alt magenta)
       (date cyan)
       (name blue-warmer)
@@ -160,7 +160,7 @@
       (docstring cyan-faint)
       (string blue-cooler)
       (type magenta-cooler)
-      (variable cyan-warmer)
+      (variable cyan)
 
       (rx-escape green) ; compare with `string'
       (rx-construct magenta-warmer)
