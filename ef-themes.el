@@ -54,6 +54,8 @@
     ef-day
     ef-deuteranopia-dark
     ef-deuteranopia-light
+    ef-duo-dark
+    ef-duo-light
     ef-light
     ef-night
     ef-spring
@@ -62,11 +64,11 @@
   "Symbols of all the Ef themes.")
 
 (defconst ef-themes-light-themes
-  '(ef-day ef-light ef-spring ef-summer ef-deuteranopia-light)
+  '(ef-day ef-deuteranopia-light ef-duo-light ef-light ef-spring ef-summer)
   "List of symbols with the light Ef themes.")
 
 (defconst ef-themes-dark-themes
-  '(ef-autumn ef-dark ef-night ef-winter ef-deuteranopia-dark)
+  '(ef-autumn ef-dark ef-deuteranopia-dark ef-duo-dark ef-night ef-winter)
   "List of symbols with the dark Ef themes.")
 
 (defcustom ef-themes-post-load-hook nil
@@ -334,12 +336,14 @@ sequence given SEQ-PRED, using SEQ-DEFAULT as a fallback."
 
 (defvar ef-themes--select-theme-history nil)
 
-(defun ef-themes--select-prompt ()
-  "Minibuffer prompt for `ef-themes-select'."
-  (completing-read "Select Ef Theme: "
-                   (ef-themes--list-known-themes)
-                   nil t nil
-                   'ef-themes--select-theme-history))
+(defun ef-themes--select-prompt (&optional prompt)
+  "Minibuffer prompt for `ef-themes-select'.
+With optional PROMPT string, use it.  Else use a generic prompt."
+  (intern
+   (completing-read (or prompt "Select Ef Theme: ")
+                    (ef-themes--list-known-themes)
+                    nil t nil
+                    'ef-themes--select-theme-history)))
 
 (defun ef-themes--load-theme (theme)
   "Load THEME while disabling other Ef themes.
@@ -352,7 +356,7 @@ Run `ef-themes-post-load-hook'."
 (defun ef-themes-select (theme)
   "Load an Ef THEME using minibuffer completion.
 When called from Lisp, THEME is a symbol."
-  (interactive (list (intern (ef-themes--select-prompt))))
+  (interactive (list (ef-themes--select-prompt)))
   (ef-themes--load-theme theme))
 
 (defun ef-themes--toggle-theme-p ()
@@ -365,16 +369,22 @@ When called from Lisp, THEME is a symbol."
 
 ;;;###autoload
 (defun ef-themes-toggle ()
-  "Toggle between the two `ef-themes-to-toggle'."
+  "Toggle between the two `ef-themes-to-toggle'.
+If `ef-themes-to-toggle' does not specify two Ef themes, inform
+the user about it while prompting with completion for a theme
+among our collection (this is practically the same as the
+`ef-themes-select' command)."
   (interactive)
-  (when-let* ((themes (ef-themes--toggle-theme-p))
-              (one (car themes))
-              (two (cadr themes)))
-    (unless (eq (length themes) 2)
-      (user-error "Can only toggle between two themes"))
-    (if (eq (car custom-enabled-themes) one)
-        (ef-themes--load-theme two)
-      (ef-themes--load-theme one))))
+  (if-let* ((themes (ef-themes--toggle-theme-p))
+            (one (car themes))
+            (two (cadr themes)))
+      (if (eq (car custom-enabled-themes) one)
+          (ef-themes--load-theme two)
+        (ef-themes--load-theme one))
+    (ef-themes--load-theme
+     (ef-themes--select-prompt
+      (concat "Set two `ef-themes-to-toggle'; "
+              "switching to theme selection for now: ")))))
 
 (defun ef-themes--minus-current (&optional variant)
   "Return list of Ef themes minus the current one.
@@ -1465,7 +1475,7 @@ Helper function for `ef-themes-preview-colors'."
     `(rcirc-monospace-text ((,c :inherit fixed-pitch)))
     `(rcirc-my-nick ((,c :inherit bold :foreground ,accent-1)))
     `(rcirc-nick-in-message ((,c :inherit warning)))
-    `(rcirc-nick-in-message-full-line ((,c :inherit italic)))
+    `(rcirc-nick-in-message-full-line ((,c :inherit warning)))
     `(rcirc-other-nick ((,c :inherit bold :foreground ,accent-0)))
     `(rcirc-prompt ((,c :inherit minibuffer-prompt)))
     `(rcirc-server ((,c :inherit shadow)))
