@@ -1,4 +1,4 @@
-;;; ef-duo-dark-theme.el --- Legible dark theme with blue and yellow colors -*- lexical-binding:t -*-
+;;; ef-duo-dark-theme.el --- Legible dark theme with mostly blue and yellow colors -*- lexical-binding:t -*-
 
 ;; Copyright (C) 2022  Free Software Foundation, Inc.
 
@@ -40,7 +40,7 @@
   ;; Most of the colors here are defined simply to preserve
   ;; compatibility with the rest of the project.  We don't actually rely
   ;; on them for anything critical.
-  (deftheme ef-duo-dark "Legible dark theme with blue and yellow colors.")
+  (deftheme ef-duo-dark "Legible dark theme with mostly blue and yellow colors.")
 
   (defconst ef-duo-dark-palette
     '(;; Basic tones
@@ -123,20 +123,20 @@
       (cyan-graph-1-bg    "#00808f")
 
       ;; Special hues
-      (bg-mode-line  "#33278f") (fg-mode-line  "#dedeff")
+      (bg-mode-line  "#352487") (fg-mode-line  "#dedeff")
       (bg-accent     "#ffb250") (fg-accent     "#000000")
       (bg-completion "#2f1a5f")
       (bg-hover      "#664f4a")
       (bg-hover-alt  "#265f4a")
       (bg-hl-line    "#301a4f")
       (bg-region     "#042a50")
-      (bg-paren      "#7f2d40")
+      (bg-paren      "#2f608e")
       (bg-err        "#330d09") ; check with err
       (bg-warning    "#332600") ; check with warning
       (bg-info       "#002212") ; check with info
 
       (border        "#444f5f")
-      (cursor        "#ff6633")
+      (cursor        "#ef6f11")
       (fg-intense    "#ffffff")
 
       (modeline-err     "#ff8faf")
@@ -153,6 +153,7 @@
       (date cyan-cooler)
       (name blue)
       (keybind blue-cooler)
+      (prompt yellow)
 
       (builtin cyan)
       (comment yellow-faint)
@@ -173,12 +174,12 @@
       (accent-2 green-cooler)
       (accent-3 red)
 
-      (mail-0 blue)
+      (mail-0 cyan)
       (mail-1 yellow-cooler)
       (mail-2 blue-warmer)
       (mail-3 yellow)
       (mail-4 cyan-cooler)
-      (mail-5 magenta-warmer)
+      (mail-5 green)
 
       (rainbow-0 blue)
       (rainbow-1 yellow-warmer)
