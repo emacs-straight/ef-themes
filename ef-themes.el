@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.4.2
+;; Version: 0.5.0
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -1242,7 +1242,7 @@ Helper function for `ef-themes-preview-colors'."
     `(mode-line ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-mode-line :foreground ,fg-mode-line)))
     `(mode-line-active ((,c :inherit mode-line)))
     `(mode-line-buffer-id ((,c :inherit bold)))
-    `(mode-line-emphasis ((,c :inherit bold-italic)))
+    `(mode-line-emphasis ((,c :inherit bold :foreground ,modeline-info)))
     `(mode-line-highlight ((,c :inherit highlight)))
     `(mode-line-inactive ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-alt :foreground ,fg-dim)))
 ;;;; mu4e
@@ -1504,6 +1504,12 @@ Helper function for `ef-themes-preview-colors'."
     `(ruler-mode-margins ((,c :inherit ruler-mode-default :foreground ,bg-main)))
     `(ruler-mode-pad ((,c :inherit ruler-mode-default :background ,bg-alt :foreground ,fg-dim)))
     `(ruler-mode-tab-stop ((,c :inherit ruler-mode-default :foreground ,yellow)))
+;;;; selectrum
+    `(selectrum-completion-annotation ((,c :inherit completions-annotations)))
+    `(selectrum-completion-docsig ((,c :inherit completions-annotations)))
+    `(selectrum-current-candidate ((,c :background ,bg-completion)))
+    `(selectrum-group-title ((,c :inherit bold :foreground ,name)))
+    `(selectrum-mouse-highlight ((,c :inherit highlight)))
 ;;;; show-paren-mode
     `(show-paren-match ((,c :background ,bg-paren :foreground ,fg-intense)))
     `(show-paren-match-expression ((,c :background ,bg-alt)))
