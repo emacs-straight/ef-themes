@@ -82,7 +82,7 @@
       (bg-green    "#8adf80")
       (bg-yellow   "#fac200")
       (bg-blue     "#cbcfff")
-      (bg-magenta  "#ff9fef")
+      (bg-magenta  "#df8fff")
       (bg-cyan     "#88c8ff")
 
       (bg-red-subtle      "#ffcfbf")
@@ -127,7 +127,7 @@
       (bg-hover-alt  "#b4cfff")
       (bg-hl-line    "#e4efd8")
       (bg-region     "#bfefff")
-      (bg-paren      "#efa09f")
+      (bg-paren      "#dfa0f3")
       (bg-err        "#ffd5ea") ; check with err
       (bg-warning    "#ffeabb") ; check with warning
       (bg-info       "#d0efda") ; check with info

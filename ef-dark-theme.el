@@ -82,7 +82,7 @@
       (bg-green    "#20a020")
       (bg-yellow   "#8f5040")
       (bg-blue     "#4648d0")
-      (bg-magenta  "#c040cf")
+      (bg-magenta  "#a050cf")
       (bg-cyan     "#2270be")
 
       (bg-red-subtle      "#72002a")
@@ -132,8 +132,8 @@
       (bg-warning    "#332600") ; check with warning
       (bg-info       "#002212") ; check with info
 
-      (border        "#444f5f")
-      (cursor        "#ff66ff")
+      (border        "#4a4a5a")
+      (cursor        "#ff76ff")
       (fg-intense    "#ffffff")
 
       (modeline-err     "#ff80af")
