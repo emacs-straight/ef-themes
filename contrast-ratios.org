@@ -31,6 +31,10 @@ C1 and C2 are color values written in hexadecimal RGB."
     (max ct (/ ct))))
 
 (defalias #'Λ #'modus-themes-contrast)
+
+;; Just an alias for the built-in function that measures distance
+;; between colours...
+(defalias #'Δ #'color-distance)
 #+end_src
 
 * ef-autumn
@@ -86,6 +90,18 @@ C1 and C2 are color values written in hexadecimal RGB."
 | modeline-info    | #4fdf5f |    6.21 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:2b8cf2d5-079f-4f69-b631-6da33da9416f
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #0f0e06 | distance | contrast |
+|---------+----------+----------|
+| #1f1b19 |     2279 |     1.13 |
+| #36322f |    13351 |     1.52 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-dark
 :PROPERTIES:
 :CUSTOM_ID: h:c97a3ebc-de07-40bf-af86-1df8be72f214
@@ -139,6 +155,18 @@ C1 and C2 are color values written in hexadecimal RGB."
 | modeline-info    | #2fc82f |    5.59 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:3b421386-0db3-4076-8386-ab6f96a1b327
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #000000 | distance | contrast |
+|---------+----------+----------|
+| #1a1a1a |     6131 |     1.21 |
+| #2b2b2b |    16771 |     1.48 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-day
 :PROPERTIES:
 :CUSTOM_ID: h:3146bf01-7f75-4e26-bd68-feeb268cf7ff
@@ -191,6 +219,18 @@ C1 and C2 are color values written in hexadecimal RGB."
 | modeline-warning | #66008f |    5.37 |
 | modeline-info    | #1f409f |    5.07 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
+
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:a03046a7-225d-4114-9415-fa565c8bcfbf
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #fff5ea | distance | contrast |
+|---------+----------+----------|
+| #f3ebdc |     1234 |     1.10 |
+| #e9e0d8 |     3887 |     1.21 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
 
 * ef-deuteranopia-dark
 :PROPERTIES:
@@ -249,6 +289,18 @@ overall design of the project.
 | modeline-info    | #aaaaff |    4.70 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:67d4c194-bacf-4d6a-b67b-700b1444b500
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #000a1f | distance | contrast |
+|---------+----------+----------|
+| #0f1c2d |     2353 |     1.15 |
+| #19263a |     6619 |     1.30 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-deuteranopia-light
 :PROPERTIES:
 :CUSTOM_ID: h:64efdb85-f6fc-418b-96fc-156409e0258d
@@ -267,7 +319,7 @@ overall design of the project.
 |----------------+---------+---------+---------+---------+---------|
 | fg-main        | #1a1a2f |   15.73 |   13.92 |   11.49 |   14.87 |
 | fg-dim         | #70627f |    5.18 |    4.59 |    3.78 |    4.90 |
-| fg-alt         | #6f6336 |    5.52 |    4.88 |    4.03 |    5.22 |
+| fg-alt         | #196f70 |    5.46 |    4.84 |    3.99 |    5.17 |
 | red            | #d3303a |    4.56 |    4.03 |    3.33 |    4.31 |
 | red-warmer     | #e00033 |    4.60 |    4.07 |    3.36 |    4.35 |
 | red-cooler     | #d50f7f |    4.61 |    4.08 |    3.37 |    4.36 |
@@ -308,6 +360,18 @@ a tone.  Blue is okay.
 | modeline-warning | #0a0a1f |   11.12 |
 | modeline-info    | #2222c3 |    5.74 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
+
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:4bae6fee-350d-4b65-ab8c-4a196beada4f
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #f5f5ff | distance | contrast |
+|---------+----------+----------|
+| #e8e8ea |     2098 |     1.13 |
+| #d3d3e0 |    10071 |     1.37 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
 
 * ef-duo-dark
 :PROPERTIES:
@@ -366,6 +430,18 @@ work with the overall design of the project.
 | modeline-info    | #00e06f |    6.78 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:9f1301ef-971b-499e-9465-cb9c88c47580
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #070019 | distance | contrast |
+|---------+----------+----------|
+| #1c1926 |     3938 |     1.19 |
+| #262230 |     8235 |     1.32 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-duo-light
 :PROPERTIES:
 :CUSTOM_ID: h:d6590592-452d-4ef1-8e9a-017d87b87239
@@ -423,6 +499,18 @@ work with the overall design of the project.
 | modeline-info    | #00409f |    6.41 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:fb1c3c25-16d8-483e-a9cf-15f511325cf1
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #fff8f0 | distance | contrast |
+|---------+----------+----------|
+| #f6ece8 |      954 |     1.10 |
+| #e7e0da |     5034 |     1.24 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-light
 :PROPERTIES:
 :CUSTOM_ID: h:02d01731-b9ab-4653-9e71-ab1592c64734
@@ -475,6 +563,18 @@ work with the overall design of the project.
 | modeline-warning | #5f0070 |    7.34 |
 | modeline-info    | #002fa0 |    6.60 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
+
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:934dd36a-ba24-4669-9df2-023b0ee1c81e
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #ffffff | distance | contrast |
+|---------+----------+----------|
+| #efefef |     2322 |     1.15 |
+| #dbdbdb |    11755 |     1.38 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
 
 * ef-night
 :PROPERTIES:
@@ -529,6 +629,18 @@ work with the overall design of the project.
 | modeline-info    | #00e06f |    6.22 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:af14156e-2999-467d-8d56-97cceacaca46
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #000e17 | distance | contrast |
+|---------+----------+----------|
+| #0f1b29 |     2111 |     1.12 |
+| #1a2a2f |     6269 |     1.32 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-spring
 :PROPERTIES:
 :CUSTOM_ID: h:f8eea1d3-359a-4ab6-9c5c-c54ebe896b43
@@ -581,6 +693,18 @@ work with the overall design of the project.
 | modeline-warning | #5f0f9f |    6.98 |
 | modeline-info    | #1240af |    6.04 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
+
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:e9585341-8217-4f8a-9bbf-99dd360b21b3
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #f6fff9 | distance | contrast |
+|---------+----------+----------|
+| #e8f0f0 |     1655 |     1.13 |
+| #e0e6e3 |     4958 |     1.24 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
 
 * ef-summer
 :PROPERTIES:
@@ -635,6 +759,18 @@ work with the overall design of the project.
 | modeline-info    | #1240af |    4.88 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:a36fc40a-a68f-4156-b803-fdf025dfb1f9
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #fff2f3 | distance | contrast |
+|---------+----------+----------|
+| #f3e7eb |     1050 |     1.10 |
+| #efd3e4 |     5100 |     1.27 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-trio-dark
 :PROPERTIES:
 :CUSTOM_ID: h:0b8d9f78-dc10-4b50-9197-90713266ec71
@@ -687,6 +823,18 @@ work with the overall design of the project.
 | modeline-warning | #edbf00 |    5.90 |
 | modeline-info    | #5fd0bf |    5.51 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
+
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:81d313cf-401c-4280-80fe-72185879034f
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #160f0f | distance | contrast |
+|---------+----------+----------|
+| #251a23 |     2130 |     1.13 |
+| #33252d |     6358 |     1.30 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
 
 * ef-trio-light
 :PROPERTIES:
@@ -741,6 +889,18 @@ work with the overall design of the project.
 | modeline-info    | #1042af |    4.98 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
 
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:847a4c42-7068-4cb6-8d23-833588ae921e
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #f8f5ff | distance | contrast |
+|---------+----------+----------|
+| #f0ecf4 |      766 |     1.08 |
+| #e3e0e9 |     4089 |     1.21 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
+
 * ef-winter
 :PROPERTIES:
 :CUSTOM_ID: h:be3bb946-642a-4ab5-80c3-86cb754b9771
@@ -793,3 +953,15 @@ work with the overall design of the project.
 | modeline-warning | #c0b300 |    5.24 |
 | modeline-info    | #40e0af |    6.76 |
 #+TBLFM: $3='(Λ $2 @1$3);%.2f
+
+** Distance and contrast between main backgrounds
+:PROPERTIES:
+:CUSTOM_ID: h:3f1ebd01-f359-44d3-99a3-85e58823ce46
+:END:
+
+# bg-main / bg-dim, bg-main / bg-alt
+| #0f0b15 | distance | contrast |
+|---------+----------+----------|
+| #161926 |     1745 |     1.11 |
+| #202234 |     5558 |     1.24 |
+#+TBLFM: $2='(Δ $1 @1$1) :: $3='(Λ $1 @1$1);%.2f
