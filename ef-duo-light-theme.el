@@ -136,7 +136,7 @@
       (bg-warning    "#ffe5ba") ; check with warning
       (bg-info       "#cff5d0") ; check with info
 
-      (border        "#cabfca")
+      (border        "#baafba")
       (cursor        "#1144ff")
       (fg-intense    "#000000")
 
@@ -186,9 +186,9 @@
       (rainbow-1 yellow-warmer)
       (rainbow-2 blue-warmer)
       (rainbow-3 yellow-cooler)
-      (rainbow-4 cyan-cooler)
+      (rainbow-4 magenta-cooler)
       (rainbow-5 green-warmer)
-      (rainbow-6 cyan)
+      (rainbow-6 cyan-warmer)
       (rainbow-7 yellow)
       (rainbow-8 green-cooler))
     "The `ef-duo-light' palette.")
