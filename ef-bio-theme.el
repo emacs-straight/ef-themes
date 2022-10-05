@@ -81,9 +81,9 @@
       (bg-red      "#bd1f30")
       (bg-green    "#20a020")
       (bg-yellow   "#845020")
-      (bg-blue     "#3633b0")
+      (bg-blue     "#2f439f")
       (bg-magenta  "#b04fcf")
-      (bg-cyan     "#2270be")
+      (bg-cyan     "#027080")
 
       (bg-red-subtle      "#6a002a")
       (bg-green-subtle    "#00422a")
@@ -124,16 +124,16 @@
       (bg-accent     "#b59ffa") (fg-accent     "#000000")
       (bg-completion "#0f3c2f")
       (bg-hover      "#4f3f9a")
-      (bg-hover-alt  "#004d0f")
+      (bg-hover-alt  "#00445a")
       (bg-hl-line    "#00331f")
-      (bg-region     "#2a3027")
+      (bg-region     "#3a3027")
       (bg-paren      "#664950")
       (bg-err        "#361400") ; check with err
       (bg-warning    "#332800") ; check with warning
-      (bg-info       "#152800") ; check with info
+      (bg-info       "#132b00") ; check with info
 
-      (border        "#445f5f")
-      (cursor        "#35ff38")
+      (border        "#525959")
+      (cursor        "#35f038")
       (fg-intense    "#ffffff")
 
       (modeline-err     "#ff9fbf")
