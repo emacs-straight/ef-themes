@@ -31,6 +31,14 @@
 ;; Emacs whose goal is to provide colorful ("pretty") yet legible
 ;; options for users who want something with a bit more flair than the
 ;; `modus-themes' (also designed by me).
+;;
+;; "Ef" is a Greek word (ευ), commonly used as a prefix to denote
+;; something good, nice, and/or easy.  For example, eftopia (ευτοπία)
+;; is the opposite of dystopia (δυστοπία): a good place as opposed to
+;; a bad place.
+;;
+;; The backronym of the `ef-themes' is: Extremely Fatigued of Themes
+;; Having Exaggerated Markings, Embellishments, and Sparkles.
 
 ;;; Code:
 
@@ -1326,7 +1334,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-clocking ((,c :background ,bg-alt :foreground ,red-warmer)))
     `(org-agenda-column-dateline ((,c :background ,bg-alt)))
     `(org-agenda-current-time ((,c :foreground ,variable)))
-    `(org-agenda-date ((,c :inherit ef-themes-heading-3)))
+    `(org-agenda-date ((,c :inherit ef-themes-heading-1)))
     `(org-agenda-date-today ((,c :inherit org-agenda-date :underline t)))
     `(org-agenda-date-weekend ((,c :inherit org-agenda-date)))
     `(org-agenda-date-weekend-today ((,c :inherit org-agenda-date-today)))
