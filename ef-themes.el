@@ -1089,8 +1089,8 @@ Helper function for `ef-themes-preview-colors'."
     ;; scale when using `text-scale-adjust'.
     `(line-number ((,c :inherit (ef-themes-fixed-pitch shadow default))))
     `(line-number-current-line ((,c :inherit (bold line-number) :foreground ,fg-intense)))
-    `(line-number-major-tick ((,c :inherit line-number :background ,bg-alt :foreground ,info)))
-    `(line-number-minor-tick ((,c :inherit line-number :background ,bg-dim :foreground ,warning)))
+    `(line-number-major-tick ((,c :inherit (bold line-number) :foreground ,rainbow-0)))
+    `(line-number-minor-tick ((,c :inherit (bold line-number))))
 ;;;; magit
     `(magit-bisect-bad ((,c :inherit error)))
     `(magit-bisect-good ((,c :inherit success)))
@@ -1331,7 +1331,7 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; org
     `(org-agenda-calendar-event ((,c :foreground ,fg-alt)))
     `(org-agenda-calendar-sexp ((,c :inherit (italic org-agenda-calendar-event))))
-    `(org-agenda-clocking ((,c :background ,bg-alt :foreground ,red-warmer)))
+    `(org-agenda-clocking ((,c :background ,bg-warning :foreground ,warning)))
     `(org-agenda-column-dateline ((,c :background ,bg-alt)))
     `(org-agenda-current-time ((,c :foreground ,variable)))
     `(org-agenda-date ((,c :inherit ef-themes-heading-1)))
@@ -1347,9 +1347,9 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-filter-tags ((,c :inherit bold :foreground ,modeline-err)))
     `(org-agenda-restriction-lock ((,c :background ,bg-dim :foreground ,fg-dim)))
     `(org-agenda-structure ((,c :inherit ef-themes-heading-0)))
-    `(org-agenda-structure-filter ((,c :inherit (warning org-agenda-structure))))
+    `(org-agenda-structure-filter ((,c :inherit org-agenda-structure :foreground ,rainbow-1)))
     `(org-agenda-structure-secondary ((,c :foreground ,rainbow-1)))
-    `(org-archived ((,c :background ,bg-alt :foreground ,fg-alt)))
+    `(org-archived ((,c :background ,bg-alt :foreground ,fg-main)))
     `(org-block ((,c :inherit ef-themes-fixed-pitch :background ,bg-inactive :extend t)))
     `(org-block-begin-line ((,c :inherit (shadow ef-themes-fixed-pitch) :background ,bg-dim :extend t)))
     `(org-block-end-line ((,c :inherit org-block-begin-line)))
