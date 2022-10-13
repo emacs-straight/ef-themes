@@ -127,7 +127,7 @@
       (bg-accent     "#7fccee") (fg-accent     "#000000")
       (bg-completion "#441824")
       (bg-hover      "#00405f")
-      (bg-hover-alt  "#5e4e5b")
+      (bg-hover-alt  "#5e3e5b")
       (bg-hl-line    "#3f1515")
       (bg-region     "#202d3f")
       (bg-paren      "#2f5f7a")
@@ -150,7 +150,7 @@
 
       (link cyan)
       (link-alt magenta-cooler)
-      (date cyan-warmer)
+      (date cyan-cooler)
       (name magenta)
       (keybind red-cooler)
       (prompt cyan)
@@ -169,9 +169,9 @@
       (rx-escape cyan) ; compare with `string'
       (rx-construct red)
 
-      (accent-0 cyan-cooler)
+      (accent-0 cyan)
       (accent-1 red)
-      (accent-2 cyan)
+      (accent-2 cyan-warmer)
       (accent-3 magenta)
 
       (mail-0 cyan)

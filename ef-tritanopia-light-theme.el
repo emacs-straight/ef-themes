@@ -49,7 +49,7 @@
       (bg-dim      "#ece8e8")
       (fg-dim      "#756275")
       (bg-alt      "#dad6d6")
-      (fg-alt      "#793f50")
+      (fg-alt      "#194f90")
 
       (bg-active   "#cac6c6")
       (bg-inactive "#f7f1f1")
@@ -126,8 +126,8 @@
       (bg-mode-line  "#ff99aa") (fg-mode-line  "#1a0a0f")
       (bg-accent     "#2299cc") (fg-accent     "#000000")
       (bg-completion "#ffcada")
-      (bg-hover      "#7fbfef")
-      (bg-hover-alt  "#dd88cc")
+      (bg-hover      "#8fcfff")
+      (bg-hover-alt  "#eda9dc")
       (bg-hl-line    "#ffdadf")
       (bg-region     "#dadadf")
       (bg-paren      "#8fc0cf")
@@ -150,7 +150,7 @@
 
       (link cyan)
       (link-alt magenta-cooler)
-      (date cyan-warmer)
+      (date cyan-cooler)
       (name magenta)
       (keybind red-cooler)
       (prompt cyan)
@@ -169,16 +169,16 @@
       (rx-escape cyan) ; compare with `string'
       (rx-construct red-warmer)
 
-      (accent-0 cyan-cooler)
+      (accent-0 cyan)
       (accent-1 red)
-      (accent-2 cyan)
+      (accent-2 cyan-warmer)
       (accent-3 magenta)
 
-      (mail-0 cyan)
+      (mail-0 cyan-cooler)
       (mail-1 red-cooler)
-      (mail-2 cyan-cooler)
+      (mail-2 cyan-warmer)
       (mail-3 red-faint)
-      (mail-4 cyan-warmer)
+      (mail-4 cyan)
       (mail-5 red-warmer)
 
       (rainbow-0 cyan)
