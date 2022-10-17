@@ -914,10 +914,13 @@ everything most users need.
 - epa
 - eshell
 - eww
+- flymake [ Part of {{{development-version}}} ]
+- flyspell [ Part of {{{development-version}}} ]
 - font-lock
 - git-commit
 - git-rebase
 - gnus
+- hi-lock (M-x highlight-regexp) [ Part of {{{development-version}}} ]
 - image-dired
 - info
 - isearch, occur, query-replace

@@ -57,11 +57,27 @@
 ;;; User options
 
 (defconst ef-themes-light-themes
-  '(ef-day ef-deuteranopia-light ef-duo-light ef-frost ef-light ef-spring ef-summer ef-tritanopia-light ef-trio-light)
+  '(ef-day
+    ef-deuteranopia-light
+    ef-duo-light
+    ef-frost
+    ef-light
+    ef-spring
+    ef-summer
+    ef-trio-light
+    ef-tritanopia-light)
   "List of symbols with the light Ef themes.")
 
 (defconst ef-themes-dark-themes
-  '(ef-autumn ef-bio ef-dark ef-deuteranopia-dark ef-duo-dark ef-night ef-tritanopia-dark ef-trio-dark ef-winter)
+  '(ef-autumn
+    ef-bio
+    ef-dark
+    ef-deuteranopia-dark
+    ef-duo-dark
+    ef-night
+    ef-trio-dark
+    ef-tritanopia-dark
+    ef-winter)
   "List of symbols with the dark Ef themes.")
 
 (defconst ef-themes-collection
@@ -949,6 +965,13 @@ Helper function for `ef-themes-preview-colors'."
     `(eww-form-submit ((,c :box ,fg-dim :background ,bg-active :foreground ,fg-intense)))
     `(eww-form-text ((,c :inherit widget-field)))
     `(eww-form-textarea ((,c :inherit eww-form-text)))
+;;;; flymake
+    `(flymake-error ((,c :underline (:style wave :color ,underline-err))))
+    `(flymake-note ((,c :underline (:style wave :color ,underline-info))))
+    `(flymake-warning ((,c :underline (:style wave :color ,underline-warning))))
+;;;; flyspell
+    `(flyspell-duplicate ((,c :underline (:style wave :color ,underline-warning))))
+    `(flyspell-incorrect ((,c :underline (:style wave :color ,underline-err))))
 ;;;; font-lock
     `(font-lock-builtin-face ((,c :inherit bold :foreground ,builtin)))
     `(font-lock-comment-delimiter-face ((,c :inherit font-lock-comment-face)))
@@ -1051,6 +1074,45 @@ Helper function for `ef-themes-preview-colors'."
     `(gnus-summary-normal-undownloaded ((,c :foreground ,warning)))
     `(gnus-summary-normal-unread (( )))
     `(gnus-summary-selected ((,c :inherit highlight)))
+;;;; hi-lock (M-x highlight-regexp)
+    ;; NOTE 2022-10-16 We hardcode color values.  We have to do this
+    ;; as the themes lack entries in their palette for such an edge
+    ;; case.  Defining those entries is not appropriate.
+    ;;
+    ;; The use of :inverse-video here is to prevert `hl-line-mode' or
+    ;; the active region from overriding those highlights.
+    `(hi-aquamarine ((((class color) (min-colors 88) (background light))
+                      :background "white" :foreground "#227f9f" :inverse-video t)
+                     (((class color) (min-colors 88) (background dark))
+                      :background "black" :foreground "#66cbdc" :inverse-video t)))
+    `(hi-black-b ((,c :inverse-video t)))
+    `(hi-black-hb ((,c :background ,bg-main :foreground ,fg-dim :inverse-video t)))
+    `(hi-blue ((((class color) (min-colors 88) (background light))
+                :background "white" :foreground "#3366dd" :inverse-video t)
+               (((class color) (min-colors 88) (background dark))
+                :background "black" :foreground "#aaccff" :inverse-video t)))
+    `(hi-blue-b ((,c :inherit (bold hi-blue))))
+    `(hi-green ((((class color) (min-colors 88) (background light))
+                 :background "white" :foreground "#008a00" :inverse-video t)
+                (((class color) (min-colors 88) (background dark))
+                 :background "black" :foreground "#66dd66" :inverse-video t)))
+    `(hi-green-b ((,c :inherit (bold hi-green))))
+    `(hi-pink ((((class color) (min-colors 88) (background light))
+                :background "white" :foreground "#bd30aa" :inverse-video t)
+               (((class color) (min-colors 88) (background dark))
+                :background "black" :foreground "#ff88ee" :inverse-video t)))
+    `(hi-red-b ((((class color) (min-colors 88) (background light))
+                 :background "white" :foreground "#dd0000" :inverse-video t)
+                (((class color) (min-colors 88) (background dark))
+                 :background "black" :foreground "#f06666" :inverse-video t)))
+    `(hi-salmon ((((class color) (min-colors 88) (background light))
+                  :background "white" :foreground "#af4f6f" :inverse-video t)
+                 (((class color) (min-colors 88) (background dark))
+                  :background "black" :foreground "#e08a50" :inverse-video t)))
+    `(hi-yellow ((((class color) (min-colors 88) (background light))
+                  :background "white" :foreground "#af6f00" :inverse-video t)
+                 (((class color) (min-colors 88) (background dark))
+                  :background "black" :foreground "#faea00" :inverse-video t)))
 ;;;; image-dired
     `(image-dired-thumb-flagged ((,c :background ,err)))
     `(image-dired-thumb-mark ((,c :background ,info)))
@@ -1335,8 +1397,8 @@ Helper function for `ef-themes-preview-colors'."
     `(notmuch-search-non-matching-authors ((,c :inherit shadow)))
     `(notmuch-search-subject ((,c :foreground ,fg-main)))
     `(notmuch-search-unread-face ((,c :inherit bold)))
-    `(notmuch-tag-added ((,c :underline ,info)))
-    `(notmuch-tag-deleted ((,c :strike-through ,err)))
+    `(notmuch-tag-added ((,c :underline ,underline-info)))
+    `(notmuch-tag-deleted ((,c :strike-through ,underline-err)))
     `(notmuch-tag-face ((,c :foreground ,accent-0)))
     `(notmuch-tag-flagged ((,c :foreground ,err)))
     `(notmuch-tag-unread ((,c :foreground ,accent-1)))
