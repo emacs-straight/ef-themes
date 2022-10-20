@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.7.0
+;; Version: 0.8.0
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -349,14 +349,32 @@ sequence given SEQ-PRED, using SEQ-DEFAULT as a fallback."
 
 (defvar ef-themes--select-theme-history nil)
 
-(defun ef-themes--select-prompt (&optional prompt)
+(defun ef-themes--choose-subset ()
+  "Use `read-multiple-choice' to return `dark' or `light' variant."
+  (intern (cadr (read-multiple-choice
+                 "Variant"
+                 '((?d "dark" "Load a random dark theme")
+                   (?l "light" "Load a random light theme"))
+                 "Limit the variation themes to select."))))
+
+(defun ef-themes--select-prompt (&optional prompt variant)
   "Minibuffer prompt for `ef-themes-select'.
-With optional PROMPT string, use it.  Else use a generic prompt."
-  (intern
-   (completing-read (or prompt "Select Ef Theme: ")
-                    (ef-themes--list-known-themes)
-                    nil t nil
-                    'ef-themes--select-theme-history)))
+With optional PROMPT string, use it.  Else use a generic prompt.
+
+With optional VARIANT, prompt for a subset of themes divided into
+light and dark variants.  Then limit the completion candidates
+accordingly."
+  (let* ((subset (when variant (ef-themes--choose-subset)))
+         (themes (pcase subset
+                   ('dark ef-themes-dark-themes)
+                   ('light ef-themes-light-themes)
+                   (_ (ef-themes--list-known-themes)))))
+    (intern
+     (completing-read
+      (or prompt "Select Ef Theme: ")
+      themes
+      nil t nil
+      'ef-themes--select-theme-history))))
 
 (defun ef-themes--load-theme (theme)
   "Load THEME while disabling other Ef themes.
@@ -366,12 +384,17 @@ Run `ef-themes-post-load-hook'."
   (run-hooks 'ef-themes-post-load-hook))
 
 ;;;###autoload
-(defun ef-themes-select (theme)
+(defun ef-themes-select (theme &optional variant)
   "Load an Ef THEME using minibuffer completion.
-When called from Lisp, THEME is a symbol.
 
-Run `ef-themes-post-load-hook' after loading the theme."
-  (interactive (list (ef-themes--select-prompt)))
+With optional VARIANT as a prefix argument, prompt to limit the
+set of themes to either dark or light variants.
+
+Run `ef-themes-post-load-hook' after loading the theme.
+
+When called from Lisp, THEME is the symbol of a theme.  VARIANT
+is ignored in this scenario."
+  (interactive (list (ef-themes--select-prompt nil current-prefix-arg)))
   (ef-themes--load-theme theme))
 
 (defun ef-themes--toggle-theme-p ()
@@ -420,21 +443,15 @@ respectively.  Else check against the return value of
 ;;;###autoload
 (defun ef-themes-load-random (&optional variant)
   "Load an Ef theme at random, excluding the current one.
-With optional VARIANT as either `light' or `dark', limit the set
-to the relevant themes.
 
-When called interactively, VARIANT is the prefix argument which
-prompts with completion for either `light' or `dark'.
+With optional VARIANT as a prefix argument, prompt to limit the
+set of themes to either dark or light variants.
 
-Run `ef-themes-post-load-hook' after loading the theme."
-  (interactive
-   (list
-    (when current-prefix-arg
-      (intern (cadr (read-multiple-choice
-                     "Variant"
-                     '((?d "dark" "Load a random dark theme")
-                       (?l "light" "Load a random light theme"))
-                     "Limit the variation themes to select."))))))
+Run `ef-themes-post-load-hook' after loading the theme.
+
+When called from Lisp, VARIANT is either the `dark' or `light'
+symbol."
+  (interactive (list (when current-prefix-arg (ef-themes--choose-subset))))
   (let* ((themes (ef-themes--minus-current variant))
          (n (random (length themes)))
          (pick (nth n themes)))
@@ -537,6 +554,21 @@ Helper function for `ef-themes-preview-colors'."
   :package-version '(ef-themes . "0.4.0")
   :group 'ef-themes-faces)
 
+(defface ef-themes-mark-delete nil
+  "Face for deletion marks, such as in Dired."
+  :package-version '(ef-themes . "0.9.0")
+  :group 'ef-themes-faces)
+
+(defface ef-themes-mark-select nil
+  "Face for selection marks, such as in Dired."
+  :package-version '(ef-themes . "0.9.0")
+  :group 'ef-themes-faces)
+
+(defface ef-themes-mark-other nil
+  "Face for other types of marks."
+  :package-version '(ef-themes . "0.9.0")
+  :group 'ef-themes-faces)
+
 (defconst ef-themes-faces
   '(
 ;;;; internal faces
@@ -552,6 +584,9 @@ Helper function for `ef-themes-preview-colors'."
     `(ef-themes-heading-8 ((,c ,@(ef-themes--heading 8) :foreground ,rainbow-8)))
     `(ef-themes-key-binding ((,c :inherit (bold ef-themes-fixed-pitch) :foreground ,keybind)))
     `(ef-themes-ui-variable-pitch ((,c ,@(ef-themes--variable-pitch-ui))))
+    `(ef-themes-mark-delete ((,c :inherit error :background ,bg-err)))
+    `(ef-themes-mark-select ((,c :inherit success :background ,bg-info)))
+    `(ef-themes-mark-other ((,c :inherit warning :background ,bg-warning)))
 ;;;; all basic faces
 ;;;;; absolute essentials
     `(bold ((,c :weight bold)))
@@ -676,7 +711,7 @@ Helper function for `ef-themes-preview-colors'."
     `(bongo-currently-playing-track ((,c :inherit bold)))
     `(bongo-elapsed-track-part ((,c :background ,bg-alt :underline t)))
     `(bongo-filled-seek-bar ((,c :background ,bg-hover)))
-    `(bongo-marked-track ((,c :inherit success :background ,bg-info)))
+    `(bongo-marked-track ((,c :inherit ef-themes-mark-other)))
     `(bongo-marked-track-line ((,c :background ,bg-dim)))
     `(bongo-played-track ((,c :inherit shadow :strike-through t)))
     `(bongo-track-length ((,c :inherit shadow)))
@@ -810,11 +845,11 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; dired
     `(dired-broken-symlink ((,c :inherit (error link))))
     `(dired-directory ((,c :foreground ,accent-0)))
-    `(dired-flagged ((,c :inherit error :background ,bg-err)))
+    `(dired-flagged ((,c :inherit ef-themes-mark-delete)))
     `(dired-header ((,c :inherit bold)))
     `(dired-ignored ((,c :inherit shadow)))
     `(dired-mark ((,c :foreground ,fg-intense)))
-    `(dired-marked ((,c :inherit success :background ,bg-info)))
+    `(dired-marked ((,c :inherit ef-themes-mark-select)))
     `(dired-symlink ((,c :inherit link)))
     `(dired-warning ((,c :inherit warning)))
 ;;;; dired-subtree
@@ -932,7 +967,7 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; embark
     `(embark-keybinding ((,c :inherit ef-themes-key-binding)))
     `(embark-keybinding-repeat ((,c :inherit bold)))
-    `(embark-collect-marked ((,c :inherit success :background ,bg-info)))
+    `(embark-collect-marked ((,c :inherit ef-themes-mark-select)))
     `(embark-collect-group-title ((,c :inherit bold :foreground ,name)))
 ;;;; epa
     `(epa-field-body (( )))
@@ -1113,6 +1148,8 @@ Helper function for `ef-themes-preview-colors'."
                   :background "white" :foreground "#af6f00" :inverse-video t)
                  (((class color) (min-colors 88) (background dark))
                   :background "black" :foreground "#faea00" :inverse-video t)))
+;;;; ibuffer
+    `(ibuffer-locked-buffer ((,c :foreground ,warning)))
 ;;;; image-dired
     `(image-dired-thumb-flagged ((,c :background ,err)))
     `(image-dired-thumb-mark ((,c :background ,info)))
@@ -1686,6 +1723,8 @@ Helper function for `ef-themes-preview-colors'."
     `(transient-unreachable ((,c :inherit shadow)))
     `(transient-unreachable-key ((,c :inherit shadow)))
     `(transient-value ((,c :inherit success :background ,bg-info)))
+;;;; trashed
+    `(trashed-restored ((,c :inherit ef-themes-mark-other)))
 ;;;; vc (vc-dir.el, vc-hooks.el)
     `(vc-dir-directory (( )))
     `(vc-dir-file ((,c :foreground ,name)))
@@ -1749,7 +1788,12 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; chart
     `(chart-face-color-list
       '( ,red-graph-0-bg ,green-graph-0-bg ,yellow-graph-0-bg ,blue-graph-0-bg ,magenta-graph-0-bg ,cyan-graph-0-bg
-         ,red-graph-1-bg ,green-graph-1-bg ,yellow-graph-1-bg ,blue-graph-1-bg ,magenta-graph-1-bg ,cyan-graph-1-bg)))
+         ,red-graph-1-bg ,green-graph-1-bg ,yellow-graph-1-bg ,blue-graph-1-bg ,magenta-graph-1-bg ,cyan-graph-1-bg))
+;;;; ibuffer
+    `(ibuffer-deletion-face 'ef-themes-mark-delete)
+    `(ibuffer-filter-group-name-face 'bold)
+    `(ibuffer-marked-face 'ef-themes-mark-select)
+    `(ibuffer-title-face 'default))
   "Custom variables for `ef-themes-theme'.")
 
 ;;; Theme macros
