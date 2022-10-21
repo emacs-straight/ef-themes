@@ -384,7 +384,7 @@ Run `ef-themes-post-load-hook'."
   (run-hooks 'ef-themes-post-load-hook))
 
 ;;;###autoload
-(defun ef-themes-select (theme &optional variant)
+(defun ef-themes-select (theme &optional _variant)
   "Load an Ef THEME using minibuffer completion.
 
 With optional VARIANT as a prefix argument, prompt to limit the
@@ -554,20 +554,13 @@ Helper function for `ef-themes-preview-colors'."
   :package-version '(ef-themes . "0.4.0")
   :group 'ef-themes-faces)
 
-(defface ef-themes-mark-delete nil
-  "Face for deletion marks, such as in Dired."
-  :package-version '(ef-themes . "0.9.0")
-  :group 'ef-themes-faces)
-
-(defface ef-themes-mark-select nil
-  "Face for selection marks, such as in Dired."
-  :package-version '(ef-themes . "0.9.0")
-  :group 'ef-themes-faces)
-
-(defface ef-themes-mark-other nil
-  "Face for other types of marks."
-  :package-version '(ef-themes . "0.9.0")
-  :group 'ef-themes-faces)
+;; This produces `ef-themes-mark-delete' and the like.
+(dolist (scope '(delete select other))
+  (custom-declare-face
+   (intern (format "ef-themes-mark-%s" scope))
+   nil (format "Face for %s marks (e.g. `dired', `trashed')." scope)
+   :package-version '(ef-themes . "0.9.0")
+   :group 'ef-themes-faces))
 
 (defconst ef-themes-faces
   '(
@@ -1000,6 +993,13 @@ Helper function for `ef-themes-preview-colors'."
     `(eww-form-submit ((,c :box ,fg-dim :background ,bg-active :foreground ,fg-intense)))
     `(eww-form-text ((,c :inherit widget-field)))
     `(eww-form-textarea ((,c :inherit eww-form-text)))
+;;;; flycheck
+    `(flycheck-error ((,c :underline (:style wave :color ,underline-err))))
+    `(flycheck-fringe-error ((,c :inherit ef-themes-mark-delete)))
+    `(flycheck-fringe-info ((,c :inherit ef-themes-mark-select)))
+    `(flycheck-fringe-warning ((,c :inherit ef-themes-mark-other)))
+    `(flycheck-info ((,c :underline (:style wave :color ,underline-info))))
+    `(flycheck-warning ((,c :underline (:style wave :color ,underline-warning))))
 ;;;; flymake
     `(flymake-error ((,c :underline (:style wave :color ,underline-err))))
     `(flymake-note ((,c :underline (:style wave :color ,underline-info))))
@@ -1789,6 +1789,10 @@ Helper function for `ef-themes-preview-colors'."
     `(chart-face-color-list
       '( ,red-graph-0-bg ,green-graph-0-bg ,yellow-graph-0-bg ,blue-graph-0-bg ,magenta-graph-0-bg ,cyan-graph-0-bg
          ,red-graph-1-bg ,green-graph-1-bg ,yellow-graph-1-bg ,blue-graph-1-bg ,magenta-graph-1-bg ,cyan-graph-1-bg))
+;;;; flymake fringe indicators
+    `(flymake-error-bitmap '(flymake-double-exclamation-mark ef-themes-mark-delete))
+    `(flymake-warning-bitmap '(exclamation-mark ef-themes-mark-other))
+    `(flymake-note-bitmap '(exclamation-mark ef-themes-mark-select))
 ;;;; ibuffer
     `(ibuffer-deletion-face 'ef-themes-mark-delete)
     `(ibuffer-filter-group-name-face 'bold)
