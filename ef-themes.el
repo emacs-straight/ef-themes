@@ -562,6 +562,14 @@ Helper function for `ef-themes-preview-colors'."
    :package-version '(ef-themes . "0.9.0")
    :group 'ef-themes-faces))
 
+;; This produces `ef-themes-underline-error' and the like
+(dolist (scope '(info error warning))
+  (custom-declare-face
+   (intern (format "ef-themes-underline-%s" scope))
+   nil (format "Face for %s underline (e.g. `flymake', `flyspell')." scope)
+   :package-version '(ef-themes . "0.9.0")
+   :group 'ef-themes-faces))
+
 (defconst ef-themes-faces
   '(
 ;;;; internal faces
@@ -580,6 +588,9 @@ Helper function for `ef-themes-preview-colors'."
     `(ef-themes-mark-delete ((,c :inherit error :background ,bg-err)))
     `(ef-themes-mark-select ((,c :inherit success :background ,bg-info)))
     `(ef-themes-mark-other ((,c :inherit warning :background ,bg-warning)))
+    `(ef-themes-underline-error ((,c :underline (:style wave :color ,underline-err))))
+    `(ef-themes-underline-info ((,c :underline (:style wave :color ,underline-info))))
+    `(ef-themes-underline-warning ((,c :underline (:style wave :color ,underline-warning))))
 ;;;; all basic faces
 ;;;;; absolute essentials
     `(bold ((,c :weight bold)))
@@ -698,6 +709,8 @@ Helper function for `ef-themes-preview-colors'."
     `(TeX-error-description-help ((,c :inherit success)))
     `(TeX-error-description-tex-said ((,c :inherit success)))
     `(TeX-error-description-warning ((,c :inherit warning)))
+;;;; auto-dim-other-buffers
+    `(auto-dim-other-buffers-face ((,c :background ,bg-inactive)))
 ;;;; bongo
     `(bongo-album-title (( )))
     `(bongo-artist ((,c :foreground ,rainbow-0)))
@@ -775,7 +788,7 @@ Helper function for `ef-themes-preview-colors'."
     `(consult-key ((,c :inherit ef-themes-key-binding)))
     `(consult-imenu-prefix ((,c :inherit shadow)))
     `(consult-line-number ((,c :inherit shadow)))
-;;;;; corfu
+;;;; corfu
     `(corfu-current ((,c :background ,bg-completion)))
     `(corfu-bar ((,c :background ,fg-main)))
     `(corfu-border ((,c :background ,bg-active)))
@@ -994,19 +1007,19 @@ Helper function for `ef-themes-preview-colors'."
     `(eww-form-text ((,c :inherit widget-field)))
     `(eww-form-textarea ((,c :inherit eww-form-text)))
 ;;;; flycheck
-    `(flycheck-error ((,c :underline (:style wave :color ,underline-err))))
+    `(flycheck-error ((,c :inherit ef-themes-underline-error)))
     `(flycheck-fringe-error ((,c :inherit ef-themes-mark-delete)))
     `(flycheck-fringe-info ((,c :inherit ef-themes-mark-select)))
     `(flycheck-fringe-warning ((,c :inherit ef-themes-mark-other)))
-    `(flycheck-info ((,c :underline (:style wave :color ,underline-info))))
-    `(flycheck-warning ((,c :underline (:style wave :color ,underline-warning))))
+    `(flycheck-info ((,c :inherit ef-themes-underline-info)))
+    `(flycheck-warning ((,c :inherit ef-themes-underline-warning)))
 ;;;; flymake
-    `(flymake-error ((,c :underline (:style wave :color ,underline-err))))
-    `(flymake-note ((,c :underline (:style wave :color ,underline-info))))
-    `(flymake-warning ((,c :underline (:style wave :color ,underline-warning))))
+    `(flymake-error ((,c :inherit ef-themes-underline-error)))
+    `(flymake-note ((,c :inherit ef-themes-underline-info)))
+    `(flymake-warning ((,c :inherit ef-themes-underline-warning)))
 ;;;; flyspell
-    `(flyspell-duplicate ((,c :underline (:style wave :color ,underline-warning))))
-    `(flyspell-incorrect ((,c :underline (:style wave :color ,underline-err))))
+    `(flyspell-duplicate ((,c :inherit ef-themes-underline-warning)))
+    `(flyspell-incorrect ((,c :inherit ef-themes-underline-error)))
 ;;;; font-lock
     `(font-lock-builtin-face ((,c :inherit bold :foreground ,builtin)))
     `(font-lock-comment-delimiter-face ((,c :inherit font-lock-comment-face)))
@@ -1776,6 +1789,10 @@ Helper function for `ef-themes-preview-colors'."
     `(widget-field ((,c :background ,bg-alt :foreground ,fg-main :extend nil)))
     `(widget-inactive ((,c :inherit shadow :background ,bg-dim)))
     `(widget-single-line-field ((,c :inherit widget-field)))
+;;;; writegood-mode
+    `(writegood-duplicates-face ((,c :inherit ef-themes-underline-error)))
+    `(writegood-passive-voice-face ((,c :inherit ef-themes-underline-info)))
+    `(writegood-weasels-face ((,c :inherit ef-themes-underline-warning)))
 ;;;; woman
     `(woman-addition ((,c :foreground ,accent-2)))
     `(woman-bold ((,c :inherit bold :foreground ,accent-0)))
