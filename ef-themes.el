@@ -613,7 +613,7 @@ Helper function for `ef-themes-preview-colors'."
     `(header-line ((,c :inherit ef-themes-ui-variable-pitch :background ,bg-dim)))
     `(header-line-highlight ((,c :inherit highlight)))
     `(help-argument-name ((,c :foreground ,accent-0)))
-    `(help-key-binding ((,c :inherit bold :foreground ,keybind)))
+    `(help-key-binding ((,c :inherit (bold ef-themes-fixed-pitch) :foreground ,keybind)))
     `(highlight ((,c :background ,bg-hover :foreground ,fg-intense)))
     `(hl-line ((,c :background ,bg-hl-line)))
     `(icon-button ((,c :box ,fg-dim :background ,bg-active :foreground ,fg-intense))) ; same as `custom-button'
@@ -1460,6 +1460,8 @@ Helper function for `ef-themes-preview-colors'."
     `(notmuch-tree-no-match-date-face ((,c :inherit shadow)))
     `(notmuch-wash-cited-text ((,c :inherit message-cited-text-1)))
     `(notmuch-wash-toggle-button ((,c :background ,bg-dim :foreground ,fg-alt)))
+;;;; olivetti
+    `(olivetti-fringe (( )))
 ;;;; orderless
     `(orderless-match-face-0 ((,c :inherit bold :foreground ,accent-0)))
     `(orderless-match-face-1 ((,c :inherit bold :foreground ,accent-1)))
