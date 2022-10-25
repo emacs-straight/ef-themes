@@ -57,7 +57,8 @@
 ;;; User options
 
 (defconst ef-themes-light-themes
-  '(ef-day
+  '(ef-cyprus
+    ef-day
     ef-deuteranopia-light
     ef-duo-light
     ef-frost
@@ -822,11 +823,6 @@ Helper function for `ef-themes-preview-colors'."
 ;;;; diff-hl
     `(diff-hl-change ((,c :background ,bg-changed-refine)))
     `(diff-hl-delete ((,c :background ,bg-removed-refine)))
-    `(diff-hl-dired-change ((,c :inherit diff-hl-change)))
-    `(diff-hl-dired-delete ((,c :inherit diff-hl-delete)))
-    `(diff-hl-dired-ignored ((,c :inherit dired-ignored)))
-    `(diff-hl-dired-insert ((,c :inherit diff-hl-insert)))
-    `(diff-hl-dired-unknown ((,c :inherit dired-ignored)))
     `(diff-hl-insert ((,c :background ,bg-added-refine)))
     `(diff-hl-reverted-hunk-highlight ((,c :background ,fg-main :foreground ,bg-main)))
 ;;;; diff-mode
@@ -1472,7 +1468,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-calendar-sexp ((,c :inherit (italic org-agenda-calendar-event))))
     `(org-agenda-clocking ((,c :background ,bg-warning :foreground ,warning)))
     `(org-agenda-column-dateline ((,c :background ,bg-alt)))
-    `(org-agenda-current-time ((,c :foreground ,variable)))
+    `(org-agenda-current-time ((,c :foreground ,fg-main)))
     `(org-agenda-date ((,c :inherit ef-themes-heading-1)))
     `(org-agenda-date-today ((,c :inherit org-agenda-date :underline t)))
     `(org-agenda-date-weekend ((,c :inherit org-agenda-date)))
