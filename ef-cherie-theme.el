@@ -44,7 +44,7 @@
       (bg-main      "#190a0f")
       (fg-main      "#d3cfcf")
       (bg-dim       "#291f26")
-      (fg-dim       "#80889f")
+      (fg-dim       "#808898")
       (bg-alt       "#392a2f")
       (fg-alt       "#bf9cdf")
 
@@ -101,9 +101,9 @@
       (bg-changed-faint  "#281a00")
       (bg-changed-refine "#484800")
 
-      (bg-removed        "#4a111f")
+      (bg-removed        "#4f0c28")
       (bg-removed-faint  "#320a14")
-      (bg-removed-refine "#751a25")
+      (bg-removed-refine "#6f1a35")
 
       ;; Graphs
       (red-graph-0-bg     "#b52c2c")
@@ -132,7 +132,7 @@
       (bg-warning    "#352905") ; check with warning
       (bg-info       "#1c2b00") ; check with info
 
-      (border        "#6f5760")
+      (border        "#695960")
       (cursor        "#ff5aaf")
       (fg-intense    "#ffffff")
 

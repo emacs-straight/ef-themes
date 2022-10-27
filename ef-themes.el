@@ -622,6 +622,7 @@ Helper function for `ef-themes-preview-colors'."
     `(link ((,c :foreground ,link :underline ,border)))
     `(link-visited ((,c :foreground ,link-alt :underline ,border)))
     `(minibuffer-prompt ((,c :foreground ,prompt)))
+    `(mm-command-output ((,c :foreground ,mail-5))) ; like message-mml
     `(pgtk-im-0 ((,c :inherit secondary-selection)))
     `(read-multiple-choice-face ((,c :inherit warning :background ,bg-warning)))
     `(rectangle-preview ((,c :inherit secondary-selection)))
@@ -790,6 +791,7 @@ Helper function for `ef-themes-preview-colors'."
     `(consult-key ((,c :inherit ef-themes-key-binding)))
     `(consult-imenu-prefix ((,c :inherit shadow)))
     `(consult-line-number ((,c :inherit shadow)))
+    `(consult-separator ((,c :foreground ,border)))
 ;;;; corfu
     `(corfu-current ((,c :background ,bg-completion)))
     `(corfu-bar ((,c :background ,fg-main)))
@@ -972,6 +974,7 @@ Helper function for `ef-themes-preview-colors'."
     `(embark-keybinding-repeat ((,c :inherit bold)))
     `(embark-collect-marked ((,c :inherit ef-themes-mark-select)))
     `(embark-collect-group-title ((,c :inherit bold :foreground ,name)))
+    `(embark-collect-zebra-highlight ((,c :background ,bg-alt)))
 ;;;; epa
     `(epa-field-body (( )))
     `(epa-field-name ((,c :inherit bold :foreground ,fg-dim)))
@@ -1162,6 +1165,8 @@ Helper function for `ef-themes-preview-colors'."
     `(ibuffer-locked-buffer ((,c :foreground ,warning)))
 ;;;; image-dired
     `(image-dired-thumb-flagged ((,c :background ,err)))
+    `(image-dired-thumb-header-file-name ((,c :inherit bold)))
+    `(image-dired-thumb-header-file-size ((,c :foreground ,info)))
     `(image-dired-thumb-mark ((,c :background ,info)))
 ;;;; info
     `(Info-quoted ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-0))) ; the capitalization is canonical
@@ -1737,6 +1742,10 @@ Helper function for `ef-themes-preview-colors'."
     `(transient-value ((,c :inherit success :background ,bg-info)))
 ;;;; trashed
     `(trashed-restored ((,c :inherit ef-themes-mark-other)))
+;;;; tty-menu
+    `(tty-menu-disabled-face ((,c :background ,bg-alt :foreground ,fg-dim)))
+    `(tty-menu-enabled-face ((,c :background ,bg-alt :foreground ,fg-intense)))
+    `(tty-menu-selected-face ((,c :inherit highlight)))
 ;;;; vc (vc-dir.el, vc-hooks.el)
     `(vc-dir-directory (( )))
     `(vc-dir-file ((,c :foreground ,name)))
