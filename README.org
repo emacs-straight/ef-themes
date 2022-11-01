@@ -992,6 +992,7 @@ everything most users need.
 - outline-mode
 - outline-minor-faces
 - package (=M-x list-packages=)
+- perspective [Part of {{{development-version}}}]
 - pulsar
 - pulse
 - rainbow-delimiters
@@ -1282,7 +1283,7 @@ matters.
 + Author/maintainer :: Protesilaos Stavrou.
 
 + Contributions to code or the manual :: Alex Lu, Christopher League,
-  Philip Kaludercic.
+  Philip Kaludercic, Walheimat.
 
 + Ideas and/or user feedback :: Alan Schmitt, Anthony Chavez, Daniel
   Mendler, Federico Stilman, Iris Garcia, Jean-Philippe Gagné Guay,
