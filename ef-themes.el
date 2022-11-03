@@ -349,15 +349,18 @@ sequence given SEQ-PRED, using SEQ-DEFAULT as a fallback."
       (symbol-value palette)
     (user-error "No enabled Ef theme could be found")))
 
-(defvar ef-themes--select-theme-history nil)
-
 (defun ef-themes--choose-subset ()
   "Use `read-multiple-choice' to return `dark' or `light' variant."
-  (intern (cadr (read-multiple-choice
-                 "Variant"
-                 '((?d "dark" "Load a random dark theme")
-                   (?l "light" "Load a random light theme"))
-                 "Limit the variation themes to select."))))
+  (intern
+   (cadr
+    (read-multiple-choice
+     "Variant"
+     '((?d "dark" "Load a random dark theme")
+       (?l "light" "Load a random light theme"))
+     "Limit to the dark or light subset of the Ef themes collection."))))
+
+(defvar ef-themes--select-theme-history nil
+  "Minibuffer history of `ef-themes--select-prompt'.")
 
 (defun ef-themes--select-prompt (&optional prompt variant)
   "Minibuffer prompt for `ef-themes-select'.
@@ -370,6 +373,11 @@ accordingly."
          (themes (pcase subset
                    ('dark ef-themes-dark-themes)
                    ('light ef-themes-light-themes)
+                   ;; NOTE 2022-11-02: This condition made sense when
+                   ;; the code now in `ef-themes--choose-subset' used
+                   ;; `completing-read'.  With `read-multiple-choice'
+                   ;; we never meet this condition, as far as I can
+                   ;; tell.  But it does no harm to keep it here.
                    (_ (ef-themes--list-known-themes)))))
     (intern
      (completing-read
