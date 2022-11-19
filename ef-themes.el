@@ -1052,6 +1052,8 @@ Helper function for `ef-themes-preview-colors'."
     `(ediff-odd-diff-Ancestor ((,c :inherit ediff-even-diff-Ancestor)))
     `(ediff-odd-diff-B ((,c :inherit ediff-even-diff-B)))
     `(ediff-odd-diff-C ((,c :inherit ediff-even-diff-C)))
+;;;; eglot
+    `(eglot-mode-line ((,c :inherit bold :foreground ,modeline-info)))
 ;;;; eldoc
     ;; NOTE: see https://github.com/purcell/package-lint/issues/187
     (list 'eldoc-highlight-function-argument `((,c :inherit warning :background ,bg-warning)))
@@ -1844,6 +1846,24 @@ Helper function for `ef-themes-preview-colors'."
     `(transient-value ((,c :inherit success :background ,bg-info)))
 ;;;; trashed
     `(trashed-restored ((,c :inherit ef-themes-mark-other)))
+;;;; tree-sitter
+    `(tree-sitter-hl-face:attribute ((,c :inherit font-lock-variable-name-face)))
+    `(tree-sitter-hl-face:constant.builtin ((,c :inherit tree-sitter-hl-face:constant)))
+    `(tree-sitter-hl-face:escape ((,c :inherit font-lock-regexp-grouping-backslash)))
+    `(tree-sitter-hl-face:function ((,c :inherit font-lock-function-name-face)))
+    `(tree-sitter-hl-face:function.call ((,c :inherit tree-sitter-hl-face:function)))
+    `(tree-sitter-hl-face:label (( )))
+    `(tree-sitter-hl-face:method.call (( )))
+    `(tree-sitter-hl-face:operator ((,c :inherit bold)))
+    `(tree-sitter-hl-face:property (( )))
+    `(tree-sitter-hl-face:property.definition ((,c :inherit font-lock-variable-name-face)))
+    `(tree-sitter-hl-face:punctuation (( )))
+    `(tree-sitter-hl-face:punctuation.bracket (( )))
+    `(tree-sitter-hl-face:punctuation.delimiter (( )))
+    `(tree-sitter-hl-face:punctuation.special ((,c :inherit font-lock-regexp-grouping-construct)))
+    `(tree-sitter-hl-face:string.special ((,c :inherit tree-sitter-hl-face:string)))
+    `(tree-sitter-hl-face:tag ((,c :inherit font-lock-function-name-face)))
+    `(tree-sitter-hl-face:type.argument (( )))
 ;;;; tty-menu
     `(tty-menu-disabled-face ((,c :background ,bg-alt :foreground ,fg-dim)))
     `(tty-menu-enabled-face ((,c :background ,bg-alt :foreground ,fg-intense)))
