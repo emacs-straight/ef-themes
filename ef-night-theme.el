@@ -47,13 +47,13 @@
     '(;; Basic tones
       (bg-main     "#000e17")
       (fg-main     "#afbcbf")
-      (bg-dim      "#0f1b29")
+      (bg-dim      "#1a202b")
       (fg-dim      "#70819f")
-      (bg-alt      "#1a2a2f")
+      (bg-alt      "#242e39")
       (fg-alt      "#b0a0a0")
 
-      (bg-active   "#28353f")
-      (bg-inactive "#0f121f")
+      (bg-active   "#343e49")
+      (bg-inactive "#11141f")
 
       ;; Basic hues for foreground values
       (red             "#ef656a")
@@ -97,13 +97,13 @@
       (bg-cyan-subtle     "#004065")
 
       ;; Diffs
-      (bg-added          "#002d1f")
-      (bg-added-faint    "#001f18")
-      (bg-added-refine   "#003b2f")
+      (bg-added          "#00371f")
+      (bg-added-faint    "#002918")
+      (bg-added-refine   "#004c2f")
 
-      (bg-changed        "#323200")
-      (bg-changed-faint  "#292000")
-      (bg-changed-refine "#484700")
+      (bg-changed        "#363300")
+      (bg-changed-faint  "#2a1f00")
+      (bg-changed-refine "#4a4a00")
 
       (bg-removed        "#450f1f")
       (bg-removed-faint  "#2f060f")
