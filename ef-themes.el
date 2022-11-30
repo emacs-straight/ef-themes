@@ -1095,7 +1095,7 @@ Helper function for `ef-themes-preview-colors'."
     `(eshell-ls-missing ((,c :inherit error)))
     `(eshell-ls-product ((,c :inherit shadow)))
     `(eshell-ls-readonly ((,c :foreground ,warning)))
-    `(eshell-ls-special ((,c :foreground ,magenta)))
+    `(eshell-ls-special ((,c :foreground ,accent-3)))
     `(eshell-ls-symlink ((,c :inherit link)))
     `(eshell-ls-unreadable ((,c :inherit shadow)))
     `(eshell-prompt ((,c :inherit minibuffer-prompt)))
@@ -1339,7 +1339,7 @@ Helper function for `ef-themes-preview-colors'."
     `(magit-diff-file-heading ((,c :inherit bold :foreground ,accent-0)))
     `(magit-diff-file-heading-highlight ((,c :inherit magit-diff-file-heading :background ,bg-alt)))
     `(magit-diff-file-heading-selection ((,c :inherit bold :background ,bg-hover-alt :foreground ,fg-intense)))
-    `(magit-diff-hunk-heading ((,c :inherit bold :background ,bg-dim)))
+    `(magit-diff-hunk-heading ((,c :inherit bold :background ,bg-alt)))
     `(magit-diff-hunk-heading-highlight ((,c :inherit bold :background ,bg-active :foreground ,fg-intense)))
     `(magit-diff-hunk-heading-selection ((,c :inherit bold :background ,bg-hover-alt :foreground ,fg-intense)))
     `(magit-diff-hunk-region ((,c :inherit bold)))
@@ -1600,7 +1600,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-checkbox ((,c :foreground ,warning)))
     `(org-checkbox-statistics-done ((,c :inherit org-done)))
     `(org-checkbox-statistics-todo ((,c :inherit org-todo)))
-    `(org-clock-overlay ((,c :background ,bg-alt :foreground ,red-cooler)))
+    `(org-clock-overlay ((,c :background ,bg-hover-alt)))
     `(org-code ((,c :inherit ef-themes-fixed-pitch :foreground ,accent-1)))
     `(org-column ((,c :inherit default :background ,bg-alt)))
     `(org-column-title ((,c :inherit (bold default) :underline t :background ,bg-alt)))
@@ -1759,12 +1759,6 @@ Helper function for `ef-themes-preview-colors'."
     `(ruler-mode-margins ((,c :inherit ruler-mode-default :foreground ,bg-main)))
     `(ruler-mode-pad ((,c :inherit ruler-mode-default :background ,bg-alt :foreground ,fg-dim)))
     `(ruler-mode-tab-stop ((,c :inherit ruler-mode-default :foreground ,yellow)))
-;;;; selectrum
-    `(selectrum-completion-annotation ((,c :inherit completions-annotations)))
-    `(selectrum-completion-docsig ((,c :inherit completions-annotations)))
-    `(selectrum-current-candidate ((,c :background ,bg-completion)))
-    `(selectrum-group-title ((,c :inherit bold :foreground ,name)))
-    `(selectrum-mouse-highlight ((,c :inherit highlight)))
 ;;;; show-paren-mode
     `(show-paren-match ((,c :background ,bg-paren :foreground ,fg-intense)))
     `(show-paren-match-expression ((,c :background ,bg-alt)))
@@ -1950,6 +1944,8 @@ Helper function for `ef-themes-preview-colors'."
 
 ;;; Theme macros
 
+;;;; Instantiate an Ef theme
+
 ;;;###autoload
 (defmacro ef-themes-theme (name palette)
   "Bind NAME's color PALETTE around face specs and variables.
@@ -1972,7 +1968,7 @@ Those are stored in `ef-themes-faces' and
        (custom-theme-set-faces ',name ,@ef-themes-faces)
        (custom-theme-set-variables ',name ,@ef-themes-custom-variables))))
 
-;;; Use theme colors
+;;;; Use theme colors
 
 (defmacro ef-themes-with-colors (&rest body)
   "Evaluate BODY with colors from current palette bound."
@@ -1995,6 +1991,8 @@ Those are stored in `ef-themes-faces' and
                       colors))
        (ignore c ,@colors)            ; Silence unused variable warnings
        ,@body)))
+
+;;;; Add themes from package to path
 
 ;;;###autoload
 (when load-file-name
