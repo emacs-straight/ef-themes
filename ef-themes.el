@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.9.0
+;; Version: 0.10.0
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -141,24 +141,29 @@ themes that form part of this collection."
 This is a helper variable intended for internal use.")
 
 (defcustom ef-themes-headings nil
-  "Heading styles with optional list of values for levels 0-8.
+  "Heading styles with optional list of values per heading level.
 
-This is an alist that accepts a (key . list-of-values)
-combination.  The key is either a number, representing the
+This is an alist that accepts a (KEY . LIST-OF-VALUES)
+combination.  The KEY is either a number, representing the
 heading's level (0-8) or t, which pertains to the fallback style.
+The named keys `agenda-date' and `agenda-structure' apply to the
+Org agenda.
 
-Level 0 is a special heading: it is used for what counts as a
-document title or equivalent, such as the #+title construct we
-find in Org files.  Levels 1-8 are regular headings.
+Level 0 is used for what counts as a document title or
+equivalent, such as the #+title construct we find in Org files.
+Levels 1-8 are regular headings.
 
-The list of values covers symbols that refer to properties, as
-described below.  Here is a complete sample, followed by a
-presentation of all available properties:
+The LIST-OF-VALUES covers symbols that refer to properties, as
+described below.  Here is a complete sample with various
+stylistic combinations, followed by a presentation of all
+available properties:
 
     (setq ef-themes-headings
           (quote ((1 . (light variable-pitch 1.5))
                   (2 . (regular 1.3))
                   (3 . (1.1))
+                  (agenda-date . (1.3))
+                  (agenda-structure . (variable-pitch light 1.8))
                   (t . (variable-pitch)))))
 
 By default (a nil value for this variable), all headings have a
@@ -217,11 +222,11 @@ will retain the original aesthetic for that level.  For example:
                   (2 . (1.3))
                   (t . t)))) ; default style for all other levels"
   :group 'ef-themes
-  :package-version '(ef-themes . "0.3.0")
+  :package-version '(ef-themes . "0.10.0")
   :type `(alist
           :options ,(mapcar (lambda (el)
                               (list el ef-themes--headings-choice))
-                            '(0 1 2 3 4 5 6 7 8 t))
+                            '(0 1 2 3 4 5 6 7 8 t agenda-date agenda-structure))
           :key-type symbol
           :value-type ,ef-themes--headings-choice)
   :link '(info-link "(ef-themes) Option for headings"))
@@ -835,7 +840,7 @@ Helper function for `ef-themes-preview-colors'."
     `(cider-repl-stdout-face ((,c :foreground ,info)))
     `(cider-warning-highlight-face ((,c :inherit ef-themes-underline-warning)))
 ;;;; change-log and log-view (`vc-print-log' and `vc-print-root-log')
-    `(change-log-acknowledgment ((,c :inherit shadow)))
+    `(change-log-acknowledgment ((,c :foreground ,identifier)))
     `(change-log-conditionals ((,c :inherit error)))
     `(change-log-date ((,c :foreground ,date)))
     `(change-log-email ((,c :foreground ,fg-alt)))
@@ -849,7 +854,7 @@ Helper function for `ef-themes-preview-colors'."
     `(log-edit-unknown-header ((,c :inherit shadow)))
     `(log-view-commit-body (( )))
     `(log-view-file ((,c :inherit bold)))
-    `(log-view-message ((,c :inherit shadow)))
+    `(log-view-message ((,c :foreground ,identifier)))
 ;;;; clojure-mode
     `(clojure-keyword-face ((,c :inherit font-lock-builtin-face)))
 ;;;; company-mode
@@ -1147,10 +1152,10 @@ Helper function for `ef-themes-preview-colors'."
     `(git-commit-overlong-summary ((,c :background ,bg-warning :foreground ,warning)))
     `(git-commit-summary ((,c :inherit bold :foreground ,accent-0)))
 ;;;; git-rebase
-    `(git-rebase-comment-hash ((,c :inherit font-lock-comment-face :foreground ,constant)))
+    `(git-rebase-comment-hash ((,c :inherit (bold font-lock-comment-face) :foreground ,identifier)))
     `(git-rebase-comment-heading  ((,c :inherit (bold font-lock-comment-face))))
     `(git-rebase-description ((,c :foreground ,fg-main)))
-    `(git-rebase-hash ((,c :foreground ,constant)))
+    `(git-rebase-hash ((,c :foreground ,identifier)))
 ;;;; gnus
     `(gnus-button ((,c :inherit button)))
     `(gnus-cite-1 ((,c :inherit message-cited-text-1)))
@@ -1348,7 +1353,7 @@ Helper function for `ef-themes-preview-colors'."
     `(magit-diffstat-removed ((,c :inherit error)))
     `(magit-dimmed ((,c :inherit shadow)))
     `(magit-filename ((,c :foreground ,name)))
-    `(magit-hash ((,c :inherit shadow)))
+    `(magit-hash ((,c :foreground ,identifier)))
     `(magit-head ((,c :inherit magit-branch-local)))
     `(magit-header-line ((,c :inherit bold)))
     `(magit-header-line-key ((,c :inherit ef-themes-key-binding)))
@@ -1575,7 +1580,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-clocking ((,c :background ,bg-warning :foreground ,warning)))
     `(org-agenda-column-dateline ((,c :background ,bg-alt)))
     `(org-agenda-current-time ((,c :foreground ,fg-main)))
-    `(org-agenda-date ((,c :inherit ef-themes-heading-2 :foreground ,date)))
+    `(org-agenda-date ((,c ,@(ef-themes--heading 'agenda-date) :foreground ,date)))
     `(org-agenda-date-today ((,c :inherit org-agenda-date :underline t)))
     `(org-agenda-date-weekend ((,c :inherit org-agenda-date :foreground ,err)))
     `(org-agenda-date-weekend-today ((,c :inherit org-agenda-date-today :foreground ,err)))
@@ -1587,7 +1592,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-filter-regexp ((,c :inherit bold :foreground ,modeline-err)))
     `(org-agenda-filter-tags ((,c :inherit bold :foreground ,modeline-err)))
     `(org-agenda-restriction-lock ((,c :background ,bg-dim :foreground ,fg-dim)))
-    `(org-agenda-structure ((,c :inherit ef-themes-heading-0 :foreground ,fg-alt)))
+    `(org-agenda-structure ((,c ,@(ef-themes--heading 'agenda-structure) :foreground ,fg-alt)))
     `(org-agenda-structure-filter ((,c :inherit org-agenda-structure :foreground ,warning)))
     `(org-agenda-structure-secondary ((,c :inherit font-lock-doc-face)))
     `(org-archived ((,c :background ,bg-alt :foreground ,fg-main)))

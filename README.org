@@ -4,9 +4,9 @@
 #+language:              en
 #+options:               ':t toc:nil author:t email:t num:t
 #+startup:               content
-#+macro:                 stable-version 0.9.0
-#+macro:                 release-date 2022-10-28
-#+macro:                 development-version 0.10.0-dev
+#+macro:                 stable-version 0.10.0
+#+macro:                 release-date 2022-12-02
+#+macro:                 development-version 0.11.0-dev
 #+export_file_name:      ef-themes.texi
 #+texinfo_filename:      ef-themes.info
 #+texinfo_dir_category:  Emacs misc features
@@ -291,25 +291,29 @@ regard.
 
 #+vindex: ef-themes-headings
 The user option ~ef-themes-headings~ provides support for individual
-heading styles for levels 0 through 8.
+heading styles for regular heading levels 0 through 8, as well as the
+Org agenda headings.
 
-This is an alist that accepts a =(key . list-of-values)= combination.
-The key is either a number, representing the heading's level (0
-through 8) or =t=, which pertains to the fallback style.
+This is an alist that accepts a =(KEY . LIST-OF-VALUES)= combination.
+The =KEY= is either a number, representing the heading's level (0
+through 8) or ~t~, which pertains to the fallback style.  The named
+keys =agenda-date= and =agenda-structure= apply to the Org agenda.
 
 Level 0 is a special heading: it is used for what counts as a document
 title or equivalent, such as the =#+title= construct we find in Org
 files.  Levels 1-8 are regular headings.
 
-The list of values covers symbols that refer to properties, as described
-below.  Here is a complete sample, followed by a presentation of all
-available properties:
+The =LIST-OF-VALUES= covers symbols that refer to properties, as
+described below.  Here is a complete sample with various stylistic
+combinations, followed by a presentation of all available properties:
 
 #+begin_src emacs-lisp
 (setq ef-themes-headings
       '((1 . (light variable-pitch 1.5))
         (2 . (regular 1.3))
         (3 . (1.1))
+        (agenda-date . (1.3))
+        (agenda-structure . (variable-pitch light 1.8))
         (t . (variable-pitch))))
 #+end_src
 
@@ -378,8 +382,6 @@ will retain the original aesthetic for that level.  For example:
 :PROPERTIES:
 :CUSTOM_ID: h:1d5fa3d8-a769-455a-aac7-5c1b925bb10b
 :END:
-
-[ This user option is part of {{{development-version}}}. ]
 
 #+vindex: ef-themes-region
 The user option ~ef-themes-region~ controls the appearance of the
@@ -989,10 +991,10 @@ everything most users need.
 - bongo
 - bookmark
 - calendar and diary
-- cider [Part of {{{development-version}}}]
+- cider
 - change-log and log-view (part of VC)
 - chart
-- clojure-mode [Part of {{{development-version}}}]
+- clojure-mode
 - company
 - compilation
 - completions
@@ -1010,7 +1012,7 @@ everything most users need.
 - display-fill-column-indicator-mode
 - doom-modeline
 - ediff
-- eglot [Part of {{{development-version}}}]
+- eglot
 - eldoc
 - elfeed
 - embark
@@ -1049,7 +1051,7 @@ everything most users need.
 - outline-mode
 - outline-minor-faces
 - package (=M-x list-packages=)
-- perspective [Part of {{{development-version}}}]
+- perspective
 - pulsar
 - pulse
 - rainbow-delimiters
@@ -1068,7 +1070,7 @@ everything most users need.
 - textsec
 - transient
 - trashed
-- tree-sitter [Part of {{{development-version}}}]
+- tree-sitter
 - tty-menu
 - vc (=vc-dir.el=, =vc-hooks.el=)
 - vertico

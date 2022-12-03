@@ -60,7 +60,7 @@
       (green           "#006f00")
       (green-warmer    "#557400")
       (green-cooler    "#00824f")
-      (green-faint     "#4f654c")
+      (green-faint     "#3a6f48")
       (yellow          "#a7601f")
       (yellow-warmer   "#bf4400")
       (yellow-cooler   "#a2604f")
@@ -158,6 +158,7 @@
       (date yellow-cooler)
       (name green-warmer)
       (keybind red)
+      (identifier green-faint)
       (prompt green)
 
       (builtin green-warmer)

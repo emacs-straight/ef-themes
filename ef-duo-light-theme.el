@@ -75,7 +75,7 @@
       (magenta         "#ba35af")
       (magenta-warmer  "#cf25aa")
       (magenta-cooler  "#6052cf")
-      (magenta-faint   "#bf3580")
+      (magenta-faint   "#af569f")
       (cyan            "#1f6fbf")
       (cyan-warmer     "#3f6faf")
       (cyan-cooler     "#1f77bb")
@@ -162,6 +162,7 @@
       (date cyan-cooler)
       (name blue)
       (keybind blue-cooler)
+      (identifier red-faint)
       (prompt blue)
 
       (builtin cyan-cooler)
