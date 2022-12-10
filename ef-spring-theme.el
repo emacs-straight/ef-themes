@@ -97,14 +97,17 @@
       (bg-added          "#c9ffda")
       (bg-added-faint    "#d7ffe5")
       (bg-added-refine   "#b3efcf")
+      (fg-added          "#005000")
 
       (bg-changed        "#ffdfb9")
       (bg-changed-faint  "#ffefcb")
       (bg-changed-refine "#ffcfa0")
+      (fg-changed        "#553d00")
 
       (bg-removed        "#ffd6e0")
       (bg-removed-faint  "#ffe9e6")
       (bg-removed-refine "#f5bfc8")
+      (fg-removed        "#8f1313")
 
       ;; Graphs
       (red-graph-0-bg     "#ef7969")
@@ -156,6 +159,7 @@
       (link cyan-cooler)
       (link-alt yellow-cooler)
       (date cyan)
+      (weekend red-faint) ; for M-x calendar and Org agenda
       (name green-cooler)
       (keybind magenta-warmer)
       (identifier magenta-faint)
