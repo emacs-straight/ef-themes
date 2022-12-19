@@ -203,10 +203,22 @@
       (rainbow-6 yellow-faint)
       (rainbow-7 blue-faint)
       (rainbow-8 magenta-faint))
-    "The `ef-deuteranopia-dark' palette.")
+    "The `ef-deuteranopia-dark' palette.
+Color values have the form (COLOR-NAME HEX-VALUE) with the former
+as a symbol and the latter as a string.
+
+Semantic color mappings have the form (MAPPING-NAME COLOR-NAME)
+with both as symbols.  The latter is a color that already exists
+in the palette and is associated with a HEX-VALUE.")
 
   (defvar ef-deuteranopia-dark-palette-overrides nil
-    "Overrides for `ef-deuteranopia-dark-palette'.")
+    "Overrides for `ef-deuteranopia-dark-palette'.
+
+Mirror the elements of the aforementioned palette, overriding
+their value.
+
+For overrides that are shared across all of the Ef themes,
+refer to `ef-themes-common-palette-overrides'.")
 
   (ef-themes-theme ef-deuteranopia-dark ef-deuteranopia-dark-palette ef-deuteranopia-dark-palette-overrides)
 
