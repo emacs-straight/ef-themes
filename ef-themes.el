@@ -297,6 +297,18 @@ Other examples:
               (const :tag "More intense background (also override text color)" accented))
   :link '(info-link "(ef-themes) Style of region highlight"))
 
+;; TODO 2022-12-30: Make the palette overrides a `defcustom'
+(defvar ef-themes-common-palette-overrides nil
+  "Set palette overrides for all the Ef themes.
+
+Mirror the elements of a theme's palette, overriding their value.
+The palette variables are named THEME-NAME-palette, while
+individual theme overrides are THEME-NAME-palette-overrides.  The
+THEME-NAME is one of the symbols in `ef-themes-collection'.
+
+Individual theme overrides take precedence over these common
+overrides.")
+
 ;;; Helpers for user options
 
 (defun ef-themes--warn (option)
@@ -430,7 +442,9 @@ symbol."
   "Return palette value of THEME with optional OVERRIDES."
   (let ((base-value (symbol-value (ef-themes--palette-symbol theme))))
     (if overrides
-        (append (symbol-value (ef-themes--palette-symbol theme :overrides)) base-value)
+        (append (symbol-value (ef-themes--palette-symbol theme :overrides))
+                ef-themes-common-palette-overrides
+                base-value)
       base-value)))
 
 (defun ef-themes--current-theme-palette (&optional overrides)
@@ -1600,7 +1614,7 @@ Helper function for `ef-themes-preview-colors'."
     `(org-agenda-date-weekend-today ((,c :inherit org-agenda-date-today :foreground ,weekend)))
     `(org-agenda-diary ((,c :inherit org-agenda-calendar-sexp)))
     `(org-agenda-dimmed-todo-face ((,c :inherit shadow)))
-    `(org-agenda-done ((,c :inherit success)))
+    `(org-agenda-done ((,c :inherit org-done)))
     `(org-agenda-filter-category ((,c :inherit bold :foreground ,modeline-err)))
     `(org-agenda-filter-effort ((,c :inherit bold :foreground ,modeline-err)))
     `(org-agenda-filter-regexp ((,c :inherit bold :foreground ,modeline-err)))
@@ -1969,17 +1983,6 @@ Helper function for `ef-themes-preview-colors'."
 ;;; Theme macros
 
 ;;;; Instantiate an Ef theme
-
-(defvar ef-themes-common-palette-overrides nil
-  "Set palette overrides for all the Ef themes.
-
-Mirror the elements of a theme's palette, overriding their value.
-The palette variables are named THEME-NAME-palette, while
-individual theme overrides are THEME-NAME-palette-overrides.  The
-THEME-NAME is one of the symbols in `ef-themes-collection'.
-
-Individual theme overrides take precedence over these common
-overrides.")
 
 ;;;###autoload
 (defmacro ef-themes-theme (name palette &optional overrides)
