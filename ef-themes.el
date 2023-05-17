@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 0.11.0
+;; Version: 1.0.0
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -322,8 +322,7 @@ Other examples:
               (const :tag "More intense background (also override text color)" accented))
   :link '(info-link "(ef-themes) Style of region highlight"))
 
-;; TODO 2022-12-30: Make the palette overrides a `defcustom'
-(defvar ef-themes-common-palette-overrides nil
+(defcustom ef-themes-common-palette-overrides nil
   "Set palette overrides for all the Ef themes.
 
 Mirror the elements of a theme's palette, overriding their value.
@@ -332,7 +331,15 @@ individual theme overrides are THEME-NAME-palette-overrides.  The
 THEME-NAME is one of the symbols in `ef-themes-collection'.
 
 Individual theme overrides take precedence over these common
-overrides.")
+overrides.
+
+To preview the palette entries, use `ef-themes-preview-colors' or
+`ef-themes-preview-colors-current' (read the documentation for
+further details)."
+  :group 'ef-themes
+  :package-version '(ef-themes . "1.0.0")
+  :type '(repeat (list symbol (choice symbol string)))
+  :link '(info-link "(ef-themes) Palette overrides"))
 
 ;;; Helpers for user options
 
@@ -903,7 +910,7 @@ Optional prefix argument MAPPINGS has the same meaning as for
     `(shadow ((,c :foreground ,fg-dim)))
     `(success ((,c :inherit bold :foreground ,info)))
     `(tooltip ((,c :background ,bg-alt :foreground ,fg-intense)))
-    `(trailing-whitespace ((,c :background ,bg-red :foreground ,fg-intense)))
+    `(trailing-whitespace ((,c :background ,bg-red-intense :foreground ,fg-intense)))
     `(warning ((,c :inherit bold :foreground ,warning)))
 ;;;; all-the-icons
     `(all-the-icons-blue ((,c :foreground ,blue-cooler)))
@@ -1045,7 +1052,7 @@ Optional prefix argument MAPPINGS has the same meaning as for
     `(company-echo-common ((,c :inherit bold :foreground ,accent-0)))
     `(company-preview ((,c :background ,bg-dim :foreground ,fg-dim)))
     `(company-preview-common ((,c :inherit company-echo-common)))
-    `(company-preview-search ((,c :background ,bg-yellow :foreground ,fg-intense)))
+    `(company-preview-search ((,c :background ,bg-yellow-intense :foreground ,fg-intense)))
     `(company-scrollbar-bg ((,c :background ,bg-active)))
     `(company-scrollbar-fg ((,c :background ,fg-main)))
     `(company-template-field ((,c :background ,bg-active :foreground ,fg-intense)))
@@ -1483,13 +1490,13 @@ Optional prefix argument MAPPINGS has the same meaning as for
     `(info-title-3 ((,c :inherit ef-themes-heading-3)))
     `(info-title-4 ((,c :inherit ef-themes-heading-4)))
 ;;;; isearch, occur, and the like
-    `(isearch ((,c :background ,bg-yellow :foreground ,fg-intense)))
-    `(isearch-fail ((,c :background ,bg-red :foreground ,fg-intense)))
-    `(isearch-group-1 ((,c :background ,bg-green :foreground ,fg-intense)))
-    `(isearch-group-2 ((,c :background ,bg-magenta :foreground ,fg-intense)))
-    `(lazy-highlight ((,c :background ,bg-blue :foreground ,fg-intense)))
+    `(isearch ((,c :background ,bg-yellow-intense :foreground ,fg-intense)))
+    `(isearch-fail ((,c :background ,bg-red-intense :foreground ,fg-intense)))
+    `(isearch-group-1 ((,c :background ,bg-green-intense :foreground ,fg-intense)))
+    `(isearch-group-2 ((,c :background ,bg-magenta-intense :foreground ,fg-intense)))
+    `(lazy-highlight ((,c :background ,bg-blue-intense :foreground ,fg-intense)))
     `(match ((,c :background ,bg-warning)))
-    `(query-replace ((,c :background ,bg-red :foreground ,fg-intense)))
+    `(query-replace ((,c :background ,bg-red-intense :foreground ,fg-intense)))
 ;;;; jit-spell
     `(jit-spell-misspelling ((,c :inherit ef-themes-underline-error)))
 ;;;;; jinx
@@ -1952,7 +1959,7 @@ Optional prefix argument MAPPINGS has the same meaning as for
     `(rainbow-delimiters-depth-7-face ((,c :foreground ,rainbow-6)))
     `(rainbow-delimiters-depth-8-face ((,c :foreground ,rainbow-7)))
     `(rainbow-delimiters-depth-9-face ((,c :foreground ,rainbow-8)))
-    `(rainbow-delimiters-mismatched-face ((,c :background ,bg-red :foreground ,fg-intense)))
+    `(rainbow-delimiters-mismatched-face ((,c :background ,bg-red-intense :foreground ,fg-intense)))
     `(rainbow-delimiters-unmatched-face ((,c :inherit (bold rainbow-delimiters-mismatched-face))))
 ;;;; rcirc
     `(rcirc-bright-nick ((,c :inherit bold :foreground ,fg-intense)))
@@ -1972,10 +1979,10 @@ Optional prefix argument MAPPINGS has the same meaning as for
     `(recursion-indicator-general ((,c :foreground ,modeline-err)))
     `(recursion-indicator-minibuffer ((,c :foreground ,modeline-info)))
 ;;;; regexp-builder (re-builder)
-    `(reb-match-0 ((,c :background ,bg-cyan :foreground ,fg-intense)))
-    `(reb-match-1 ((,c :background ,bg-red :foreground ,fg-intense)))
-    `(reb-match-2 ((,c :background ,bg-magenta :foreground ,fg-intense)))
-    `(reb-match-3 ((,c :background ,bg-yellow :foreground ,fg-intense)))
+    `(reb-match-0 ((,c :background ,bg-cyan-intense :foreground ,fg-intense)))
+    `(reb-match-1 ((,c :background ,bg-red-intense :foreground ,fg-intense)))
+    `(reb-match-2 ((,c :background ,bg-magenta-intense :foreground ,fg-intense)))
+    `(reb-match-3 ((,c :background ,bg-yellow-intense :foreground ,fg-intense)))
     `(reb-regexp-grouping-backslash ((,c :inherit font-lock-regexp-grouping-backslash)))
     `(reb-regexp-grouping-construct ((,c :inherit font-lock-regexp-grouping-construct)))
 ;;;;; rst-mode
@@ -1999,7 +2006,7 @@ Optional prefix argument MAPPINGS has the same meaning as for
 ;;;; show-paren-mode
     `(show-paren-match ((,c :background ,bg-paren :foreground ,fg-intense)))
     `(show-paren-match-expression ((,c :background ,bg-alt)))
-    `(show-paren-mismatch ((,c :background ,bg-red :foreground ,fg-intense)))
+    `(show-paren-mismatch ((,c :background ,bg-red-intense :foreground ,fg-intense)))
 ;;;; shell-script-mode (sh-mode)
     `(sh-heredoc ((,c :inherit font-lock-doc-face)))
     `(sh-quoted-exec ((,c :inherit font-lock-builtin-face)))
@@ -2158,7 +2165,7 @@ Optional prefix argument MAPPINGS has the same meaning as for
     `(whitespace-newline ((,c :inherit whitespace-indentation)))
     `(whitespace-space ((,c :inherit whitespace-indentation)))
     `(whitespace-space-after-tab ((,c :inherit whitespace-space-before-tab)))
-    `(whitespace-space-before-tab ((,c :background ,bg-red)))
+    `(whitespace-space-before-tab ((,c :background ,bg-red-intense)))
     `(whitespace-tab ((,c :inherit whitespace-indentation)))
     `(whitespace-trailing ((,c :inherit whitespace-space-before-tab)))
 ;;;; widget
