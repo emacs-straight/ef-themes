@@ -59,9 +59,9 @@
       (red             "#c3303a")
       (red-warmer      "#d00000")
       (red-cooler      "#b02440")
-      (red-faint       "#894452")
-      (green           "#1f601f")
-      (green-warmer    "#3f5500")
+      (red-faint       "#894852")
+      (green           "#00601f")
+      (green-warmer    "#355500")
       (green-cooler    "#007047")
       (green-faint     "#306630")
       (yellow          "#9a501f")
@@ -170,7 +170,7 @@
       (link green)
       (link-alt magenta)
       (name green-warmer)
-      (keybind magenta-cooler)
+      (keybind magenta)
       (identifier magenta-faint)
       (prompt magenta)
 
@@ -218,7 +218,7 @@
       (prose-table fg-alt)
       (prose-tag cyan-faint)
       (prose-todo red)
-      (prose-verbatim green-warmer)
+      (prose-verbatim cyan-cooler)
 
 ;;;; Mail mappings
 
