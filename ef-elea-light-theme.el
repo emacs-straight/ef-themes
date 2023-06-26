@@ -135,7 +135,7 @@
       (fg-mode-line       "#142810")
       (bg-completion      "#c2eaba")
       (bg-hover           "#dfbac0")
-      (bg-hover-secondary "#afdfbf")
+      (bg-hover-secondary "#b5dfbf")
       (bg-hl-line         "#d0e7c4")
       (bg-region          "#d9d2ef")
       (bg-paren           "#8ad3a2")
@@ -143,7 +143,7 @@
       (bg-warning         "#e8e8aa") ; check with warning
       (bg-info            "#b4efc6") ; check with info
 
-      (border        "#bbc0ba")
+      (border        "#a5aaaf")
       (cursor        "#770080")
       (fg-intense    "#000000")
 
@@ -222,11 +222,11 @@
 
 ;;;; Mail mappings
 
-      (mail-cite-0 green-warmer)
+      (mail-cite-0 cyan-cooler)
       (mail-cite-1 magenta)
-      (mail-cite-2 cyan)
+      (mail-cite-2 green-warmer)
       (mail-cite-3 magenta-cooler)
-      (mail-part blue-faint)
+      (mail-part yellow-cooler)
       (mail-recipient red-faint)
       (mail-subject green-cooler)
       (mail-other green)
