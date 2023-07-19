@@ -553,9 +553,16 @@ overrides."
 
 (defun ef-themes--annotate-theme (theme)
   "Return completion annotation for THEME."
-  (let ((doc (get (intern theme) 'theme-documentation)))
-    (when doc ;; A completion annotation function may return nil
-      (concat " -- " (car (split-string doc "\\."))))))
+  (when-let ((symbol (intern-soft theme))
+             (doc-string (get symbol 'theme-documentation)))
+    (format " -- %s" (car (split-string doc-string "\\.")))))
+
+(defun ef-themes--completion-table (category candidates)
+  "Pass appropriate metadata CATEGORY to completion CANDIDATES."
+  (lambda (string pred action)
+    (if (eq action 'metadata)
+        `(metadata (category . ,category))
+      (complete-with-action action candidates string pred))))
 
 (defvar ef-themes--select-theme-history nil
   "Minibuffer history of `ef-themes--select-prompt'.")
@@ -563,10 +570,12 @@ overrides."
 (defun ef-themes--load-subset (subset)
   "Return the `light' or `dark' SUBSET of the Ef themes.
 If SUBSET is neither `light' nor `dark', return all the known Ef themes."
-  (pcase subset
-    ('dark ef-themes-dark-themes)
-    ('light ef-themes-light-themes)
-    (_ (ef-themes--list-known-themes))))
+  (ef-themes--completion-table
+   'theme
+   (pcase subset
+     ('dark ef-themes-dark-themes)
+     ('light ef-themes-light-themes)
+     (_ (ef-themes--list-known-themes)))))
 
 (defun ef-themes--maybe-prompt-subset (variant)
   "Helper function for `ef-themes--select-prompt' VARIANT argument."
@@ -784,7 +793,8 @@ Helper function for `ef-themes-preview-colors'."
         (completion-extra-properties `(:annotation-function ,#'ef-themes--annotate-theme)))
     (completing-read
      (format "Use palette from theme [%s]: " def)
-     (ef-themes--list-known-themes) nil t nil
+     (ef-themes--load-subset :all-themes)
+     nil t nil
      'ef-themes--preview-colors-prompt-history def)))
 
 (defun ef-themes-preview-colors (theme &optional mappings)
