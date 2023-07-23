@@ -48,10 +48,10 @@
       (fg-main      "#eaedef")
       (bg-dim       "#1d2c39")
       (fg-dim       "#969faf")
-      (bg-alt       "#2f3943")
+      (bg-alt       "#2a3644")
       (fg-alt       "#90a0dc")
 
-      (bg-active    "#4f5963")
+      (bg-active    "#4a5664")
       (bg-inactive  "#1a2331")
 
 ;;; Basic hues for foreground values
@@ -60,7 +60,7 @@
       (red-warmer      "#ff7a5f")
       (red-cooler      "#ff7788")
       (red-faint       "#fca4a4")
-      (green           "#30ba3f")
+      (green           "#41bf4f")
       (green-warmer    "#7fce5f")
       (green-cooler    "#30c489")
       (green-faint     "#a9c99f")
@@ -188,7 +188,7 @@
       (preprocessor magenta-cooler)
       (docstring cyan-faint)
       (string cyan-cooler)
-      (type green)
+      (type green-cooler)
       (variable cyan)
       (rx-escape yellow) ; compare with `string'
       (rx-construct red)
@@ -196,9 +196,9 @@
 ;;;; Accent mappings
 
       (accent-0 blue-cooler)
-      (accent-1 green)
+      (accent-1 green-warmer)
       (accent-2 cyan)
-      (accent-3 magenta)
+      (accent-3 red-cooler)
 
 ;;;; Date mappings
 
@@ -228,11 +228,11 @@
 
       (mail-cite-0 cyan-cooler)
       (mail-cite-1 magenta)
-      (mail-cite-2 green-warmer)
+      (mail-cite-2 blue-faint)
       (mail-cite-3 yellow-cooler)
-      (mail-part magenta-cooler)
+      (mail-part cyan)
       (mail-recipient blue-warmer)
-      (mail-subject green)
+      (mail-subject green-warmer)
       (mail-other blue)
 
 ;;;; Space mappings
