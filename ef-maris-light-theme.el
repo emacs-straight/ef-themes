@@ -1,4 +1,4 @@
-;;; ef-maris-light-theme.el --- Legible light theme with blue, cyan, and teal colors -*- lexical-binding:t -*-
+;;; ef-maris-light-theme.el --- Legible light theme with blue, cyan, and green colors -*- lexical-binding:t -*-
 
 ;; Copyright (C) 2023  Free Software Foundation, Inc.
 
@@ -38,7 +38,7 @@
   (require 'ef-themes)
 
   (deftheme ef-maris-light
-    "Legible light theme with blue, cyan, and teal colors.")
+    "Legible light theme with blue, cyan, and green colors.")
 
   (defconst ef-maris-light-palette
     '(
@@ -59,7 +59,7 @@
       (red             "#c3303a")
       (red-warmer      "#d00000")
       (red-cooler      "#b02440")
-      (red-faint       "#9b4052")
+      (red-faint       "#8b4052")
       (green           "#007010")
       (green-warmer    "#3a6f00")
       (green-cooler    "#007047")
@@ -161,7 +161,7 @@
 
 ;;; Conditional hues
 
-      (bg-region-intense "#c6b2d3")
+      (bg-region-intense "#a6bfd3")
 
 ;;; Mappings
 
