@@ -53,7 +53,7 @@
       (bg-dim      "#f5e9cb")
       (fg-dim      "#68708a")
       (bg-alt      "#e7d7c6")
-      (fg-alt      "#86663a")
+      (fg-alt      "#66713a")
 
       (bg-active   "#c7b7a6")
       (bg-inactive "#f9efd4")
@@ -141,7 +141,6 @@
       (bg-hover           "#aee7df")
       (bg-hover-secondary "#c4d47a")
       (bg-hl-line         "#fae7b0")
-      (bg-region          "#dfe4ef")
       (bg-paren           "#afcf8f")
       (bg-err             "#ffd4b5") ; check with err
       (bg-warning         "#ffe89f") ; check with warning
@@ -163,10 +162,6 @@
       (bg-char-1 "#f0a0f0")
       (bg-char-2 "#d0e000")
 
-;;; Conditional hues
-
-      (bg-region-intense "#eacf8f")
-
 ;;; Mappings
 
 ;;;; General mappings
@@ -181,6 +176,9 @@
       (keybind yellow-warmer)
       (identifier red-faint)
       (prompt green-warmer)
+
+      (bg-region "#f0d4d8")
+      (fg-region unspecified)
 
 ;;;; Code mappings
 
