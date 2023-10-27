@@ -6,7 +6,7 @@
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
 ;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 1.3.0
+;; Version: 1.4.0
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -1369,8 +1369,8 @@ text should not be underlined as well) yet still blend in."
     `(git-commit-comment-heading ((,c :inherit (bold font-lock-comment-face))))
     `(git-commit-comment-file ((,c :inherit font-lock-comment-face :foreground ,name)))
     `(git-commit-keyword ((,c :foreground ,keyword)))
-    `(git-commit-nonempty-second-line ((,c :background ,bg-err :foreground ,err)))
-    `(git-commit-overlong-summary ((,c :background ,bg-warning :foreground ,warning)))
+    `(git-commit-nonempty-second-line ((,c :foreground ,err)))
+    `(git-commit-overlong-summary ((,c :foreground ,warning)))
     `(git-commit-summary ((,c :inherit success)))
 ;;;; git-gutter
     `(git-gutter:added ((,c :background ,bg-added :foreground ,fg-added)))
@@ -2199,8 +2199,8 @@ text should not be underlined as well) yet still blend in."
     `(vc-dir-status-warning ((,c :inherit error)))
     `(vc-conflict-state ((,c :inherit error)))
     `(vc-edited-state ((,c :inherit italic)))
-    `(vc-git-log-edit-summary-max-warning ((,c :background ,bg-err :foreground ,err)))
-    `(vc-git-log-edit-summary-target-warning ((,c :background ,bg-warning :foreground ,warning)))
+    `(vc-git-log-edit-summary-max-warning ((,c :foreground ,err)))
+    `(vc-git-log-edit-summary-target-warning ((,c :foreground ,warning)))
     `(vc-locally-added-state ((,c :inherit italic)))
     `(vc-locked-state ((,c :inherit success)))
     `(vc-missing-state ((,c :inherit error)))
