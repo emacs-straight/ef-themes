@@ -51,7 +51,7 @@
       (bg-main     "#ffead8")
       (fg-main     "#393330")
       (bg-dim      "#f0d8cf")
-      (fg-dim      "#6c697f")
+      (fg-dim      "#6e678f")
       (bg-alt      "#e7d2cb")
       (fg-alt      "#8a5f4a")
 
@@ -67,7 +67,7 @@
       (green           "#007000")
       (green-warmer    "#557000")
       (green-cooler    "#00704f")
-      (green-faint     "#3f714f")
+      (green-faint     "#3f712f")
       (yellow          "#906200")
       (yellow-warmer   "#b44405")
       (yellow-cooler   "#8a6340")
