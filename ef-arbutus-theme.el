@@ -145,8 +145,8 @@
       (bg-paren           "#efafbf")
 ;; TODO 2023-12-27:
       (bg-err             "#ffd4b5") ; check with err
-      (bg-warning         "#ffe49f") ; check with warning
-      (bg-info            "#ddf0ac") ; check with info
+      (bg-warning         "#efe48f") ; check with warning
+      (bg-info            "#d0f0bc") ; check with info
 
       (border        "#c0b4a6")
       (cursor        "#208f10")
@@ -228,7 +228,7 @@
       (prose-table fg-alt)
       (prose-table-formula info)
       (prose-tag cyan-faint)
-      (prose-todo red-warmer)
+      (prose-todo yellow-warmer)
       (prose-verbatim blue-cooler)
 
 ;;;; Mail mappings
@@ -263,7 +263,7 @@
       (rainbow-4 green-warmer)
       (rainbow-5 cyan-cooler)
       (rainbow-6 yellow-cooler)
-      (rainbow-7 magenta)
+      (rainbow-7 red-cooler)
       (rainbow-8 cyan))
     "The `ef-arbutus' palette.
 Color values have the form (COLOR-NAME HEX-VALUE) with the former
