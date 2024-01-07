@@ -87,6 +87,7 @@
     ef-maris-dark
     ef-melissa-dark
     ef-night
+    ef-rosa
     ef-symbiosis
     ef-trio-dark
     ef-tritanopia-dark
@@ -1329,6 +1330,10 @@ text should not be underlined as well) yet still blend in."
     `(eshell-ls-symlink ((,c :inherit link)))
     `(eshell-ls-unreadable ((,c :inherit shadow)))
     `(eshell-prompt ((,c :inherit minibuffer-prompt)))
+;;;; evil-mode
+    `(evil-ex-commands ((,c :inherit font-lock-keyword-face)))
+    `(evil-ex-info ((,c :inherit font-lock-type-face)))
+    `(evil-ex-substitute-replacement ((,c :inherit query-replace)))
 ;;;; eww
     `(eww-invalid-certificate ((,c :foreground ,err)))
     `(eww-valid-certificate ((,c :foreground ,info)))
