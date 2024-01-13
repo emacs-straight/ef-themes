@@ -1,6 +1,6 @@
 ;;; ef-deuteranopia-dark-theme.el --- Legible dark theme, optimized for red-green color deficiency -*- lexical-binding:t -*-
 
-;; Copyright (C) 2022-2023  Free Software Foundation, Inc.
+;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
@@ -93,8 +93,8 @@
       (bg-red-intense     "#8d7f00")
       (bg-green-intense   "#afcf20")
       (bg-yellow-intense  "#5f5f00")
-      (bg-blue-intense    "#264fa0")
-      (bg-magenta-intense "#6f6aff")
+      (bg-blue-intense    "#266fd0")
+      (bg-magenta-intense "#6f60c0")
       (bg-cyan-intense    "#007fae")
 
       (bg-red-subtle      "#72002a")
@@ -169,7 +169,8 @@
 
 ;;;; General mappings
 
-      (fringe unspecified)
+      (bg-fringe unspecified)
+      (fg-fringe unspecified)
 
       (err yellow-warmer)
       (warning yellow-cooler)
@@ -242,6 +243,17 @@
       (mail-recipient blue-warmer)
       (mail-subject cyan-cooler)
       (mail-other cyan)
+
+;;;; Search mappings
+
+      (bg-search-current bg-yellow-intense)
+      (bg-search-lazy bg-blue-intense)
+      (bg-search-replace bg-magenta-intense)
+
+      (bg-search-rx-group-0 bg-cyan-intense)
+      (bg-search-rx-group-1 bg-magenta-intense)
+      (bg-search-rx-group-2 bg-blue-subtle)
+      (bg-search-rx-group-3 bg-yellow-subtle)
 
 ;;;; Space mappings
 

@@ -1,6 +1,6 @@
 ;;; ef-melissa-dark-theme.el --- Legible dark theme with warm colors (yellow, red, green, cyan) -*- lexical-binding:t -*-
 
-;; Copyright (C) 2022-2023  Free Software Foundation, Inc.
+;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
@@ -87,19 +87,19 @@
 
 ;;; Basic hues for background values
 
-      (bg-red-intense     "#bd1f30")
-      (bg-green-intense   "#20a420")
-      (bg-yellow-intense  "#847020")
-      (bg-blue-intense    "#2f5f9f")
-      (bg-magenta-intense "#b05fcf")
-      (bg-cyan-intense    "#028099")
+      (bg-red-intense     "#b02930")
+      (bg-green-intense   "#4a7100")
+      (bg-yellow-intense  "#8f5040")
+      (bg-blue-intense    "#4648d0")
+      (bg-magenta-intense "#a04fc5")
+      (bg-cyan-intense    "#2270cf")
 
-      (bg-red-subtle      "#70202a")
-      (bg-green-subtle    "#105d1a")
-      (bg-yellow-subtle   "#625000")
-      (bg-blue-subtle     "#143f84")
-      (bg-magenta-subtle  "#55407a")
-      (bg-cyan-subtle     "#30546f")
+      (bg-red-subtle      "#72002a")
+      (bg-green-subtle    "#00422a")
+      (bg-yellow-subtle   "#603000")
+      (bg-blue-subtle     "#242679")
+      (bg-magenta-subtle  "#501f72")
+      (bg-cyan-subtle     "#004065")
 
 ;;; Diffs
 
@@ -166,7 +166,8 @@
 
 ;;;; General mappings
 
-      (fringe unspecified)
+      (bg-fringe unspecified)
+      (fg-fringe unspecified)
 
       (err red-warmer)
       (warning yellow-warmer)
@@ -239,6 +240,17 @@
       (mail-recipient yellow)
       (mail-subject green)
       (mail-other yellow-cooler)
+
+;;;; Search mappings
+
+      (bg-search-current bg-yellow-intense)
+      (bg-search-lazy bg-blue-intense)
+      (bg-search-replace bg-red-intense)
+
+      (bg-search-rx-group-0 bg-magenta-intense)
+      (bg-search-rx-group-1 bg-green-intense)
+      (bg-search-rx-group-2 bg-red-subtle)
+      (bg-search-rx-group-3 bg-cyan-subtle)
 
 ;;;; Space mappings
 

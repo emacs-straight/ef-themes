@@ -1,6 +1,6 @@
 ;;; ef-duo-dark-theme.el --- Legible dark theme with mostly blue and orange colors -*- lexical-binding:t -*-
 
-;; Copyright (C) 2022-2023  Free Software Foundation, Inc.
+;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
@@ -91,7 +91,7 @@
 ;;; Basic hues for background values
 
       (bg-red-intense     "#cd2f30")
-      (bg-green-intense   "#20a020")
+      (bg-green-intense   "#407720")
       (bg-yellow-intense  "#8f5040")
       (bg-blue-intense    "#4648d0")
       (bg-magenta-intense "#b04fcf")
@@ -101,7 +101,7 @@
       (bg-green-subtle    "#00422a")
       (bg-yellow-subtle   "#603000")
       (bg-blue-subtle     "#242679")
-      (bg-magenta-subtle  "#5a105f")
+      (bg-magenta-subtle  "#501f72")
       (bg-cyan-subtle     "#004065")
 
 ;;; Diffs
@@ -169,7 +169,8 @@
 
 ;;;; General mappings
 
-      (fringe unspecified)
+      (bg-fringe unspecified)
+      (fg-fringe unspecified)
 
       (err red)
       (warning yellow)
@@ -242,6 +243,17 @@
       (mail-recipient blue)
       (mail-subject yellow-warmer)
       (mail-other cyan-warmer)
+
+;;;; Search mappings
+
+      (bg-search-current bg-yellow-intense)
+      (bg-search-lazy bg-blue-intense)
+      (bg-search-replace bg-red-intense)
+
+      (bg-search-rx-group-0 bg-magenta-intense)
+      (bg-search-rx-group-1 bg-green-intense)
+      (bg-search-rx-group-2 bg-red-subtle)
+      (bg-search-rx-group-3 bg-cyan-subtle)
 
 ;;;; Space mappings
 

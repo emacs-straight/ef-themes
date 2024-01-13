@@ -1,6 +1,6 @@
 ;;; ef-tritanopia-light-theme.el --- Legible light theme, optimized for blue-yellow color deficiency -*- lexical-binding:t -*-
 
-;; Copyright (C) 2022-2023  Free Software Foundation, Inc.
+;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
@@ -169,7 +169,8 @@
 
 ;;;; General mappings
 
-      (fringe unspecified)
+      (bg-fringe unspecified)
+      (fg-fringe unspecified)
 
       (err red-warmer)
       (warning magenta)
@@ -242,6 +243,17 @@
       (mail-recipient magenta)
       (mail-subject red-warmer)
       (mail-other magenta-cooler)
+
+;;;; Search mappings
+
+      (bg-search-current bg-red-intense)
+      (bg-search-lazy bg-cyan-intense)
+      (bg-search-replace bg-magenta-intense)
+
+      (bg-search-rx-group-0 bg-blue-intense)
+      (bg-search-rx-group-1 bg-magenta-intense)
+      (bg-search-rx-group-2 bg-cyan-subtle)
+      (bg-search-rx-group-3 bg-red-subtle)
 
 ;;;; Space mappings
 

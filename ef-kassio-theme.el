@@ -1,6 +1,6 @@
 ;;; ef-kassio-theme.el --- Legible light theme with blue, red, magenta, and earthly colors -*- lexical-binding:t -*-
 
-;; Copyright (C) 2022-2023  Free Software Foundation, Inc.
+;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
@@ -166,7 +166,8 @@
 
 ;;;; General mappings
 
-      (fringe unspecified)
+      (bg-fringe unspecified)
+      (fg-fringe unspecified)
 
       (err red-warmer)
       (warning yellow-warmer)
@@ -239,6 +240,17 @@
       (mail-recipient magenta)
       (mail-subject blue)
       (mail-other magenta-faint)
+
+;;;; Search mappings
+
+      (bg-search-current bg-yellow-intense)
+      (bg-search-lazy bg-blue-intense)
+      (bg-search-replace bg-red-intense)
+
+      (bg-search-rx-group-0 bg-magenta-intense)
+      (bg-search-rx-group-1 bg-green-intense)
+      (bg-search-rx-group-2 bg-red-subtle)
+      (bg-search-rx-group-3 bg-cyan-subtle)
 
 ;;;; Space mappings
 

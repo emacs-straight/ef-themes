@@ -1,6 +1,6 @@
 ;;; ef-elea-light-theme.el --- Legible light theme with brown, magenta, and green colors -*- lexical-binding:t -*-
 
-;; Copyright (C) 2023  Free Software Foundation, Inc.
+;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
@@ -88,11 +88,11 @@
 ;;; Basic hues for background values
 
       (bg-red-intense     "#ff8f88")
-      (bg-green-intense   "#96df80")
+      (bg-green-intense   "#a6df80")
       (bg-yellow-intense  "#efbf00")
       (bg-blue-intense    "#cfceff")
       (bg-magenta-intense "#df9fff")
-      (bg-cyan-intense    "#88cfd0")
+      (bg-cyan-intense    "#88cbdc")
 
       (bg-red-subtle      "#f0c6bf")
       (bg-green-subtle    "#c4edaf")
@@ -166,7 +166,8 @@
 
 ;;;; General mappings
 
-      (fringe unspecified)
+      (bg-fringe unspecified)
+      (fg-fringe unspecified)
 
       (err red-warmer)
       (warning yellow-warmer)
@@ -239,6 +240,17 @@
       (mail-recipient red-faint)
       (mail-subject green-cooler)
       (mail-other green)
+
+;;;; Search mappings
+
+      (bg-search-current bg-yellow-intense)
+      (bg-search-lazy bg-blue-intense)
+      (bg-search-replace bg-red-intense)
+
+      (bg-search-rx-group-0 bg-magenta-intense)
+      (bg-search-rx-group-1 bg-green-intense)
+      (bg-search-rx-group-2 bg-red-subtle)
+      (bg-search-rx-group-3 bg-cyan-subtle)
 
 ;;;; Space mappings
 
