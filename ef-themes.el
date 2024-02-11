@@ -3,10 +3,9 @@
 ;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
-;; Maintainer: Ef-Themes Development <~protesilaos/ef-themes@lists.sr.ht>
+;; Maintainer: Protesilaos Stavrou <info@protesilaos.com>
 ;; URL: https://git.sr.ht/~protesilaos/ef-themes
-;; Mailing-List: https://lists.sr.ht/~protesilaos/ef-themes
-;; Version: 1.5.0
+;; Version: 1.5.1
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: faces, theme, accessibility
 
@@ -1951,7 +1950,7 @@ text should not be underlined as well) yet still blend in."
     `(org-date-selected ((,c :foreground ,date-common :inverse-video t)))
     `(org-dispatcher-highlight ((,c :inherit warning :background ,bg-warning)))
     `(org-document-info ((,c :foreground ,prose-metadata-value)))
-    `(org-document-info-keyword ((,c :foreground ,prose-metadata)))
+    `(org-document-info-keyword ((,c :inherit ef-themes-fixed-pitch :foreground ,prose-metadata)))
     `(org-document-title ((,c :inherit ef-themes-heading-0)))
     `(org-done ((,c :foreground ,prose-done)))
     `(org-drawer ((,c :inherit ef-themes-fixed-pitch :foreground ,prose-metadata)))
