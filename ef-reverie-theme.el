@@ -49,26 +49,26 @@
 
       (bg-main     "#f3eddf")
       (fg-main     "#4f204f")
-      (bg-dim      "#e6d3d0")
+      (bg-dim      "#e5d6d4")
       (fg-dim      "#6f6877")
-      (bg-alt      "#d7c6c5")
+      (bg-alt      "#d9cac8")
       (fg-alt      "#55447f")
 
-      (bg-active   "#b7a6a5")
+      (bg-active   "#b9aaa8")
       (bg-inactive "#f1e4da")
 
 ;;; Basic hues for foreground values
 
       (red             "#ba2d2f")
       (red-warmer      "#b21f00")
-      (red-cooler      "#a4384f")
+      (red-cooler      "#a83058")
       (red-faint       "#a04650")
       (green           "#007a0a")
       (green-warmer    "#5a7400")
       (green-cooler    "#008250")
       (green-faint     "#426340")
-      (yellow          "#88602f")
-      (yellow-warmer   "#a05005")
+      (yellow          "#87591f")
+      (yellow-warmer   "#a05900")
       (yellow-cooler   "#906045")
       (yellow-faint    "#7a5c50")
       (blue            "#375cc6")
@@ -93,28 +93,28 @@
       (bg-magenta-intense "#df9fff")
       (bg-cyan-intense    "#88cfd0")
 
-      (bg-red-subtle      "#ffc6bf")
-      (bg-green-subtle    "#c4f2af")
-      (bg-yellow-subtle   "#f0f07f")
-      (bg-blue-subtle     "#ccdfff")
-      (bg-magenta-subtle  "#fad3ff")
-      (bg-cyan-subtle     "#bfefff")
+      (bg-red-subtle      "#f5c6bf")
+      (bg-green-subtle    "#c0e3c0")
+      (bg-yellow-subtle   "#ede28f")
+      (bg-blue-subtle     "#ccd9f4")
+      (bg-magenta-subtle  "#f0d0f0")
+      (bg-cyan-subtle     "#bfeae0")
 
 ;;; Diffs
 
       (bg-added          "#b7ecd0")
       (bg-added-faint    "#cef3d2")
-      (bg-added-refine   "#a0d0c0")
+      (bg-added-refine   "#a4d4c4")
       (fg-added          "#0f443f")
 
       (bg-changed        "#f5e690")
       (bg-changed-faint  "#f5edaf")
-      (bg-changed-refine "#edd082")
+      (bg-changed-refine "#eed284")
       (fg-changed        "#553d00")
 
       (bg-removed        "#f8c3bf")
       (bg-removed-faint  "#fed8d0")
-      (bg-removed-refine "#f0a0b9")
+      (bg-removed-refine "#f9a8bd")
       (fg-removed        "#801530")
 
 ;;; Graphs
@@ -138,7 +138,7 @@
       (fg-mode-line       "#523044")
       (bg-completion      "#efc7d8")
       (bg-hover           "#ddc97f")
-      (bg-hover-secondary "#d4d4da")
+      (bg-hover-secondary "#d0c4e4")
       (bg-hl-line         "#e7d9e0")
       (bg-paren           "#bf9fbf")
       (bg-err             "#ffc4d4") ; check with err

@@ -93,18 +93,18 @@
       (bg-magenta-intense "#b05fcf")
       (bg-cyan-intense    "#0280b9")
 
-      (bg-red-subtle      "#6a102a")
-      (bg-green-subtle    "#00522a")
-      (bg-yellow-subtle   "#5a4000")
-      (bg-blue-subtle     "#243788")
-      (bg-magenta-subtle  "#422e6b")
-      (bg-cyan-subtle     "#005065")
+      (bg-red-subtle      "#6a192f")
+      (bg-green-subtle    "#2f502f")
+      (bg-yellow-subtle   "#5a4020")
+      (bg-blue-subtle     "#3a3980")
+      (bg-magenta-subtle  "#553977")
+      (bg-cyan-subtle     "#305060")
 
 ;;; Diffs
 
       (bg-added          "#304a4f")
       (bg-added-faint    "#16383f")
-      (bg-added-refine   "#336f6f")
+      (bg-added-refine   "#2f6767")
       (fg-added          "#a0d0f0")
 
       (bg-changed        "#51512f")
@@ -114,7 +114,7 @@
 
       (bg-removed        "#5a3142")
       (bg-removed-faint  "#4a2034")
-      (bg-removed-refine "#772a4b")
+      (bg-removed-refine "#782a4a")
       (fg-removed        "#f0bfcf")
 
 ;;; Graphs
