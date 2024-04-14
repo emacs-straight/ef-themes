@@ -55,7 +55,7 @@
       (fg-alt      "#55447f")
 
       (bg-active   "#b9aaa8")
-      (bg-inactive "#f1e4da")
+      (bg-inactive "#ede4da")
 
 ;;; Basic hues for foreground values
 
@@ -219,7 +219,7 @@
 ;;;; Prose mappings
 
       (prose-code blue-warmer)
-      (prose-done cyan-warmer)
+      (prose-done cyan-cooler)
       (prose-macro green-cooler)
       (prose-metadata fg-dim)
       (prose-metadata-value fg-alt)
