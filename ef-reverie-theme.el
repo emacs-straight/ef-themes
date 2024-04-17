@@ -86,24 +86,24 @@
 
 ;;; Basic hues for background values
 
-      (bg-red-intense     "#ff8f88")
-      (bg-green-intense   "#96df80")
-      (bg-yellow-intense  "#efbf00")
-      (bg-blue-intense    "#cfceff")
-      (bg-magenta-intense "#df9fff")
-      (bg-cyan-intense    "#88cfd0")
+      (bg-red-intense     "#ed899f")
+      (bg-green-intense   "#96d080")
+      (bg-yellow-intense  "#e2b270")
+      (bg-blue-intense    "#c0c0f0")
+      (bg-magenta-intense "#daaaf0")
+      (bg-cyan-intense    "#8fc6d0")
 
-      (bg-red-subtle      "#f5c6bf")
-      (bg-green-subtle    "#c0e3c0")
-      (bg-yellow-subtle   "#ede28f")
-      (bg-blue-subtle     "#ccd9f4")
-      (bg-magenta-subtle  "#f0d0f0")
-      (bg-cyan-subtle     "#bfeae0")
+      (bg-red-subtle      "#f0c0b0")
+      (bg-green-subtle    "#b9e0b4")
+      (bg-yellow-subtle   "#ebe08f")
+      (bg-blue-subtle     "#ccd0f4")
+      (bg-magenta-subtle  "#edc9ea")
+      (bg-cyan-subtle     "#b3e8e0")
 
 ;;; Diffs
 
-      (bg-added          "#b7ecd0")
-      (bg-added-faint    "#cef3d2")
+      (bg-added          "#b4e9d0")
+      (bg-added-faint    "#c9edd7")
       (bg-added-refine   "#a4d4c4")
       (fg-added          "#0f443f")
 
@@ -113,7 +113,7 @@
       (fg-changed        "#553d00")
 
       (bg-removed        "#f8c3bf")
-      (bg-removed-faint  "#fed8d0")
+      (bg-removed-faint  "#f4d8d0")
       (bg-removed-refine "#f9a8bd")
       (fg-removed        "#801530")
 
@@ -136,7 +136,7 @@
 
       (bg-mode-line       "#d1b0df")
       (fg-mode-line       "#523044")
-      (bg-completion      "#efc7d8")
+      (bg-completion      "#e9cedd")
       (bg-hover           "#ddc97f")
       (bg-hover-secondary "#d0c4e4")
       (bg-hl-line         "#e7d9e0")
@@ -146,7 +146,7 @@
       (bg-info            "#dddef0") ; check with info
 
       (border        "#c5afb6")
-      (cursor        "#a06052")
+      (cursor        "#9d5744")
       (fg-intense    "#000000")
 
       (modeline-err     "#900000")
@@ -195,12 +195,12 @@
       (type green-faint)
       (variable magenta)
       (rx-escape cyan-cooler) ; compare with `string'
-      (rx-construct red-cooler)
+      (rx-construct red-warmer)
 
 ;;;; Accent mappings
 
       (accent-0 yellow)
-      (accent-1 red-cooler)
+      (accent-1 red)
       (accent-2 magenta-warmer)
       (accent-3 blue-warmer)
 
