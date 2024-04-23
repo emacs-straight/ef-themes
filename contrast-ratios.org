@@ -595,7 +595,7 @@ overall design of the project.
 | yellow         | #805d00 |    5.57 |    4.93 |    4.07 |    5.26 |
 | yellow-warmer  | #965000 |    5.63 |    4.98 |    4.11 |    5.32 |
 | yellow-cooler  | #765040 |    6.48 |    5.74 |    4.73 |    6.13 |
-| yellow-faint   | #776d6a |    4.64 |    4.11 |    3.39 |    4.39 |
+| yellow-faint   | #77604a |    5.45 |    4.83 |    3.98 |    5.16 |
 | blue           | #375cd8 |    5.26 |    4.66 |    3.84 |    4.98 |
 | blue-warmer    | #4250ef |    5.35 |    4.73 |    3.91 |    5.06 |
 | blue-cooler    | #065fff |    4.74 |    4.20 |    3.46 |    4.48 |
@@ -1053,7 +1053,7 @@ a tone.  Blue is okay.
 | yellow         | #9a6012 |    4.91 |    4.25 |    3.78 |    4.60 |
 | yellow-warmer  | #b6530f |    4.70 |    4.08 |    3.62 |    4.41 |
 | yellow-cooler  | #a04646 |    5.75 |    4.99 |    4.43 |    5.40 |
-| yellow-faint   | #a65d6a |    4.53 |    3.93 |    3.49 |    4.25 |
+| yellow-faint   | #7a5f2f |    5.68 |    4.92 |    4.37 |    5.33 |
 | blue           | #3c3bbe |    7.77 |    6.74 |    5.98 |    7.29 |
 | blue-warmer    | #4250ef |    5.49 |    4.76 |    4.23 |    5.15 |
 | blue-cooler    | #065fff |    4.87 |    4.22 |    3.75 |    4.57 |
@@ -1313,7 +1313,7 @@ a tone.  Blue is okay.
 | yellow         | #e4b53f |    7.55 |    6.12 |    4.63 |    6.82 |
 | yellow-warmer  | #ffa21f |    7.18 |    5.82 |    4.40 |    6.49 |
 | yellow-cooler  | #e7a06f |    6.64 |    5.38 |    4.07 |    6.00 |
-| yellow-faint   | #eac29f |    8.74 |    7.09 |    5.36 |    7.90 |
+| yellow-faint   | #eab780 |    7.96 |    6.45 |    4.88 |    7.20 |
 | blue           | #57aff6 |    6.10 |    4.94 |    3.74 |    5.51 |
 | blue-warmer    | #98bfff |    7.72 |    6.26 |    4.73 |    6.98 |
 | blue-cooler    | #62cfef |    8.04 |    6.51 |    4.93 |    7.27 |
@@ -1378,7 +1378,7 @@ a tone.  Blue is okay.
 | yellow         | #a46110 |    4.52 |    4.05 |    3.48 |    4.27 |
 | yellow-warmer  | #ba5205 |    4.52 |    4.05 |    3.48 |    4.26 |
 | yellow-cooler  | #946830 |    4.54 |    4.06 |    3.49 |    4.28 |
-| yellow-faint   | #92616a |    4.69 |    4.20 |    3.61 |    4.43 |
+| yellow-faint   | #7f6f1a |    4.64 |    4.15 |    3.56 |    4.37 |
 | blue           | #375cc6 |    5.54 |    4.96 |    4.26 |    5.22 |
 | blue-warmer    | #5f5fdf |    4.64 |    4.15 |    3.56 |    4.37 |
 | blue-cooler    | #265fbf |    5.60 |    5.01 |    4.30 |    5.28 |
@@ -1566,7 +1566,7 @@ a tone.  Blue is okay.
 | red-warmer     | #ff7f5f |    6.19 |    5.05 |    4.37 |    6.01 |
 | red-cooler     | #f0888f |    6.31 |    5.15 |    4.46 |    6.13 |
 | red-faint      | #e89f84 |    7.12 |    5.80 |    5.02 |    6.91 |
-| green          | #55cb56 |    7.36 |    6.01 |    5.20 |    7.16 |
+| green          | #5fbb5f |    6.41 |    5.23 |    4.53 |    6.23 |
 | green-warmer   | #8ad05a |    8.23 |    6.71 |    5.81 |    8.00 |
 | green-cooler   | #49d081 |    7.77 |    6.34 |    5.49 |    7.55 |
 | green-faint    | #9aba8b |    7.15 |    5.83 |    5.05 |    6.95 |

@@ -63,7 +63,7 @@
       (red-warmer      "#ff7f5f")
       (red-cooler      "#f0888f")
       (red-faint       "#e89f84")
-      (green           "#55cb56")
+      (green           "#5fbb5f")
       (green-warmer    "#8ad05a")
       (green-cooler    "#49d081")
       (green-faint     "#9aba8b")
@@ -172,7 +172,7 @@
       (warning yellow-warmer)
       (info green)
 
-      (link green)
+      (link green-cooler)
       (link-alt magenta-cooler)
       (name magenta-warmer)
       (keybind magenta-warmer)
@@ -185,7 +185,7 @@
 ;;;; Code mappings
 
       (builtin magenta-cooler)
-      (comment fg-dim)
+      (comment green-faint)
       (constant green-cooler)
       (fnname magenta-warmer)
       (keyword magenta)
@@ -237,7 +237,7 @@
       (mail-cite-3 yellow-cooler)
       (mail-part magenta-cooler)
       (mail-recipient magenta)
-      (mail-subject green-cooler)
+      (mail-subject green)
       (mail-other magenta-warmer)
 
 ;;;; Search mappings
