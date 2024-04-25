@@ -74,7 +74,7 @@
       (blue            "#375cc6")
       (blue-warmer     "#5059c0")
       (blue-cooler     "#265fbf")
-      (blue-faint      "#4a659f")
+      (blue-faint      "#475d8e")
       (magenta         "#9f4e74")
       (magenta-warmer  "#a73080")
       (magenta-cooler  "#7755b4")
@@ -185,7 +185,7 @@
 ;;;; Code mappings
 
       (builtin magenta-faint)
-      (comment fg-dim)
+      (comment blue-faint)
       (constant blue-warmer)
       (fnname cyan-warmer)
       (keyword yellow-cooler)
