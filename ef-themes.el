@@ -63,6 +63,7 @@
     ef-day
     ef-deuteranopia-light
     ef-duo-light
+    ef-eagle
     ef-elea-light
     ef-frost
     ef-kassio
@@ -88,6 +89,7 @@
     ef-maris-dark
     ef-melissa-dark
     ef-night
+    ef-owl
     ef-rosa
     ef-symbiosis
     ef-trio-dark

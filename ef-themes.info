@@ -1,4 +1,4 @@
-This is docUUUnlN.info, produced by makeinfo version 6.8 from
+This is docvOKXAm.info, produced by makeinfo version 6.8 from
 ef-themes.texi.
 
 Copyright (C) 2022-2023 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docUUUnlN.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docvOKXAm.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 ef-themes: colorful and legible themes
 **************************************
@@ -143,7 +143,7 @@ Indices
 
 
 
-File: docUUUnlN.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docvOKXAm.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -154,7 +154,7 @@ File: docUUUnlN.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: docUUUnlN.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docvOKXAm.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -173,7 +173,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: docUUUnlN.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docvOKXAm.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -200,7 +200,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: docUUUnlN.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
+File: docvOKXAm.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -253,7 +253,7 @@ File: docUUUnlN.info,  Node: Sample configuration,  Next: Themes for red-green o
      ;; - `ef-themes-preview-colors-current'
 
 
-File: docUUUnlN.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customization options,  Prev: Sample configuration,  Up: Top
+File: docvOKXAm.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customization options,  Prev: Sample configuration,  Up: Top
 
 3 Themes for red-green or blue-yellow color deficiency
 ******************************************************
@@ -272,7 +272,7 @@ themes that are optimized for such cases.  The names of the themes are:
    *note Loading a theme::.
 
 
-File: docUUUnlN.info,  Node: Customization options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
+File: docvOKXAm.info,  Node: Customization options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
 
 4 Customization options
 ***********************
@@ -296,7 +296,7 @@ Principles.).
 * Stylistic variants using palette overrides::
 
 
-File: docUUUnlN.info,  Node: Disable other themes,  Next: Toggle between two Ef themes,  Up: Customization options
+File: docvOKXAm.info,  Node: Disable other themes,  Next: Toggle between two Ef themes,  Up: Customization options
 
 4.1 Disable other themes
 ========================
@@ -319,7 +319,7 @@ customizations.  Users who use such customization bundles must set this
 variable to a nil value.
 
 
-File: docUUUnlN.info,  Node: Toggle between two Ef themes,  Next: Enable mixed fonts,  Prev: Disable other themes,  Up: Customization options
+File: docvOKXAm.info,  Node: Toggle between two Ef themes,  Next: Enable mixed fonts,  Prev: Disable other themes,  Up: Customization options
 
 4.2 Toggle between two Ef themes
 ================================
@@ -340,7 +340,7 @@ either with minibuffer completion or at random (*note Commands to load
 an Ef theme::).
 
 
-File: docUUUnlN.info,  Node: Enable mixed fonts,  Next: UI typeface,  Prev: Toggle between two Ef themes,  Up: Customization options
+File: docvOKXAm.info,  Node: Enable mixed fonts,  Next: UI typeface,  Prev: Toggle between two Ef themes,  Up: Customization options
 
 4.3 Enable mixed fonts
 ======================
@@ -369,7 +369,7 @@ family of the ‘fixed-pitch’ and ‘variable-pitch’ faces.  The ‘fontaine
 package on GNU ELPA (by Protesilaos) can be helpful in this regard.
 
 
-File: docUUUnlN.info,  Node: UI typeface,  Next: Option for headings,  Prev: Enable mixed fonts,  Up: Customization options
+File: docvOKXAm.info,  Node: UI typeface,  Next: Option for headings,  Prev: Enable mixed fonts,  Up: Customization options
 
 4.4 UI typeface
 ===============
@@ -393,7 +393,7 @@ family of the ‘fixed-pitch’ and ‘variable-pitch’ faces.  The ‘fontaine
 package on GNU ELPA (by Protesilaos) can be helpful in this regard.
 
 
-File: docUUUnlN.info,  Node: Option for headings,  Next: Palette overrides,  Prev: UI typeface,  Up: Customization options
+File: docvOKXAm.info,  Node: Option for headings,  Next: Palette overrides,  Prev: UI typeface,  Up: Customization options
 
 4.5 Option for headings
 =======================
@@ -480,7 +480,7 @@ This will retain the original aesthetic for that level.  For example:
              (t . t))) ; default style for all unspecified levels
 
 
-File: docUUUnlN.info,  Node: Palette overrides,  Next: Stylistic variants using palette overrides,  Prev: Option for headings,  Up: Customization options
+File: docvOKXAm.info,  Node: Palette overrides,  Next: Stylistic variants using palette overrides,  Prev: Option for headings,  Up: Customization options
 
 4.6 Palette overrides
 =====================
@@ -503,6 +503,8 @@ Overrides are either shared, by being stored in the user option
 they name.  In the latter case, the naming scheme of each palette
 variable is ‘THEME-NAME-palette-overrides’, thus yielding:
 
+   • ‘ef-arbutus-palette-overrides’
+
    • ‘ef-autumn-palette-overrides’
 
    • ‘ef-bio-palette-overrides’
@@ -519,9 +521,17 @@ variable is ‘THEME-NAME-palette-overrides’, thus yielding:
 
    • ‘ef-deuteranopia-light-palette-overrides’
 
+   • ‘ef-dream-palette-overrides’
+
    • ‘ef-duo-dark-palette-overrides’
 
    • ‘ef-duo-light-palette-overrides’
+
+   • ‘ef-eagle-palette-overrides’ [ Part of 1.8.0-dev.  ]
+
+   • ‘ef-elea-dark-palette-overrides’
+
+   • ‘ef-elea-light-palette-overrides’
 
    • ‘ef-frost-palette-overrides’
 
@@ -529,7 +539,21 @@ variable is ‘THEME-NAME-palette-overrides’, thus yielding:
 
    • ‘ef-light-palette-overrides’
 
+   • ‘ef-maris-dark-palette-overrides’
+
+   • ‘ef-maris-light-palette-overrides’
+
+   • ‘ef-melissa-dark-palette-overrides’
+
+   • ‘ef-melissa-light-palette-overrides’
+
    • ‘ef-night-palette-overrides’
+
+   • ‘ef-owl-palette-overrides’ [ Part of 1.8.0-dev.  ]
+
+   • ‘ef-reverie-palette-overrides’
+
+   • ‘ef-rosa-palette-overrides’
 
    • ‘ef-spring-palette-overrides’
 
@@ -637,7 +661,7 @@ top of the buffer.  In the above example, the first instance of
 ‘blue-warmer’ is the override and the second is the original one.
 
 
-File: docUUUnlN.info,  Node: Stylistic variants using palette overrides,  Prev: Palette overrides,  Up: Customization options
+File: docvOKXAm.info,  Node: Stylistic variants using palette overrides,  Prev: Palette overrides,  Up: Customization options
 
 4.7 Stylistic variants using palette overrides
 ==============================================
@@ -653,7 +677,7 @@ the call that loads the theme.
 * Make the region more intense::
 
 
-File: docUUUnlN.info,  Node: Make the region more intense,  Up: Stylistic variants using palette overrides
+File: docvOKXAm.info,  Node: Make the region more intense,  Up: Stylistic variants using palette overrides
 
 4.7.1 Make the region more intense
 ----------------------------------
@@ -691,7 +715,7 @@ intense.
              (fg-region fg-main)))
 
 
-File: docUUUnlN.info,  Node: Loading a theme,  Next: Commands to load an Ef theme,  Prev: Customization options,  Up: Top
+File: docvOKXAm.info,  Node: Loading a theme,  Next: Commands to load an Ef theme,  Prev: Customization options,  Up: Top
 
 5 Loading a theme
 *****************
@@ -723,7 +747,7 @@ theme::).  For example:
      (ef-themes-select 'ef-summer)
 
 
-File: docUUUnlN.info,  Node: Commands to load an Ef theme,  Next: Preview theme colors,  Prev: Loading a theme,  Up: Top
+File: docvOKXAm.info,  Node: Commands to load an Ef theme,  Next: Preview theme colors,  Prev: Loading a theme,  Up: Top
 
 6 Commands to load an Ef theme
 ******************************
@@ -798,7 +822,7 @@ a light/dark theme and then loads an appropriate Ef theme at random:
        (ef-themes-load-random 'light))
 
 
-File: docUUUnlN.info,  Node: Preview theme colors,  Next: Use colors from the active Ef theme,  Prev: Commands to load an Ef theme,  Up: Top
+File: docvOKXAm.info,  Node: Preview theme colors,  Next: Use colors from the active Ef theme,  Prev: Commands to load an Ef theme,  Up: Top
 
 7 Preview theme colors
 **********************
@@ -832,7 +856,7 @@ contents are, such as ‘*ef-summer-list-colors*’ for named colors and
 ‘*ef-summer-list-mappings*’ for the semantic color mappings.
 
 
-File: docUUUnlN.info,  Node: Use colors from the active Ef theme,  Next: Do-It-Yourself customizations,  Prev: Preview theme colors,  Up: Top
+File: docvOKXAm.info,  Node: Use colors from the active Ef theme,  Next: Do-It-Yourself customizations,  Prev: Preview theme colors,  Up: Top
 
 8 Use colors from the active Ef theme
 *************************************
@@ -861,7 +885,7 @@ color mapping are still possible.  At any rate, we will not outright
 break any code that uses ‘ef-themes-with-colors’.
 
 
-File: docUUUnlN.info,  Node: Do-It-Yourself customizations,  Next: Faces defined by the Ef themes,  Prev: Use colors from the active Ef theme,  Up: Top
+File: docvOKXAm.info,  Node: Do-It-Yourself customizations,  Next: Faces defined by the Ef themes,  Prev: Use colors from the active Ef theme,  Up: Top
 
 9 Do-It-Yourself customizations
 *******************************
@@ -882,7 +906,7 @@ their liking.
 * Tweak goto-address-mode faces::
 
 
-File: docUUUnlN.info,  Node: Get a single color from the palette,  Next: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: Get a single color from the palette,  Next: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
 
 9.1 Get a single color from the palette
 =======================================
@@ -936,7 +960,7 @@ with/without overrides and when recursive mappings are introduced.
      ;; => "#d3303a"
 
 
-File: docUUUnlN.info,  Node: The general approach to advanced DIY changes,  Next: A theme-agnostic hook for theme loading,  Prev: Get a single color from the palette,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: The general approach to advanced DIY changes,  Next: A theme-agnostic hook for theme loading,  Prev: Get a single color from the palette,  Up: Do-It-Yourself customizations
 
 9.2 The general approach to advanced DIY changes
 ================================================
@@ -1023,7 +1047,7 @@ mechanism.  We are willing to help and shall provide comprehensive
 documentation where necessary.
 
 
-File: docUUUnlN.info,  Node: A theme-agnostic hook for theme loading,  Next: Do not extend the region background,  Prev: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: A theme-agnostic hook for theme loading,  Next: Do not extend the region background,  Prev: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
 
 9.3 A theme-agnostic hook for theme loading
 ===========================================
@@ -1074,7 +1098,7 @@ the user can replace it with ‘after-enable-theme-hook’ should they need
 to (provided they understand the implications).
 
 
-File: docUUUnlN.info,  Node: Do not extend the region background,  Next: Add support for hl-todo,  Prev: A theme-agnostic hook for theme loading,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: Do not extend the region background,  Next: Add support for hl-todo,  Prev: A theme-agnostic hook for theme loading,  Up: Do-It-Yourself customizations
 
 9.4 Do not extend the region background
 =======================================
@@ -1091,7 +1115,7 @@ to the Emacs configuration file will suffice:
    *note Make the region more intense::.
 
 
-File: docUUUnlN.info,  Node: Add support for hl-todo,  Next: Make the mode line like the modus-themes default,  Prev: Do not extend the region background,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: Add support for hl-todo,  Next: Make the mode line like the modus-themes default,  Prev: Do not extend the region background,  Up: Do-It-Yourself customizations
 
 9.5 Add support for hl-todo
 ===========================
@@ -1135,7 +1159,7 @@ method.
 commands for previewing the palette (*note Preview theme colors::).
 
 
-File: docUUUnlN.info,  Node: Make the mode line like the modus-themes default,  Next: Configure bold and italic faces,  Prev: Add support for hl-todo,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: Make the mode line like the modus-themes default,  Next: Configure bold and italic faces,  Prev: Add support for hl-todo,  Up: Do-It-Yourself customizations
 
 9.6 Make the mode line like the ‘modus-themes’ default
 ======================================================
@@ -1169,7 +1193,7 @@ snippet:
      `(mode-line ((,c :background ,bg-mode-line :foreground ,fg-mode-line :box (:line-width 1 :color ,fg-dim))))
 
 
-File: docUUUnlN.info,  Node: Configure bold and italic faces,  Next: Tweak org-modern timestamps,  Prev: Make the mode line like the modus-themes default,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: Configure bold and italic faces,  Next: Tweak org-modern timestamps,  Prev: Make the mode line like the modus-themes default,  Up: Do-It-Yourself customizations
 
 9.7 Configure bold and italic faces
 ===================================
@@ -1221,7 +1245,7 @@ pick fonts that work in tandem):
 provides the means to configure font families via faces.
 
 
-File: docUUUnlN.info,  Node: Tweak org-modern timestamps,  Next: Tweak goto-address-mode faces,  Prev: Configure bold and italic faces,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: Tweak org-modern timestamps,  Next: Tweak goto-address-mode faces,  Prev: Configure bold and italic faces,  Up: Do-It-Yourself customizations
 
 9.8 Tweak ‘org-modern’ timestamps
 =================================
@@ -1251,7 +1275,7 @@ further trouble (*note Enable mixed fonts::).
    For any further issues, you are welcome to ask for help.
 
 
-File: docUUUnlN.info,  Node: Tweak goto-address-mode faces,  Prev: Tweak org-modern timestamps,  Up: Do-It-Yourself customizations
+File: docvOKXAm.info,  Node: Tweak goto-address-mode faces,  Prev: Tweak org-modern timestamps,  Up: Do-It-Yourself customizations
 
 9.9 Tweak goto-address-mode faces
 =================================
@@ -1276,7 +1300,7 @@ addresses stand out more, due to the use of the uncommon ‘@’ caharacter
 but also because they are often enclosed in angled brackets).
 
 
-File: docUUUnlN.info,  Node: Faces defined by the Ef themes,  Next: Supported packages or face groups,  Prev: Do-It-Yourself customizations,  Up: Top
+File: docvOKXAm.info,  Node: Faces defined by the Ef themes,  Next: Supported packages or face groups,  Prev: Do-It-Yourself customizations,  Up: Top
 
 10 Faces defined by the Ef themes
 *********************************
@@ -1311,7 +1335,7 @@ packages, like Dired, Trashed, Ibuffer.
    • ‘ef-themes-underline-warning’
 
 
-File: docUUUnlN.info,  Node: Supported packages or face groups,  Next: Principles,  Prev: Faces defined by the Ef themes,  Up: Top
+File: docvOKXAm.info,  Node: Supported packages or face groups,  Next: Principles,  Prev: Faces defined by the Ef themes,  Up: Top
 
 11 Supported packages or face groups
 ************************************
@@ -1328,7 +1352,7 @@ already covers everything most users need.
 * Packages that are hard to support::
 
 
-File: docUUUnlN.info,  Node: Explicitly supported packages or face groups,  Next: Implicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docvOKXAm.info,  Node: Explicitly supported packages or face groups,  Next: Implicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.1 Explicitly supported packages or face groups
 =================================================
@@ -1466,7 +1490,7 @@ File: docUUUnlN.info,  Node: Explicitly supported packages or face groups,  Next
    • ztree
 
 
-File: docUUUnlN.info,  Node: Implicitly supported packages or face groups,  Next: Packages that are hard to support,  Prev: Explicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docvOKXAm.info,  Node: Implicitly supported packages or face groups,  Next: Packages that are hard to support,  Prev: Explicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.2 Implicitly supported packages or face groups
 =================================================
@@ -1492,7 +1516,7 @@ in perfectly.  If there are refinements we need to made, then we need to
 intervene (*note Explicitly supported packages or face groups::).
 
 
-File: docUUUnlN.info,  Node: Packages that are hard to support,  Prev: Implicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docvOKXAm.info,  Node: Packages that are hard to support,  Prev: Implicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.3 Packages that are hard to support
 ======================================
@@ -1560,7 +1584,7 @@ web-mode
    The above list is non-exhaustive though you get the idea.
 
 
-File: docUUUnlN.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages or face groups,  Up: Top
+File: docvOKXAm.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages or face groups,  Up: Top
 
 12 Principles
 *************
@@ -1604,7 +1628,7 @@ File: docUUUnlN.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages o
 * Minimal VS maximal scope::
 
 
-File: docUUUnlN.info,  Node: Minimal VS maximal scope,  Up: Principles
+File: docvOKXAm.info,  Node: Minimal VS maximal scope,  Up: Principles
 
 12.1 Minimal VS maximal scope
 =============================
@@ -1623,7 +1647,7 @@ necessity.  The ‘modus-themes’ are such because:
 have such a lofty accessibility target.
 
 
-File: docUUUnlN.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  Up: Top
+File: docvOKXAm.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  Up: Top
 
 13 FAQ
 ******
@@ -1639,7 +1663,7 @@ File: docUUUnlN.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  U
 * Add something like Nord or Zenburn?::
 
 
-File: docUUUnlN.info,  Node: What does Ef mean?,  Next: Will you stop using the modus-themes?,  Up: FAQ
+File: docvOKXAm.info,  Node: What does Ef mean?,  Next: Will you stop using the modus-themes?,  Up: FAQ
 
 13.1 What does Ef mean?
 =======================
@@ -1649,7 +1673,7 @@ good, nice, and/or easy.  For example, eftopia (ευτοπία) is the opposite
 of dystopia (δυστοπία): a good place as opposed to a bad place.
 
 
-File: docUUUnlN.info,  Node: Will you stop using the modus-themes?,  Next: Then why develop the ef-themes?,  Prev: What does Ef mean?,  Up: FAQ
+File: docvOKXAm.info,  Node: Will you stop using the modus-themes?,  Next: Then why develop the ef-themes?,  Prev: What does Ef mean?,  Up: FAQ
 
 13.2 Will you stop using the modus-themes?
 ==========================================
@@ -1658,7 +1682,7 @@ No.  For my workflow, accessibility is the most important quality.  The
 ‘modus-themes’ will remain my default choice.
 
 
-File: docUUUnlN.info,  Node: Then why develop the ef-themes?,  Next: Difference between ef-themes and modus-themes?,  Prev: Will you stop using the modus-themes?,  Up: FAQ
+File: docvOKXAm.info,  Node: Then why develop the ef-themes?,  Next: Difference between ef-themes and modus-themes?,  Prev: Will you stop using the modus-themes?,  Up: FAQ
 
 13.3 Then why develop the ef-themes?
 ====================================
@@ -1671,7 +1695,7 @@ considerations for legibility, and (ii) are not designed on a whimsy.
 fine with a bit more relaxed accessibility target.
 
 
-File: docUUUnlN.info,  Node: Difference between ef-themes and modus-themes?,  Next: Too many options what should I do?,  Prev: Then why develop the ef-themes?,  Up: FAQ
+File: docvOKXAm.info,  Node: Difference between ef-themes and modus-themes?,  Next: Too many options what should I do?,  Prev: Then why develop the ef-themes?,  Up: FAQ
 
 13.4 Difference between ef-themes and modus-themes?
 ===================================================
@@ -1735,7 +1759,7 @@ pay attention.  In short: I am not picking random colors and
 implementing them on a whimsy.  Theme development is not easy.
 
 
-File: docUUUnlN.info,  Node: Too many options what should I do?,  Next: Let Org tags inherit the heading color?,  Prev: Difference between ef-themes and modus-themes?,  Up: FAQ
+File: docvOKXAm.info,  Node: Too many options what should I do?,  Next: Let Org tags inherit the heading color?,  Prev: Difference between ef-themes and modus-themes?,  Up: FAQ
 
 13.5 Too many options, what should I do?
 ========================================
@@ -1748,7 +1772,7 @@ tweaks to toggle between those two and don’t worry anymore about the
 abundance of choice (*note Toggle between two Ef themes::).  Good luck!
 
 
-File: docUUUnlN.info,  Node: Let Org tags inherit the heading color?,  Next: Add something like Nord or Zenburn?,  Prev: Too many options what should I do?,  Up: FAQ
+File: docvOKXAm.info,  Node: Let Org tags inherit the heading color?,  Next: Add something like Nord or Zenburn?,  Prev: Too many options what should I do?,  Up: FAQ
 
 13.6 Let Org tags inherit the heading color?
 ============================================
@@ -1781,7 +1805,7 @@ Realigning tags by inserting spaces also creates noise in
 version-controlled files, which is undesirable.
 
 
-File: docUUUnlN.info,  Node: Add something like Nord or Zenburn?,  Prev: Let Org tags inherit the heading color?,  Up: FAQ
+File: docvOKXAm.info,  Node: Add something like Nord or Zenburn?,  Prev: Let Org tags inherit the heading color?,  Up: FAQ
 
 13.7 Add something like Nord or Zenburn?
 ========================================
@@ -1810,7 +1834,7 @@ compromises and sub-optimal choices, which make no sense for a project
 with opinionanted design principles.
 
 
-File: docUUUnlN.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: FAQ,  Up: Top
+File: docvOKXAm.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: FAQ,  Up: Top
 
 14 Acknowledgements
 *******************
@@ -1834,7 +1858,7 @@ Ideas and/or user feedback
      marasenna, newhallroad.
 
 
-File: docUUUnlN.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docvOKXAm.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 15 GNU Free Documentation License
 *********************************
@@ -2316,7 +2340,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docUUUnlN.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docvOKXAm.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 16 Indices
 **********
@@ -2328,7 +2352,7 @@ File: docUUUnlN.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up
 * Concept index::
 
 
-File: docUUUnlN.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docvOKXAm.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 16.1 Function index
 ===================
@@ -2356,7 +2380,7 @@ File: docUUUnlN.info,  Node: Function index,  Next: Variable index,  Up: Indices
                                                                (line  6)
 
 
-File: docUUUnlN.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docvOKXAm.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 16.2 Variable index
 ===================
@@ -2364,23 +2388,35 @@ File: docUUUnlN.info,  Node: Variable index,  Next: Concept index,  Prev: Functi
  [index ]
 * Menu:
 
-* ef-autumn-palette-overrides:           Palette overrides.    (line 24)
-* ef-bio-palette-overrides:              Palette overrides.    (line 26)
-* ef-cherie-palette-overrides:           Palette overrides.    (line 28)
-* ef-cyprus-palette-overrides:           Palette overrides.    (line 30)
-* ef-dark-palette-overrides:             Palette overrides.    (line 32)
-* ef-day-palette-overrides:              Palette overrides.    (line 34)
-* ef-deuteranopia-dark-palette-overrides: Palette overrides.   (line 36)
-* ef-deuteranopia-light-palette-overrides: Palette overrides.  (line 38)
-* ef-duo-dark-palette-overrides:         Palette overrides.    (line 40)
-* ef-duo-light-palette-overrides:        Palette overrides.    (line 42)
-* ef-frost-palette-overrides:            Palette overrides.    (line 44)
-* ef-kassio-palette-overrides:           Palette overrides.    (line 46)
-* ef-light-palette-overrides:            Palette overrides.    (line 48)
-* ef-night-palette-overrides:            Palette overrides.    (line 50)
-* ef-spring-palette-overrides:           Palette overrides.    (line 52)
-* ef-summer-palette-overrides:           Palette overrides.    (line 54)
-* ef-symbiosis-palette-overrides:        Palette overrides.    (line 56)
+* ef-arbutus-palette-overrides:          Palette overrides.    (line 24)
+* ef-autumn-palette-overrides:           Palette overrides.    (line 26)
+* ef-bio-palette-overrides:              Palette overrides.    (line 28)
+* ef-cherie-palette-overrides:           Palette overrides.    (line 30)
+* ef-cyprus-palette-overrides:           Palette overrides.    (line 32)
+* ef-dark-palette-overrides:             Palette overrides.    (line 34)
+* ef-day-palette-overrides:              Palette overrides.    (line 36)
+* ef-deuteranopia-dark-palette-overrides: Palette overrides.   (line 38)
+* ef-deuteranopia-light-palette-overrides: Palette overrides.  (line 40)
+* ef-dream-palette-overrides:            Palette overrides.    (line 42)
+* ef-duo-dark-palette-overrides:         Palette overrides.    (line 44)
+* ef-duo-light-palette-overrides:        Palette overrides.    (line 46)
+* ef-eagle-palette-overrides:            Palette overrides.    (line 48)
+* ef-elea-dark-palette-overrides:        Palette overrides.    (line 50)
+* ef-elea-light-palette-overrides:       Palette overrides.    (line 52)
+* ef-frost-palette-overrides:            Palette overrides.    (line 54)
+* ef-kassio-palette-overrides:           Palette overrides.    (line 56)
+* ef-light-palette-overrides:            Palette overrides.    (line 58)
+* ef-maris-dark-palette-overrides:       Palette overrides.    (line 60)
+* ef-maris-light-palette-overrides:      Palette overrides.    (line 62)
+* ef-melissa-dark-palette-overrides:     Palette overrides.    (line 64)
+* ef-melissa-light-palette-overrides:    Palette overrides.    (line 66)
+* ef-night-palette-overrides:            Palette overrides.    (line 68)
+* ef-owl-palette-overrides:              Palette overrides.    (line 70)
+* ef-reverie-palette-overrides:          Palette overrides.    (line 72)
+* ef-rosa-palette-overrides:             Palette overrides.    (line 74)
+* ef-spring-palette-overrides:           Palette overrides.    (line 76)
+* ef-summer-palette-overrides:           Palette overrides.    (line 78)
+* ef-symbiosis-palette-overrides:        Palette overrides.    (line 80)
 * ef-themes-common-palette-overrides:    Palette overrides.    (line 18)
 * ef-themes-disable-other-themes:        Disable other themes. (line  6)
 * ef-themes-headings:                    Option for headings.  (line  6)
@@ -2390,14 +2426,14 @@ File: docUUUnlN.info,  Node: Variable index,  Next: Concept index,  Prev: Functi
 * ef-themes-to-toggle:                   Toggle between two Ef themes.
                                                                (line  6)
 * ef-themes-variable-pitch-ui:           UI typeface.          (line  6)
-* ef-trio-dark-palette-overrides:        Palette overrides.    (line 58)
-* ef-trio-light-palette-overrides:       Palette overrides.    (line 60)
-* ef-tritanopia-dark-palette-overrides:  Palette overrides.    (line 62)
-* ef-tritanopia-light-palette-overrides: Palette overrides.    (line 64)
-* ef-winter-palette-overrides:           Palette overrides.    (line 66)
+* ef-trio-dark-palette-overrides:        Palette overrides.    (line 82)
+* ef-trio-light-palette-overrides:       Palette overrides.    (line 84)
+* ef-tritanopia-dark-palette-overrides:  Palette overrides.    (line 86)
+* ef-tritanopia-light-palette-overrides: Palette overrides.    (line 88)
+* ef-winter-palette-overrides:           Palette overrides.    (line 90)
 
 
-File: docUUUnlN.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docvOKXAm.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 16.3 Concept index
 ==================
@@ -2428,43 +2464,43 @@ Node: Enable mixed fonts11494
 Node: UI typeface12870
 Node: Option for headings13806
 Node: Palette overrides17482
-Node: Stylistic variants using palette overrides22655
-Node: Make the region more intense23234
-Node: Loading a theme24713
-Node: Commands to load an Ef theme25909
-Node: Preview theme colors29297
-Node: Use colors from the active Ef theme30807
-Node: Do-It-Yourself customizations32018
-Node: Get a single color from the palette32690
-Node: The general approach to advanced DIY changes34717
-Node: A theme-agnostic hook for theme loading38786
-Node: Do not extend the region background41332
-Node: Add support for hl-todo42037
-Node: Make the mode line like the modus-themes default43950
-Node: Configure bold and italic faces45520
-Node: Tweak org-modern timestamps47947
-Node: Tweak goto-address-mode faces49334
-Node: Faces defined by the Ef themes50435
-Node: Supported packages or face groups51705
-Node: Explicitly supported packages or face groups52311
-Node: Implicitly supported packages or face groups55107
-Node: Packages that are hard to support55973
-Node: Principles58110
-Node: Minimal VS maximal scope60120
-Node: FAQ60879
-Node: What does Ef mean?61305
-Node: Will you stop using the modus-themes?61693
-Node: Then why develop the ef-themes?62050
-Node: Difference between ef-themes and modus-themes?62639
-Node: Too many options what should I do?66155
-Node: Let Org tags inherit the heading color?66855
-Node: Add something like Nord or Zenburn?68678
-Node: Acknowledgements69972
-Node: GNU Free Documentation License70826
-Node: Indices96171
-Node: Function index96349
-Node: Variable index97810
-Node: Concept index100238
+Node: Stylistic variants using palette overrides23231
+Node: Make the region more intense23810
+Node: Loading a theme25289
+Node: Commands to load an Ef theme26485
+Node: Preview theme colors29873
+Node: Use colors from the active Ef theme31383
+Node: Do-It-Yourself customizations32594
+Node: Get a single color from the palette33266
+Node: The general approach to advanced DIY changes35293
+Node: A theme-agnostic hook for theme loading39362
+Node: Do not extend the region background41908
+Node: Add support for hl-todo42613
+Node: Make the mode line like the modus-themes default44526
+Node: Configure bold and italic faces46096
+Node: Tweak org-modern timestamps48523
+Node: Tweak goto-address-mode faces49910
+Node: Faces defined by the Ef themes51011
+Node: Supported packages or face groups52281
+Node: Explicitly supported packages or face groups52887
+Node: Implicitly supported packages or face groups55683
+Node: Packages that are hard to support56549
+Node: Principles58686
+Node: Minimal VS maximal scope60696
+Node: FAQ61455
+Node: What does Ef mean?61881
+Node: Will you stop using the modus-themes?62269
+Node: Then why develop the ef-themes?62626
+Node: Difference between ef-themes and modus-themes?63215
+Node: Too many options what should I do?66731
+Node: Let Org tags inherit the heading color?67431
+Node: Add something like Nord or Zenburn?69254
+Node: Acknowledgements70548
+Node: GNU Free Documentation License71402
+Node: Indices96747
+Node: Function index96925
+Node: Variable index98386
+Node: Concept index101690
 
 End Tag Table
 
