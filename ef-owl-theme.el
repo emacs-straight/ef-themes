@@ -71,14 +71,14 @@
       (yellow-warmer   "#d1a45f")
       (yellow-cooler   "#cf9f90")
       (yellow-faint    "#cbb0a0")
-      (blue            "#8fa4e5")
+      (blue            "#80a4e0")
       (blue-warmer     "#a0a0ef")
       (blue-cooler     "#72aff0")
       (blue-faint      "#aabae0")
       (magenta         "#e5a0ea")
       (magenta-warmer  "#d389af")
       (magenta-cooler  "#cfa0e8")
-      (magenta-faint   "#e0c0d7")
+      (magenta-faint   "#e5bbd7")
       (cyan            "#8fb8ea")
       (cyan-warmer     "#99bfd0")
       (cyan-cooler     "#7ac4b7")
@@ -186,8 +186,8 @@
 
       (builtin blue)
       (comment magenta-faint)
-      (constant green)
-      (fnname yellow-cooler)
+      (constant yellow-cooler)
+      (fnname green)
       (keyword cyan-warmer)
       (preprocessor cyan-cooler)
       (docstring green-faint)
@@ -218,7 +218,7 @@
 
 ;;;; Prose mappings
 
-      (prose-code magenta-warmer)
+      (prose-code green-warmer)
       (prose-done green)
       (prose-macro green-cooler)
       (prose-metadata fg-dim)
@@ -309,12 +309,12 @@
 
       (rainbow-0 green-cooler)
       (rainbow-1 blue)
-      (rainbow-2 magenta-warmer)
-      (rainbow-3 cyan-cooler)
+      (rainbow-2 cyan-cooler)
+      (rainbow-3 magenta-cooler)
       (rainbow-4 yellow-cooler)
-      (rainbow-5 magenta-cooler)
-      (rainbow-6 red-cooler)
-      (rainbow-7 green-warmer)
+      (rainbow-5 green-warmer)
+      (rainbow-6 magenta-warmer)
+      (rainbow-7 cyan-warmer)
       (rainbow-8 yellow))
     "The `ef-owl' palette.
 Color values have the form (COLOR-NAME HEX-VALUE) with the former
