@@ -1,4 +1,4 @@
-This is doc5CvPKw.info, produced by makeinfo version 6.8 from
+This is docv0S4K8.info, produced by makeinfo version 6.8 from
 ef-themes.texi.
 
 Copyright (C) 2022-2023 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: doc5CvPKw.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docv0S4K8.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 ef-themes: colorful and legible themes
 **************************************
@@ -43,11 +43,11 @@ package called ‘ef-themes’, and provides every other piece of
 information pertinent to it.
 
    The documentation furnished herein corresponds to stable version
-1.7.0, released on 2024-04-28.  Any reference to a newer feature which
+1.8.0, released on 2024-08-27.  Any reference to a newer feature which
 does not yet form part of the latest tagged commit, is explicitly marked
 as such.
 
-   Current development target is 1.8.0-dev.
+   Current development target is 1.9.0-dev.
 
    • Package name (GNU ELPA): ‘ef-themes’
    • Official manual: <https://protesilaos.com/emacs/ef-themes>
@@ -143,7 +143,7 @@ Indices
 
 
 
-File: doc5CvPKw.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docv0S4K8.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -154,7 +154,7 @@ File: doc5CvPKw.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: doc5CvPKw.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docv0S4K8.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -173,7 +173,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: doc5CvPKw.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docv0S4K8.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -200,7 +200,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: doc5CvPKw.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
+File: docv0S4K8.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -253,7 +253,7 @@ File: doc5CvPKw.info,  Node: Sample configuration,  Next: Themes for red-green o
      ;; - `ef-themes-preview-colors-current'
 
 
-File: doc5CvPKw.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customization options,  Prev: Sample configuration,  Up: Top
+File: docv0S4K8.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customization options,  Prev: Sample configuration,  Up: Top
 
 3 Themes for red-green or blue-yellow color deficiency
 ******************************************************
@@ -272,7 +272,7 @@ themes that are optimized for such cases.  The names of the themes are:
    *note Loading a theme::.
 
 
-File: doc5CvPKw.info,  Node: Customization options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
+File: docv0S4K8.info,  Node: Customization options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
 
 4 Customization options
 ***********************
@@ -296,7 +296,7 @@ Principles.).
 * Stylistic variants using palette overrides::
 
 
-File: doc5CvPKw.info,  Node: Disable other themes,  Next: Toggle between two Ef themes,  Up: Customization options
+File: docv0S4K8.info,  Node: Disable other themes,  Next: Toggle between two Ef themes,  Up: Customization options
 
 4.1 Disable other themes
 ========================
@@ -319,7 +319,7 @@ customizations.  Users who use such customization bundles must set this
 variable to a nil value.
 
 
-File: doc5CvPKw.info,  Node: Toggle between two Ef themes,  Next: Enable mixed fonts,  Prev: Disable other themes,  Up: Customization options
+File: docv0S4K8.info,  Node: Toggle between two Ef themes,  Next: Enable mixed fonts,  Prev: Disable other themes,  Up: Customization options
 
 4.2 Toggle between two Ef themes
 ================================
@@ -340,7 +340,7 @@ either with minibuffer completion or at random (*note Commands to load
 an Ef theme::).
 
 
-File: doc5CvPKw.info,  Node: Enable mixed fonts,  Next: UI typeface,  Prev: Toggle between two Ef themes,  Up: Customization options
+File: docv0S4K8.info,  Node: Enable mixed fonts,  Next: UI typeface,  Prev: Toggle between two Ef themes,  Up: Customization options
 
 4.3 Enable mixed fonts
 ======================
@@ -369,7 +369,7 @@ family of the ‘fixed-pitch’ and ‘variable-pitch’ faces.  The ‘fontaine
 package on GNU ELPA (by Protesilaos) can be helpful in this regard.
 
 
-File: doc5CvPKw.info,  Node: UI typeface,  Next: Option for headings,  Prev: Enable mixed fonts,  Up: Customization options
+File: docv0S4K8.info,  Node: UI typeface,  Next: Option for headings,  Prev: Enable mixed fonts,  Up: Customization options
 
 4.4 UI typeface
 ===============
@@ -393,7 +393,7 @@ family of the ‘fixed-pitch’ and ‘variable-pitch’ faces.  The ‘fontaine
 package on GNU ELPA (by Protesilaos) can be helpful in this regard.
 
 
-File: doc5CvPKw.info,  Node: Option for headings,  Next: Palette overrides,  Prev: UI typeface,  Up: Customization options
+File: docv0S4K8.info,  Node: Option for headings,  Next: Palette overrides,  Prev: UI typeface,  Up: Customization options
 
 4.5 Option for headings
 =======================
@@ -480,7 +480,7 @@ This will retain the original aesthetic for that level.  For example:
              (t . t))) ; default style for all unspecified levels
 
 
-File: doc5CvPKw.info,  Node: Palette overrides,  Next: Stylistic variants using palette overrides,  Prev: Option for headings,  Up: Customization options
+File: docv0S4K8.info,  Node: Palette overrides,  Next: Stylistic variants using palette overrides,  Prev: Option for headings,  Up: Customization options
 
 4.6 Palette overrides
 =====================
@@ -527,7 +527,7 @@ variable is ‘THEME-NAME-palette-overrides’, thus yielding:
 
    • ‘ef-duo-light-palette-overrides’
 
-   • ‘ef-eagle-palette-overrides’ [ Part of 1.8.0-dev.  ]
+   • ‘ef-eagle-palette-overrides’
 
    • ‘ef-elea-dark-palette-overrides’
 
@@ -549,7 +549,7 @@ variable is ‘THEME-NAME-palette-overrides’, thus yielding:
 
    • ‘ef-night-palette-overrides’
 
-   • ‘ef-owl-palette-overrides’ [ Part of 1.8.0-dev.  ]
+   • ‘ef-owl-palette-overrides’
 
    • ‘ef-reverie-palette-overrides’
 
@@ -661,7 +661,7 @@ top of the buffer.  In the above example, the first instance of
 ‘blue-warmer’ is the override and the second is the original one.
 
 
-File: doc5CvPKw.info,  Node: Stylistic variants using palette overrides,  Prev: Palette overrides,  Up: Customization options
+File: docv0S4K8.info,  Node: Stylistic variants using palette overrides,  Prev: Palette overrides,  Up: Customization options
 
 4.7 Stylistic variants using palette overrides
 ==============================================
@@ -677,7 +677,7 @@ the call that loads the theme.
 * Make the region more intense::
 
 
-File: doc5CvPKw.info,  Node: Make the region more intense,  Up: Stylistic variants using palette overrides
+File: docv0S4K8.info,  Node: Make the region more intense,  Up: Stylistic variants using palette overrides
 
 4.7.1 Make the region more intense
 ----------------------------------
@@ -715,7 +715,7 @@ intense.
              (fg-region fg-main)))
 
 
-File: doc5CvPKw.info,  Node: Loading a theme,  Next: Commands to load an Ef theme,  Prev: Customization options,  Up: Top
+File: docv0S4K8.info,  Node: Loading a theme,  Next: Commands to load an Ef theme,  Prev: Customization options,  Up: Top
 
 5 Loading a theme
 *****************
@@ -747,7 +747,7 @@ theme::).  For example:
      (ef-themes-select 'ef-summer)
 
 
-File: doc5CvPKw.info,  Node: Commands to load an Ef theme,  Next: Preview theme colors,  Prev: Loading a theme,  Up: Top
+File: docv0S4K8.info,  Node: Commands to load an Ef theme,  Next: Preview theme colors,  Prev: Loading a theme,  Up: Top
 
 6 Commands to load an Ef theme
 ******************************
@@ -822,7 +822,7 @@ a light/dark theme and then loads an appropriate Ef theme at random:
        (ef-themes-load-random 'light))
 
 
-File: doc5CvPKw.info,  Node: Preview theme colors,  Next: Use colors from the active Ef theme,  Prev: Commands to load an Ef theme,  Up: Top
+File: docv0S4K8.info,  Node: Preview theme colors,  Next: Use colors from the active Ef theme,  Prev: Commands to load an Ef theme,  Up: Top
 
 7 Preview theme colors
 **********************
@@ -856,7 +856,7 @@ contents are, such as ‘*ef-summer-list-colors*’ for named colors and
 ‘*ef-summer-list-mappings*’ for the semantic color mappings.
 
 
-File: doc5CvPKw.info,  Node: Use colors from the active Ef theme,  Next: Do-It-Yourself customizations,  Prev: Preview theme colors,  Up: Top
+File: docv0S4K8.info,  Node: Use colors from the active Ef theme,  Next: Do-It-Yourself customizations,  Prev: Preview theme colors,  Up: Top
 
 8 Use colors from the active Ef theme
 *************************************
@@ -885,7 +885,7 @@ color mapping are still possible.  At any rate, we will not outright
 break any code that uses ‘ef-themes-with-colors’.
 
 
-File: doc5CvPKw.info,  Node: Do-It-Yourself customizations,  Next: Faces defined by the Ef themes,  Prev: Use colors from the active Ef theme,  Up: Top
+File: docv0S4K8.info,  Node: Do-It-Yourself customizations,  Next: Faces defined by the Ef themes,  Prev: Use colors from the active Ef theme,  Up: Top
 
 9 Do-It-Yourself customizations
 *******************************
@@ -906,7 +906,7 @@ their liking.
 * Tweak goto-address-mode faces::
 
 
-File: doc5CvPKw.info,  Node: Get a single color from the palette,  Next: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: Get a single color from the palette,  Next: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
 
 9.1 Get a single color from the palette
 =======================================
@@ -960,7 +960,7 @@ with/without overrides and when recursive mappings are introduced.
      ;; => "#d3303a"
 
 
-File: doc5CvPKw.info,  Node: The general approach to advanced DIY changes,  Next: A theme-agnostic hook for theme loading,  Prev: Get a single color from the palette,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: The general approach to advanced DIY changes,  Next: A theme-agnostic hook for theme loading,  Prev: Get a single color from the palette,  Up: Do-It-Yourself customizations
 
 9.2 The general approach to advanced DIY changes
 ================================================
@@ -1047,7 +1047,7 @@ mechanism.  We are willing to help and shall provide comprehensive
 documentation where necessary.
 
 
-File: doc5CvPKw.info,  Node: A theme-agnostic hook for theme loading,  Next: Do not extend the region background,  Prev: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: A theme-agnostic hook for theme loading,  Next: Do not extend the region background,  Prev: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
 
 9.3 A theme-agnostic hook for theme loading
 ===========================================
@@ -1098,7 +1098,7 @@ the user can replace it with ‘after-enable-theme-hook’ should they need
 to (provided they understand the implications).
 
 
-File: doc5CvPKw.info,  Node: Do not extend the region background,  Next: Add support for hl-todo,  Prev: A theme-agnostic hook for theme loading,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: Do not extend the region background,  Next: Add support for hl-todo,  Prev: A theme-agnostic hook for theme loading,  Up: Do-It-Yourself customizations
 
 9.4 Do not extend the region background
 =======================================
@@ -1115,7 +1115,7 @@ to the Emacs configuration file will suffice:
    *note Make the region more intense::.
 
 
-File: doc5CvPKw.info,  Node: Add support for hl-todo,  Next: Make the mode line like the modus-themes default,  Prev: Do not extend the region background,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: Add support for hl-todo,  Next: Make the mode line like the modus-themes default,  Prev: Do not extend the region background,  Up: Do-It-Yourself customizations
 
 9.5 Add support for hl-todo
 ===========================
@@ -1159,7 +1159,7 @@ method.
 commands for previewing the palette (*note Preview theme colors::).
 
 
-File: doc5CvPKw.info,  Node: Make the mode line like the modus-themes default,  Next: Configure bold and italic faces,  Prev: Add support for hl-todo,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: Make the mode line like the modus-themes default,  Next: Configure bold and italic faces,  Prev: Add support for hl-todo,  Up: Do-It-Yourself customizations
 
 9.6 Make the mode line like the ‘modus-themes’ default
 ======================================================
@@ -1193,7 +1193,7 @@ snippet:
      `(mode-line ((,c :background ,bg-mode-line :foreground ,fg-mode-line :box (:line-width 1 :color ,fg-dim))))
 
 
-File: doc5CvPKw.info,  Node: Configure bold and italic faces,  Next: Tweak org-modern timestamps,  Prev: Make the mode line like the modus-themes default,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: Configure bold and italic faces,  Next: Tweak org-modern timestamps,  Prev: Make the mode line like the modus-themes default,  Up: Do-It-Yourself customizations
 
 9.7 Configure bold and italic faces
 ===================================
@@ -1245,7 +1245,7 @@ pick fonts that work in tandem):
 provides the means to configure font families via faces.
 
 
-File: doc5CvPKw.info,  Node: Tweak org-modern timestamps,  Next: Tweak goto-address-mode faces,  Prev: Configure bold and italic faces,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: Tweak org-modern timestamps,  Next: Tweak goto-address-mode faces,  Prev: Configure bold and italic faces,  Up: Do-It-Yourself customizations
 
 9.8 Tweak ‘org-modern’ timestamps
 =================================
@@ -1275,7 +1275,7 @@ further trouble (*note Enable mixed fonts::).
    For any further issues, you are welcome to ask for help.
 
 
-File: doc5CvPKw.info,  Node: Tweak goto-address-mode faces,  Prev: Tweak org-modern timestamps,  Up: Do-It-Yourself customizations
+File: docv0S4K8.info,  Node: Tweak goto-address-mode faces,  Prev: Tweak org-modern timestamps,  Up: Do-It-Yourself customizations
 
 9.9 Tweak goto-address-mode faces
 =================================
@@ -1300,7 +1300,7 @@ addresses stand out more, due to the use of the uncommon ‘@’ caharacter
 but also because they are often enclosed in angled brackets).
 
 
-File: doc5CvPKw.info,  Node: Faces defined by the Ef themes,  Next: Supported packages or face groups,  Prev: Do-It-Yourself customizations,  Up: Top
+File: docv0S4K8.info,  Node: Faces defined by the Ef themes,  Next: Supported packages or face groups,  Prev: Do-It-Yourself customizations,  Up: Top
 
 10 Faces defined by the Ef themes
 *********************************
@@ -1335,7 +1335,7 @@ packages, like Dired, Trashed, Ibuffer.
    • ‘ef-themes-underline-warning’
 
 
-File: doc5CvPKw.info,  Node: Supported packages or face groups,  Next: Principles,  Prev: Faces defined by the Ef themes,  Up: Top
+File: docv0S4K8.info,  Node: Supported packages or face groups,  Next: Principles,  Prev: Faces defined by the Ef themes,  Up: Top
 
 11 Supported packages or face groups
 ************************************
@@ -1352,7 +1352,7 @@ already covers everything most users need.
 * Packages that are hard to support::
 
 
-File: doc5CvPKw.info,  Node: Explicitly supported packages or face groups,  Next: Implicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docv0S4K8.info,  Node: Explicitly supported packages or face groups,  Next: Implicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.1 Explicitly supported packages or face groups
 =================================================
@@ -1449,7 +1449,7 @@ File: doc5CvPKw.info,  Node: Explicitly supported packages or face groups,  Next
    • outline-mode
    • outline-minor-faces
    • package (‘M-x list-packages’)
-   • pdf-tools [ Part of 1.8.0-dev.  ]
+   • pdf-tools
    • perspective
    • proced
    • powerline
@@ -1490,7 +1490,7 @@ File: doc5CvPKw.info,  Node: Explicitly supported packages or face groups,  Next
    • ztree
 
 
-File: doc5CvPKw.info,  Node: Implicitly supported packages or face groups,  Next: Packages that are hard to support,  Prev: Explicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docv0S4K8.info,  Node: Implicitly supported packages or face groups,  Next: Packages that are hard to support,  Prev: Explicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.2 Implicitly supported packages or face groups
 =================================================
@@ -1516,7 +1516,7 @@ in perfectly.  If there are refinements we need to made, then we need to
 intervene (*note Explicitly supported packages or face groups::).
 
 
-File: doc5CvPKw.info,  Node: Packages that are hard to support,  Prev: Implicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docv0S4K8.info,  Node: Packages that are hard to support,  Prev: Implicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.3 Packages that are hard to support
 ======================================
@@ -1584,7 +1584,7 @@ web-mode
    The above list is non-exhaustive though you get the idea.
 
 
-File: doc5CvPKw.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages or face groups,  Up: Top
+File: docv0S4K8.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages or face groups,  Up: Top
 
 12 Principles
 *************
@@ -1628,7 +1628,7 @@ File: doc5CvPKw.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages o
 * Minimal VS maximal scope::
 
 
-File: doc5CvPKw.info,  Node: Minimal VS maximal scope,  Up: Principles
+File: docv0S4K8.info,  Node: Minimal VS maximal scope,  Up: Principles
 
 12.1 Minimal VS maximal scope
 =============================
@@ -1647,7 +1647,7 @@ necessity.  The ‘modus-themes’ are such because:
 have such a lofty accessibility target.
 
 
-File: doc5CvPKw.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  Up: Top
+File: docv0S4K8.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  Up: Top
 
 13 FAQ
 ******
@@ -1663,7 +1663,7 @@ File: doc5CvPKw.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  U
 * Add something like Nord or Zenburn?::
 
 
-File: doc5CvPKw.info,  Node: What does Ef mean?,  Next: Will you stop using the modus-themes?,  Up: FAQ
+File: docv0S4K8.info,  Node: What does Ef mean?,  Next: Will you stop using the modus-themes?,  Up: FAQ
 
 13.1 What does Ef mean?
 =======================
@@ -1673,7 +1673,7 @@ good, nice, and/or easy.  For example, eftopia (ευτοπία) is the opposite
 of dystopia (δυστοπία): a good place as opposed to a bad place.
 
 
-File: doc5CvPKw.info,  Node: Will you stop using the modus-themes?,  Next: Then why develop the ef-themes?,  Prev: What does Ef mean?,  Up: FAQ
+File: docv0S4K8.info,  Node: Will you stop using the modus-themes?,  Next: Then why develop the ef-themes?,  Prev: What does Ef mean?,  Up: FAQ
 
 13.2 Will you stop using the modus-themes?
 ==========================================
@@ -1682,7 +1682,7 @@ No.  For my workflow, accessibility is the most important quality.  The
 ‘modus-themes’ will remain my default choice.
 
 
-File: doc5CvPKw.info,  Node: Then why develop the ef-themes?,  Next: Difference between ef-themes and modus-themes?,  Prev: Will you stop using the modus-themes?,  Up: FAQ
+File: docv0S4K8.info,  Node: Then why develop the ef-themes?,  Next: Difference between ef-themes and modus-themes?,  Prev: Will you stop using the modus-themes?,  Up: FAQ
 
 13.3 Then why develop the ef-themes?
 ====================================
@@ -1695,7 +1695,7 @@ considerations for legibility, and (ii) are not designed on a whimsy.
 fine with a bit more relaxed accessibility target.
 
 
-File: doc5CvPKw.info,  Node: Difference between ef-themes and modus-themes?,  Next: Too many options what should I do?,  Prev: Then why develop the ef-themes?,  Up: FAQ
+File: docv0S4K8.info,  Node: Difference between ef-themes and modus-themes?,  Next: Too many options what should I do?,  Prev: Then why develop the ef-themes?,  Up: FAQ
 
 13.4 Difference between ef-themes and modus-themes?
 ===================================================
@@ -1759,7 +1759,7 @@ pay attention.  In short: I am not picking random colors and
 implementing them on a whimsy.  Theme development is not easy.
 
 
-File: doc5CvPKw.info,  Node: Too many options what should I do?,  Next: Let Org tags inherit the heading color?,  Prev: Difference between ef-themes and modus-themes?,  Up: FAQ
+File: docv0S4K8.info,  Node: Too many options what should I do?,  Next: Let Org tags inherit the heading color?,  Prev: Difference between ef-themes and modus-themes?,  Up: FAQ
 
 13.5 Too many options, what should I do?
 ========================================
@@ -1772,7 +1772,7 @@ tweaks to toggle between those two and don’t worry anymore about the
 abundance of choice (*note Toggle between two Ef themes::).  Good luck!
 
 
-File: doc5CvPKw.info,  Node: Let Org tags inherit the heading color?,  Next: Add something like Nord or Zenburn?,  Prev: Too many options what should I do?,  Up: FAQ
+File: docv0S4K8.info,  Node: Let Org tags inherit the heading color?,  Next: Add something like Nord or Zenburn?,  Prev: Too many options what should I do?,  Up: FAQ
 
 13.6 Let Org tags inherit the heading color?
 ============================================
@@ -1805,7 +1805,7 @@ Realigning tags by inserting spaces also creates noise in
 version-controlled files, which is undesirable.
 
 
-File: doc5CvPKw.info,  Node: Add something like Nord or Zenburn?,  Prev: Let Org tags inherit the heading color?,  Up: FAQ
+File: docv0S4K8.info,  Node: Add something like Nord or Zenburn?,  Prev: Let Org tags inherit the heading color?,  Up: FAQ
 
 13.7 Add something like Nord or Zenburn?
 ========================================
@@ -1834,7 +1834,7 @@ compromises and sub-optimal choices, which make no sense for a project
 with opinionanted design principles.
 
 
-File: doc5CvPKw.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: FAQ,  Up: Top
+File: docv0S4K8.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: FAQ,  Up: Top
 
 14 Acknowledgements
 *******************
@@ -1858,7 +1858,7 @@ Ideas and/or user feedback
      marasenna, newhallroad.
 
 
-File: doc5CvPKw.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docv0S4K8.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 15 GNU Free Documentation License
 *********************************
@@ -2340,7 +2340,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: doc5CvPKw.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docv0S4K8.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 16 Indices
 **********
@@ -2352,7 +2352,7 @@ File: doc5CvPKw.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up
 * Concept index::
 
 
-File: doc5CvPKw.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docv0S4K8.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 16.1 Function index
 ===================
@@ -2380,7 +2380,7 @@ File: doc5CvPKw.info,  Node: Function index,  Next: Variable index,  Up: Indices
                                                                (line  6)
 
 
-File: doc5CvPKw.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docv0S4K8.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 16.2 Variable index
 ===================
@@ -2433,7 +2433,7 @@ File: doc5CvPKw.info,  Node: Variable index,  Next: Concept index,  Prev: Functi
 * ef-winter-palette-overrides:           Palette overrides.    (line 90)
 
 
-File: doc5CvPKw.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docv0S4K8.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 16.3 Concept index
 ==================
@@ -2464,43 +2464,43 @@ Node: Enable mixed fonts11494
 Node: UI typeface12870
 Node: Option for headings13806
 Node: Palette overrides17482
-Node: Stylistic variants using palette overrides23231
-Node: Make the region more intense23810
-Node: Loading a theme25289
-Node: Commands to load an Ef theme26485
-Node: Preview theme colors29873
-Node: Use colors from the active Ef theme31383
-Node: Do-It-Yourself customizations32594
-Node: Get a single color from the palette33266
-Node: The general approach to advanced DIY changes35293
-Node: A theme-agnostic hook for theme loading39362
-Node: Do not extend the region background41908
-Node: Add support for hl-todo42613
-Node: Make the mode line like the modus-themes default44526
-Node: Configure bold and italic faces46096
-Node: Tweak org-modern timestamps48523
-Node: Tweak goto-address-mode faces49910
-Node: Faces defined by the Ef themes51011
-Node: Supported packages or face groups52281
-Node: Explicitly supported packages or face groups52887
-Node: Implicitly supported packages or face groups55683
-Node: Packages that are hard to support56549
-Node: Principles58686
-Node: Minimal VS maximal scope60696
-Node: FAQ61455
-Node: What does Ef mean?61881
-Node: Will you stop using the modus-themes?62269
-Node: Then why develop the ef-themes?62626
-Node: Difference between ef-themes and modus-themes?63215
-Node: Too many options what should I do?66731
-Node: Let Org tags inherit the heading color?67431
-Node: Add something like Nord or Zenburn?69254
-Node: Acknowledgements70548
-Node: GNU Free Documentation License71402
-Node: Indices96747
-Node: Function index96925
-Node: Variable index98386
-Node: Concept index101690
+Node: Stylistic variants using palette overrides23183
+Node: Make the region more intense23762
+Node: Loading a theme25241
+Node: Commands to load an Ef theme26437
+Node: Preview theme colors29825
+Node: Use colors from the active Ef theme31335
+Node: Do-It-Yourself customizations32546
+Node: Get a single color from the palette33218
+Node: The general approach to advanced DIY changes35245
+Node: A theme-agnostic hook for theme loading39314
+Node: Do not extend the region background41860
+Node: Add support for hl-todo42565
+Node: Make the mode line like the modus-themes default44478
+Node: Configure bold and italic faces46048
+Node: Tweak org-modern timestamps48475
+Node: Tweak goto-address-mode faces49862
+Node: Faces defined by the Ef themes50963
+Node: Supported packages or face groups52233
+Node: Explicitly supported packages or face groups52839
+Node: Implicitly supported packages or face groups55611
+Node: Packages that are hard to support56477
+Node: Principles58614
+Node: Minimal VS maximal scope60624
+Node: FAQ61383
+Node: What does Ef mean?61809
+Node: Will you stop using the modus-themes?62197
+Node: Then why develop the ef-themes?62554
+Node: Difference between ef-themes and modus-themes?63143
+Node: Too many options what should I do?66659
+Node: Let Org tags inherit the heading color?67359
+Node: Add something like Nord or Zenburn?69182
+Node: Acknowledgements70476
+Node: GNU Free Documentation License71330
+Node: Indices96675
+Node: Function index96853
+Node: Variable index98314
+Node: Concept index101618
 
 End Tag Table
 

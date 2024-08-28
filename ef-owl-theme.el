@@ -49,12 +49,12 @@
 
       (bg-main     "#292c2f")
       (fg-main     "#d0d0d0")
-      (bg-dim      "#393c3f")
+      (bg-dim      "#373b3d")
       (fg-dim      "#857f8f")
-      (bg-alt      "#404245")
+      (bg-alt      "#40474b")
       (fg-alt      "#aab9af")
 
-      (bg-active   "#606265")
+      (bg-active   "#60676b")
       (bg-inactive "#333539")
 
 ;;; Basic hues for foreground values
@@ -65,7 +65,7 @@
       (red-faint       "#eba0af")
       (green           "#70bb70")
       (green-warmer    "#98c06f")
-      (green-cooler    "#67bb97")
+      (green-cooler    "#60bd90")
       (green-faint     "#9fb3a7")
       (yellow          "#c09f6f")
       (yellow-warmer   "#d1a45f")
@@ -74,14 +74,14 @@
       (blue            "#80a4e0")
       (blue-warmer     "#a0a0ef")
       (blue-cooler     "#72aff0")
-      (blue-faint      "#aabae0")
+      (blue-faint      "#aab2df")
       (magenta         "#e5a0ea")
       (magenta-warmer  "#d389af")
       (magenta-cooler  "#cfa0e8")
       (magenta-faint   "#e5bbd7")
       (cyan            "#8fb8ea")
       (cyan-warmer     "#99bfd0")
-      (cyan-cooler     "#7ac4b7")
+      (cyan-cooler     "#7ac0b9")
       (cyan-faint      "#a2c5d8")
 
 ;;; Basic hues for background values
@@ -102,10 +102,10 @@
 
 ;;; Diffs
 
-      (bg-added          "#304a4f")
-      (bg-added-faint    "#1a3640")
-      (bg-added-refine   "#2f6767")
-      (fg-added          "#a0d0f0")
+      (bg-added          "#304a3f")
+      (bg-added-faint    "#1a3630")
+      (bg-added-refine   "#2f6757")
+      (fg-added          "#a0d0d0")
 
       (bg-changed        "#51512f")
       (bg-changed-faint  "#40332f")
@@ -185,21 +185,21 @@
 ;;;; Code mappings
 
       (builtin blue)
-      (comment magenta-faint)
+      (comment blue-faint)
       (constant yellow-cooler)
-      (fnname green)
+      (fnname green-cooler)
       (keyword cyan-warmer)
-      (preprocessor cyan-cooler)
+      (preprocessor green-warmer)
       (docstring green-faint)
-      (string green-cooler)
+      (string cyan-cooler)
       (type magenta-cooler)
       (variable blue-warmer)
-      (rx-escape blue-cooler) ; compare with `string'
-      (rx-construct red-warmer)
+      (rx-escape yellow) ; compare with `string'
+      (rx-construct red)
 
 ;;;; Accent mappings
 
-      (accent-0 cyan-warmer)
+      (accent-0 cyan-cooler)
       (accent-1 yellow-cooler)
       (accent-2 red)
       (accent-3 green)
@@ -225,7 +225,7 @@
       (prose-metadata-value fg-alt)
       (prose-table fg-alt)
       (prose-table-formula err)
-      (prose-tag yellow-faint)
+      (prose-tag cyan-faint)
       (prose-todo red-warmer)
       (prose-verbatim blue)
 
@@ -242,6 +242,7 @@
 
 ;;;; Search mappings
 
+      (bg-search-match bg-warning)
       (bg-search-current bg-yellow-intense)
       (bg-search-lazy bg-cyan-intense)
       (bg-search-replace bg-red-intense)
