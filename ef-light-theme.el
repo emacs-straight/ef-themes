@@ -50,9 +50,9 @@
       (bg-main     "#ffffff")
       (fg-main     "#202020")
       (bg-dim      "#efefef")
-      (fg-dim      "#70627f")
+      (fg-dim      "#68759f")
       (bg-alt      "#dbdbdb")
-      (fg-alt      "#196f70")
+      (fg-alt      "#397a70")
 
       (bg-active   "#b3b3b3")
       (bg-inactive "#f9f9f9")
@@ -74,7 +74,7 @@
       (blue            "#3740cf")
       (blue-warmer     "#4250ef")
       (blue-cooler     "#065fff")
-      (blue-faint      "#4f54ba")
+      (blue-faint      "#4f54aa")
       (magenta         "#ba35af")
       (magenta-warmer  "#cf25aa")
       (magenta-cooler  "#6052cf")
@@ -102,9 +102,9 @@
 
 ;;; Diffs
 
-      (bg-added          "#d5f8d5")
+      (bg-added          "#d0f0d0")
       (bg-added-faint    "#e5ffe5")
-      (bg-added-refine   "#c6e8c6")
+      (bg-added-refine   "#b2e8be")
       (fg-added          "#005000")
 
       (bg-changed        "#f4e8bd")
@@ -172,7 +172,7 @@
       (warning yellow-warmer)
       (info green)
 
-      (link blue)
+      (link blue-warmer)
       (link-alt magenta)
       (name magenta-cooler)
       (keybind blue-cooler)
@@ -310,7 +310,7 @@
 
       (rainbow-0 green-cooler)
       (rainbow-1 blue-faint)
-      (rainbow-2 magenta-warmer)
+      (rainbow-2 magenta)
       (rainbow-3 cyan-cooler)
       (rainbow-4 yellow-cooler)
       (rainbow-5 magenta-cooler)
