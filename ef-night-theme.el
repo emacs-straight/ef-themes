@@ -78,7 +78,7 @@
       (magenta         "#d570af")
       (magenta-warmer  "#e580ea")
       (magenta-cooler  "#af8aff")
-      (magenta-faint   "#c59faf")
+      (magenta-faint   "#c59fcf")
       (cyan            "#4fb0cf")
       (cyan-warmer     "#6fafff")
       (cyan-cooler     "#3dc0b0")
@@ -189,11 +189,11 @@
       (constant magenta-cooler)
       (fnname cyan-cooler)
       (keyword blue-warmer)
-      (preprocessor red-warmer)
+      (preprocessor red-faint)
       (docstring cyan-faint)
       (string blue-cooler)
-      (type magenta-cooler)
-      (variable cyan)
+      (type magenta-faint)
+      (variable cyan-warmer)
       (rx-escape green) ; compare with `string'
       (rx-construct magenta-warmer)
 

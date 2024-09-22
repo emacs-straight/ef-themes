@@ -1103,7 +1103,7 @@ text should not be underlined as well) yet still blend in."
     `(company-scrollbar-bg ((,c :background ,bg-active)))
     `(company-scrollbar-fg ((,c :background ,fg-main)))
     `(company-template-field ((,c :background ,bg-active :foreground ,fg-intense)))
-    `(company-tooltip ((,c :background ,bg-inactive)))
+    `(company-tooltip ((,c :inherit ef-themes-fixed-pitch :background ,bg-inactive)))
     `(company-tooltip-annotation ((,c :inherit completions-annotations)))
     `(company-tooltip-common ((,c :inherit company-echo-common)))
     `(company-tooltip-deprecated ((,c :inherit company-tooltip :strike-through t)))
@@ -1140,7 +1140,7 @@ text should not be underlined as well) yet still blend in."
     `(corfu-current ((,c :background ,bg-completion)))
     `(corfu-bar ((,c :background ,fg-main)))
     `(corfu-border ((,c :background ,bg-active)))
-    `(corfu-default ((,c :background ,bg-inactive)))
+    `(corfu-default ((,c :inherit ef-themes-fixed-pitch :background ,bg-inactive)))
 ;;;;; corfu-candidate-overlay
     `(corfu-candidate-overlay-face ((t :inherit shadow)))
 ;;;; corfu-quick
