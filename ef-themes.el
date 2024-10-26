@@ -150,6 +150,14 @@ themes that form part of this collection."
   :package-version '(ef-themes . "0.3.0")
   :group 'ef-themes)
 
+(defcustom ef-themes-to-rotate ef-themes-items
+  "List of Ef themes to rotate among, per `modus-themes-rotate'."
+  :type `(repeat (choice
+                  :tag "A theme among the `ef-themes-items'"
+                  ,@(mapcar (lambda (theme) (list 'const theme)) ef-themes-items)))
+  :package-version '(modus-themes . "1.9.0")
+  :group 'ef-themes)
+
 (defconst ef-themes-weights
   '( thin ultralight extralight light semilight regular medium
      semibold bold heavy extrabold ultrabold)
@@ -474,11 +482,11 @@ themes."
   "Return THEME palette as a symbol.
 With optional OVERRIDES, return THEME palette overrides as a
 symbol."
-  (when-let ((suffix (cond
-                      ((and theme overrides)
-                       "palette-overrides")
-                      (theme
-                       "palette"))))
+  (when-let* ((suffix (cond
+                       ((and theme overrides)
+                        "palette-overrides")
+                       (theme
+                        "palette"))))
     (intern (format "%s-%s" theme suffix))))
 
 (defun ef-themes--palette-value (theme &optional overrides)
@@ -494,7 +502,7 @@ symbol."
   "Return palette value of active Ef theme, else produce `user-error'.
 With optional OVERRIDES return palette value plus whatever
 overrides."
-  (if-let ((theme (ef-themes--current-theme)))
+  (if-let* ((theme (ef-themes--current-theme)))
       (if overrides
           (ef-themes--palette-value theme :overrides)
         (ef-themes--palette-value theme))
@@ -512,8 +520,8 @@ overrides."
 
 (defun ef-themes--annotate-theme (theme)
   "Return completion annotation for THEME."
-  (when-let ((symbol (intern-soft theme))
-             (doc-string (get symbol 'theme-documentation)))
+  (when-let* ((symbol (intern-soft theme))
+              (doc-string (get symbol 'theme-documentation)))
     (format " -- %s"
             (propertize
              (car (split-string doc-string "\\."))
@@ -525,6 +533,10 @@ overrides."
     (if (eq action 'metadata)
         `(metadata (category . ,category))
       (complete-with-action action candidates string pred))))
+
+(defun ef-themes--ef-p (theme)
+  "Return non-nil if THEME name has an ef- prefix."
+  (string-prefix-p "ef-" (symbol-name theme)))
 
 (defvar ef-themes--select-theme-history nil
   "Minibuffer history of `ef-themes--select-prompt'.")
@@ -570,7 +582,12 @@ When VARIANT is nil, all Ef themes are candidates for completion."
             custom-enabled-themes
           (ef-themes--list-known-themes))))
 
-(defun ef-themes--load-theme (theme)
+(define-obsolete-function-alias
+  'ef-themes--load-theme
+  'ef-themes-load-theme
+  "1.9.0")
+
+(defun ef-themes-load-theme (theme)
   "Load THEME while disabling other Ef themes.
 Which themes are disabled is determined by the user option
 `ef-themes-disable-other-themes'.
@@ -584,6 +601,8 @@ Return THEME."
   (run-hooks 'ef-themes-post-load-hook)
   theme)
 
+;;;; Select a theme using minibuffer completion
+
 ;;;###autoload
 (defun ef-themes-select (theme &optional _variant)
   "Load an Ef THEME using minibuffer completion.
@@ -596,7 +615,7 @@ Run `ef-themes-post-load-hook' after loading the theme.
 When called from Lisp, THEME is the symbol of a theme.  VARIANT
 is ignored in this scenario."
   (interactive (list (ef-themes--select-prompt nil current-prefix-arg)))
-  (ef-themes--load-theme theme))
+  (ef-themes-load-theme theme))
 
 ;;;###autoload
 (defun ef-themes-select-light (theme)
@@ -613,7 +632,7 @@ whether it is light or dark."
   (interactive
    (list
     (ef-themes--select-prompt "Select light Ef theme: " 'light)))
-  (ef-themes--load-theme theme))
+  (ef-themes-load-theme theme))
 
 ;;;###autoload
 (defun ef-themes-select-dark (theme)
@@ -630,7 +649,7 @@ whether it is light or dark."
   (interactive
    (list
     (ef-themes--select-prompt "Select dark Ef theme: " 'dark)))
-  (ef-themes--load-theme theme))
+  (ef-themes-load-theme theme))
 
 (defun ef-themes--toggle-theme-p ()
   "Return non-nil if `ef-themes-to-toggle' are valid."
@@ -640,6 +659,8 @@ whether it is light or dark."
               theme
             (user-error "`%s' is not part of `ef-themes-collection'" theme)))
         ef-themes-to-toggle))
+
+;;;; Toggle between two themes
 
 ;;;###autoload
 (defun ef-themes-toggle ()
@@ -655,12 +676,14 @@ Run `ef-themes-post-load-hook' after loading the theme."
             (one (car themes))
             (two (cadr themes)))
       (if (eq (car custom-enabled-themes) one)
-          (ef-themes--load-theme two)
-        (ef-themes--load-theme one))
-    (ef-themes--load-theme
+          (ef-themes-load-theme two)
+        (ef-themes-load-theme one))
+    (ef-themes-load-theme
      (ef-themes--select-prompt
       (concat "Set two `ef-themes-to-toggle'; "
               "switching to theme selection for now: ")))))
+
+;;;; Load a theme at random
 
 (defun ef-themes--minus-current (&optional variant)
   "Return list of Ef themes minus the current one.
@@ -692,8 +715,46 @@ symbol."
          (n (random (length themes)))
          (pick (nth n themes))
          (loaded (if (null pick) (car themes) pick)))
-    (ef-themes--load-theme loaded)
+    (ef-themes-load-theme loaded)
     (message "Loaded `%s'" loaded)))
+
+;;;; Rotate through a list of themes
+
+(defun ef-themes--rotate (themes)
+  "Rotate THEMES rightward such that the car is moved to the end."
+  (if (proper-list-p themes)
+      (let* ((index (seq-position themes (ef-themes--current-theme)))
+             (offset (1+ index)))
+        (append (nthcdr offset themes) (take offset themes)))
+    (error "The `%s' is not a list" themes)))
+
+(defun ef-themes--rotate-p (themes)
+  "Return a new theme among THEMES if it is possible to rotate to it."
+  (if-let* ((new-theme (car (ef-themes--rotate themes))))
+      (if (eq new-theme (ef-themes--current-theme))
+          (car (ef-themes--rotate-p (ef-themes--rotate themes)))
+        new-theme)
+    (error "Cannot determine a theme among `%s'" themes)))
+
+;;;###autoload
+(defun ef-themes-rotate (themes)
+  "Rotate to the next theme among THEMES.
+When called interactively THEMES is the value of `ef-themes-to-rotate'.
+
+If the current theme is already the next in line, then move to the one
+after.  Perform the rotation rightwards, such that the first element in
+the list becomes the last.  Do not modify THEMES in the process."
+  (interactive (list ef-themes-to-rotate))
+  (unless (proper-list-p themes)
+    "This is not a list of themes: `%s'" themes)
+  (let ((candidate (ef-themes--rotate-p themes)))
+    (if (ef-themes--ef-p candidate)
+        (progn
+          (message "Rotating to `%s'" (propertize (symbol-name candidate) 'face 'success))
+          (ef-themes-load-theme candidate))
+      (user-error "`%s' is not part of the Ef collection" candidate))))
+
+;;;; Preview a theme palette
 
 (defun ef-themes--preview-colors-render (buffer theme &optional mappings &rest _)
   "Render colors in BUFFER from THEME for `ef-themes-preview-colors'.
