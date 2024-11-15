@@ -61,7 +61,7 @@
 
       (red             "#d3303a")
       (red-warmer      "#e00033")
-      (red-cooler      "#d50f7f")
+      (red-cooler      "#d51272")
       (red-faint       "#c24552")
       (green           "#217a3c")
       (green-warmer    "#4a7d00")
@@ -208,11 +208,13 @@
 
       (date-common cyan-cooler)
       (date-deadline red)
+      (date-deadline-subtle red-cooler)
       (date-event fg-alt)
       (date-holiday magenta-warmer)
       (date-now fg-main)
       (date-range fg-alt)
       (date-scheduled yellow)
+      (date-scheduled-subtle yellow-faint)
       (date-weekday cyan)
       (date-weekend red-faint)
 

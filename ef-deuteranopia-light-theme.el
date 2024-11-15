@@ -65,7 +65,7 @@
       (red             "#d3303a")
       (red-warmer      "#e00033")
       (red-cooler      "#d50f7f")
-      (red-faint       "#c24552")
+      (red-faint       "#a04852")
       (green           "#217a3c")
       (green-warmer    "#4a7d00")
       (green-cooler    "#008058")
@@ -84,7 +84,7 @@
       (magenta-faint   "#9f5080")
       (cyan            "#1f6fbf")
       (cyan-warmer     "#3f6faf")
-      (cyan-cooler     "#1f77bb")
+      (cyan-cooler     "#1477b2")
       (cyan-faint      "#506fa0")
 
 ;;; Basic hues for background values
@@ -211,11 +211,13 @@
 
       (date-common yellow-cooler)
       (date-deadline yellow-warmer)
+      (date-deadline-subtle red-faint)
       (date-event fg-alt)
       (date-holiday cyan)
       (date-now fg-main)
       (date-range fg-alt)
       (date-scheduled yellow-cooler)
+      (date-scheduled-subtle yellow-faint)
       (date-weekday cyan)
       (date-weekend magenta-faint)
 
