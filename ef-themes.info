@@ -1,4 +1,4 @@
-This is docBXlh8y.info, produced by makeinfo version 6.8 from
+This is docBihTna.info, produced by makeinfo version 6.8 from
 ef-themes.texi.
 
 Copyright (C) 2022-2023 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docBXlh8y.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docBihTna.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 ef-themes: colorful and legible themes
 **************************************
@@ -43,11 +43,11 @@ package called ‘ef-themes’, and provides every other piece of
 information pertinent to it.
 
    The documentation furnished herein corresponds to stable version
-1.8.0, released on 2024-08-27.  Any reference to a newer feature which
+1.9.0, released on 2024-11-16.  Any reference to a newer feature which
 does not yet form part of the latest tagged commit, is explicitly marked
 as such.
 
-   Current development target is 1.9.0-dev.
+   Current development target is 1.10.0-dev.
 
    • Package name (GNU ELPA): ‘ef-themes’
    • Official manual: <https://protesilaos.com/emacs/ef-themes>
@@ -144,7 +144,7 @@ Indices
 
 
 
-File: docBXlh8y.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docBihTna.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -155,7 +155,7 @@ File: docBXlh8y.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: docBXlh8y.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docBihTna.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -174,7 +174,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: docBXlh8y.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docBihTna.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -201,7 +201,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: docBXlh8y.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
+File: docBihTna.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -254,7 +254,7 @@ File: docBXlh8y.info,  Node: Sample configuration,  Next: Themes for red-green o
      ;; - `ef-themes-preview-colors-current'
 
 
-File: docBXlh8y.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customization options,  Prev: Sample configuration,  Up: Top
+File: docBihTna.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customization options,  Prev: Sample configuration,  Up: Top
 
 3 Themes for red-green or blue-yellow color deficiency
 ******************************************************
@@ -273,7 +273,7 @@ themes that are optimized for such cases.  The names of the themes are:
    *note Loading a theme::.
 
 
-File: docBXlh8y.info,  Node: Customization options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
+File: docBihTna.info,  Node: Customization options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
 
 4 Customization options
 ***********************
@@ -298,7 +298,7 @@ Principles.).
 * Stylistic variants using palette overrides::
 
 
-File: docBXlh8y.info,  Node: Disable other themes,  Next: Toggle between two Ef themes,  Up: Customization options
+File: docBihTna.info,  Node: Disable other themes,  Next: Toggle between two Ef themes,  Up: Customization options
 
 4.1 Disable other themes
 ========================
@@ -321,7 +321,7 @@ customizations.  Users who use such customization bundles must set this
 variable to a nil value.
 
 
-File: docBXlh8y.info,  Node: Toggle between two Ef themes,  Next: Rotate among a list of Ef themes,  Prev: Disable other themes,  Up: Customization options
+File: docBihTna.info,  Node: Toggle between two Ef themes,  Next: Rotate among a list of Ef themes,  Prev: Disable other themes,  Up: Customization options
 
 4.2 Toggle between two Ef themes
 ================================
@@ -342,17 +342,15 @@ either with minibuffer completion or at random (*note Commands to load
 an Ef theme::).
 
 
-File: docBXlh8y.info,  Node: Rotate among a list of Ef themes,  Next: Enable mixed fonts,  Prev: Toggle between two Ef themes,  Up: Customization options
+File: docBihTna.info,  Node: Rotate among a list of Ef themes,  Next: Enable mixed fonts,  Prev: Toggle between two Ef themes,  Up: Customization options
 
 4.3 Rotate among a list of Ef themes
 ====================================
 
-[ This is part of 1.9.0-dev.  ]
-
-   The user option ‘ef-themes-to-rotate’ defines a list of Ef themes
-that can be used in rotation.  The command ‘ef-themes-rotate’ reads from
-that list and switches to the next item.  If the next item is the
-current one, it moves to the one after.
+The user option ‘ef-themes-to-rotate’ defines a list of Ef themes that
+can be used in rotation.  The command ‘ef-themes-rotate’ reads from that
+list and switches to the next item.  If the next item is the current
+one, it moves to the one after.
 
    Possible values for ‘ef-themes-to-rotate’ are any of the themes
 specified in value of the variable ‘ef-themes-items’.
@@ -362,7 +360,7 @@ either with minibuffer completion or at random (*note Commands to load
 an Ef theme::).
 
 
-File: docBXlh8y.info,  Node: Enable mixed fonts,  Next: UI typeface,  Prev: Rotate among a list of Ef themes,  Up: Customization options
+File: docBihTna.info,  Node: Enable mixed fonts,  Next: UI typeface,  Prev: Rotate among a list of Ef themes,  Up: Customization options
 
 4.4 Enable mixed fonts
 ======================
@@ -391,7 +389,7 @@ family of the ‘fixed-pitch’ and ‘variable-pitch’ faces.  The ‘fontaine
 package on GNU ELPA (by Protesilaos) can be helpful in this regard.
 
 
-File: docBXlh8y.info,  Node: UI typeface,  Next: Option for headings,  Prev: Enable mixed fonts,  Up: Customization options
+File: docBihTna.info,  Node: UI typeface,  Next: Option for headings,  Prev: Enable mixed fonts,  Up: Customization options
 
 4.5 UI typeface
 ===============
@@ -415,7 +413,7 @@ family of the ‘fixed-pitch’ and ‘variable-pitch’ faces.  The ‘fontaine
 package on GNU ELPA (by Protesilaos) can be helpful in this regard.
 
 
-File: docBXlh8y.info,  Node: Option for headings,  Next: Palette overrides,  Prev: UI typeface,  Up: Customization options
+File: docBihTna.info,  Node: Option for headings,  Next: Palette overrides,  Prev: UI typeface,  Up: Customization options
 
 4.6 Option for headings
 =======================
@@ -502,7 +500,7 @@ This will retain the original aesthetic for that level.  For example:
              (t . t))) ; default style for all unspecified levels
 
 
-File: docBXlh8y.info,  Node: Palette overrides,  Next: Stylistic variants using palette overrides,  Prev: Option for headings,  Up: Customization options
+File: docBihTna.info,  Node: Palette overrides,  Next: Stylistic variants using palette overrides,  Prev: Option for headings,  Up: Customization options
 
 4.7 Palette overrides
 =====================
@@ -683,7 +681,7 @@ top of the buffer.  In the above example, the first instance of
 ‘blue-warmer’ is the override and the second is the original one.
 
 
-File: docBXlh8y.info,  Node: Stylistic variants using palette overrides,  Prev: Palette overrides,  Up: Customization options
+File: docBihTna.info,  Node: Stylistic variants using palette overrides,  Prev: Palette overrides,  Up: Customization options
 
 4.8 Stylistic variants using palette overrides
 ==============================================
@@ -699,7 +697,7 @@ the call that loads the theme.
 * Make the region more intense::
 
 
-File: docBXlh8y.info,  Node: Make the region more intense,  Up: Stylistic variants using palette overrides
+File: docBihTna.info,  Node: Make the region more intense,  Up: Stylistic variants using palette overrides
 
 4.8.1 Make the region more intense
 ----------------------------------
@@ -737,7 +735,7 @@ intense.
              (fg-region fg-main)))
 
 
-File: docBXlh8y.info,  Node: Loading a theme,  Next: Commands to load an Ef theme,  Prev: Customization options,  Up: Top
+File: docBihTna.info,  Node: Loading a theme,  Next: Commands to load an Ef theme,  Prev: Customization options,  Up: Top
 
 5 Loading a theme
 *****************
@@ -769,7 +767,7 @@ theme::).  For example:
      (ef-themes-select 'ef-summer)
 
 
-File: docBXlh8y.info,  Node: Commands to load an Ef theme,  Next: Preview theme colors,  Prev: Loading a theme,  Up: Top
+File: docBihTna.info,  Node: Commands to load an Ef theme,  Next: Preview theme colors,  Prev: Loading a theme,  Up: Top
 
 6 Commands to load an Ef theme
 ******************************
@@ -777,8 +775,7 @@ File: docBXlh8y.info,  Node: Commands to load an Ef theme,  Next: Preview theme 
 The commands mentioned herein call ‘ef-themes-post-load-hook’ at the
 end.  This is for advanced users who want to trigger some code after an
 Ef theme is loaded (*note Use colors from the active Ef theme::).  The
-same goes for ‘ef-themes-toggle’ and ‘ef-themes-rotate’ [ The
-‘ef-themes-rotate’ is part of 1.9.0-dev ].
+same goes for ‘ef-themes-toggle’ and ‘ef-themes-rotate’.
 
    • *note Toggle between two Ef themes::
    • *note Rotate among a list of Ef themes::
@@ -847,7 +844,7 @@ a light/dark theme and then loads an appropriate Ef theme at random:
        (ef-themes-load-random 'light))
 
 
-File: docBXlh8y.info,  Node: Preview theme colors,  Next: Use colors from the active Ef theme,  Prev: Commands to load an Ef theme,  Up: Top
+File: docBihTna.info,  Node: Preview theme colors,  Next: Use colors from the active Ef theme,  Prev: Commands to load an Ef theme,  Up: Top
 
 7 Preview theme colors
 **********************
@@ -881,7 +878,7 @@ contents are, such as ‘*ef-summer-list-colors*’ for named colors and
 ‘*ef-summer-list-mappings*’ for the semantic color mappings.
 
 
-File: docBXlh8y.info,  Node: Use colors from the active Ef theme,  Next: Do-It-Yourself customizations,  Prev: Preview theme colors,  Up: Top
+File: docBihTna.info,  Node: Use colors from the active Ef theme,  Next: Do-It-Yourself customizations,  Prev: Preview theme colors,  Up: Top
 
 8 Use colors from the active Ef theme
 *************************************
@@ -910,7 +907,7 @@ color mapping are still possible.  At any rate, we will not outright
 break any code that uses ‘ef-themes-with-colors’.
 
 
-File: docBXlh8y.info,  Node: Do-It-Yourself customizations,  Next: Faces defined by the Ef themes,  Prev: Use colors from the active Ef theme,  Up: Top
+File: docBihTna.info,  Node: Do-It-Yourself customizations,  Next: Faces defined by the Ef themes,  Prev: Use colors from the active Ef theme,  Up: Top
 
 9 Do-It-Yourself customizations
 *******************************
@@ -931,7 +928,7 @@ their liking.
 * Tweak goto-address-mode faces::
 
 
-File: docBXlh8y.info,  Node: Get a single color from the palette,  Next: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: Get a single color from the palette,  Next: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
 
 9.1 Get a single color from the palette
 =======================================
@@ -985,7 +982,7 @@ with/without overrides and when recursive mappings are introduced.
      ;; => "#d3303a"
 
 
-File: docBXlh8y.info,  Node: The general approach to advanced DIY changes,  Next: A theme-agnostic hook for theme loading,  Prev: Get a single color from the palette,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: The general approach to advanced DIY changes,  Next: A theme-agnostic hook for theme loading,  Prev: Get a single color from the palette,  Up: Do-It-Yourself customizations
 
 9.2 The general approach to advanced DIY changes
 ================================================
@@ -1072,7 +1069,7 @@ mechanism.  We are willing to help and shall provide comprehensive
 documentation where necessary.
 
 
-File: docBXlh8y.info,  Node: A theme-agnostic hook for theme loading,  Next: Do not extend the region background,  Prev: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: A theme-agnostic hook for theme loading,  Next: Do not extend the region background,  Prev: The general approach to advanced DIY changes,  Up: Do-It-Yourself customizations
 
 9.3 A theme-agnostic hook for theme loading
 ===========================================
@@ -1123,7 +1120,7 @@ the user can replace it with ‘after-enable-theme-hook’ should they need
 to (provided they understand the implications).
 
 
-File: docBXlh8y.info,  Node: Do not extend the region background,  Next: Add support for hl-todo,  Prev: A theme-agnostic hook for theme loading,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: Do not extend the region background,  Next: Add support for hl-todo,  Prev: A theme-agnostic hook for theme loading,  Up: Do-It-Yourself customizations
 
 9.4 Do not extend the region background
 =======================================
@@ -1140,7 +1137,7 @@ to the Emacs configuration file will suffice:
    *note Make the region more intense::.
 
 
-File: docBXlh8y.info,  Node: Add support for hl-todo,  Next: Make the mode line like the modus-themes default,  Prev: Do not extend the region background,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: Add support for hl-todo,  Next: Make the mode line like the modus-themes default,  Prev: Do not extend the region background,  Up: Do-It-Yourself customizations
 
 9.5 Add support for hl-todo
 ===========================
@@ -1184,7 +1181,7 @@ method.
 commands for previewing the palette (*note Preview theme colors::).
 
 
-File: docBXlh8y.info,  Node: Make the mode line like the modus-themes default,  Next: Configure bold and italic faces,  Prev: Add support for hl-todo,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: Make the mode line like the modus-themes default,  Next: Configure bold and italic faces,  Prev: Add support for hl-todo,  Up: Do-It-Yourself customizations
 
 9.6 Make the mode line like the ‘modus-themes’ default
 ======================================================
@@ -1218,7 +1215,7 @@ snippet:
      `(mode-line ((,c :background ,bg-mode-line :foreground ,fg-mode-line :box (:line-width 1 :color ,fg-dim))))
 
 
-File: docBXlh8y.info,  Node: Configure bold and italic faces,  Next: Tweak org-modern timestamps,  Prev: Make the mode line like the modus-themes default,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: Configure bold and italic faces,  Next: Tweak org-modern timestamps,  Prev: Make the mode line like the modus-themes default,  Up: Do-It-Yourself customizations
 
 9.7 Configure bold and italic faces
 ===================================
@@ -1270,7 +1267,7 @@ pick fonts that work in tandem):
 provides the means to configure font families via faces.
 
 
-File: docBXlh8y.info,  Node: Tweak org-modern timestamps,  Next: Tweak goto-address-mode faces,  Prev: Configure bold and italic faces,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: Tweak org-modern timestamps,  Next: Tweak goto-address-mode faces,  Prev: Configure bold and italic faces,  Up: Do-It-Yourself customizations
 
 9.8 Tweak ‘org-modern’ timestamps
 =================================
@@ -1300,7 +1297,7 @@ further trouble (*note Enable mixed fonts::).
    For any further issues, you are welcome to ask for help.
 
 
-File: docBXlh8y.info,  Node: Tweak goto-address-mode faces,  Prev: Tweak org-modern timestamps,  Up: Do-It-Yourself customizations
+File: docBihTna.info,  Node: Tweak goto-address-mode faces,  Prev: Tweak org-modern timestamps,  Up: Do-It-Yourself customizations
 
 9.9 Tweak goto-address-mode faces
 =================================
@@ -1325,7 +1322,7 @@ addresses stand out more, due to the use of the uncommon ‘@’ caharacter
 but also because they are often enclosed in angled brackets).
 
 
-File: docBXlh8y.info,  Node: Faces defined by the Ef themes,  Next: Supported packages or face groups,  Prev: Do-It-Yourself customizations,  Up: Top
+File: docBihTna.info,  Node: Faces defined by the Ef themes,  Next: Supported packages or face groups,  Prev: Do-It-Yourself customizations,  Up: Top
 
 10 Faces defined by the Ef themes
 *********************************
@@ -1360,7 +1357,7 @@ packages, like Dired, Trashed, Ibuffer.
    • ‘ef-themes-underline-warning’
 
 
-File: docBXlh8y.info,  Node: Supported packages or face groups,  Next: Principles,  Prev: Faces defined by the Ef themes,  Up: Top
+File: docBihTna.info,  Node: Supported packages or face groups,  Next: Principles,  Prev: Faces defined by the Ef themes,  Up: Top
 
 11 Supported packages or face groups
 ************************************
@@ -1377,7 +1374,7 @@ already covers everything most users need.
 * Packages that are hard to support::
 
 
-File: docBXlh8y.info,  Node: Explicitly supported packages or face groups,  Next: Implicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docBihTna.info,  Node: Explicitly supported packages or face groups,  Next: Implicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.1 Explicitly supported packages or face groups
 =================================================
@@ -1434,13 +1431,13 @@ File: docBXlh8y.info,  Node: Explicitly supported packages or face groups,  Next
    • flymake
    • flyspell
    • font-lock
-   • forge [ Part of 1.9.0-dev.  ]
+   • forge
    • git-commit
    • git-gutter
    • git-gutter-fr
    • git-rebase
    • gnus
-   • hexl-mode [ Part of 1.9.0-dev.  ]
+   • hexl-mode
    • hi-lock (‘M-x highlight-regexp’)
    • highlight-indentation
    • ibuffer
@@ -1498,7 +1495,7 @@ File: docBXlh8y.info,  Node: Explicitly supported packages or face groups,  Next
    • tempel
    • term
    • textsec
-   • tldr [ Part of 1.9.0-dev.  ]
+   • tldr
    • transient
    • trashed
    • tree-sitter
@@ -1513,13 +1510,13 @@ File: docBXlh8y.info,  Node: Explicitly supported packages or face groups,  Next
    • whitespace-mode
    • widget
    • window-divider-mode
-   • window-tool-bar-mode [ Part of 1.9.0-dev.  ]
+   • window-tool-bar-mode
    • writegood-mode
    • woman
    • ztree
 
 
-File: docBXlh8y.info,  Node: Implicitly supported packages or face groups,  Next: Packages that are hard to support,  Prev: Explicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docBihTna.info,  Node: Implicitly supported packages or face groups,  Next: Packages that are hard to support,  Prev: Explicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.2 Implicitly supported packages or face groups
 =================================================
@@ -1544,7 +1541,7 @@ in perfectly.  If there are refinements we need to made, then we need to
 intervene (*note Explicitly supported packages or face groups::).
 
 
-File: docBXlh8y.info,  Node: Packages that are hard to support,  Prev: Implicitly supported packages or face groups,  Up: Supported packages or face groups
+File: docBihTna.info,  Node: Packages that are hard to support,  Prev: Implicitly supported packages or face groups,  Up: Supported packages or face groups
 
 11.3 Packages that are hard to support
 ======================================
@@ -1612,7 +1609,7 @@ web-mode
    The above list is non-exhaustive though you get the idea.
 
 
-File: docBXlh8y.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages or face groups,  Up: Top
+File: docBihTna.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages or face groups,  Up: Top
 
 12 Principles
 *************
@@ -1656,7 +1653,7 @@ File: docBXlh8y.info,  Node: Principles,  Next: FAQ,  Prev: Supported packages o
 * Minimal VS maximal scope::
 
 
-File: docBXlh8y.info,  Node: Minimal VS maximal scope,  Up: Principles
+File: docBihTna.info,  Node: Minimal VS maximal scope,  Up: Principles
 
 12.1 Minimal VS maximal scope
 =============================
@@ -1675,7 +1672,7 @@ necessity.  The ‘modus-themes’ are such because:
 have such a lofty accessibility target.
 
 
-File: docBXlh8y.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  Up: Top
+File: docBihTna.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  Up: Top
 
 13 FAQ
 ******
@@ -1691,7 +1688,7 @@ File: docBXlh8y.info,  Node: FAQ,  Next: Acknowledgements,  Prev: Principles,  U
 * Add something like Nord or Zenburn?::
 
 
-File: docBXlh8y.info,  Node: What does Ef mean?,  Next: Will you stop using the modus-themes?,  Up: FAQ
+File: docBihTna.info,  Node: What does Ef mean?,  Next: Will you stop using the modus-themes?,  Up: FAQ
 
 13.1 What does Ef mean?
 =======================
@@ -1701,7 +1698,7 @@ good, nice, and/or easy.  For example, eftopia (ευτοπία) is the opposite
 of dystopia (δυστοπία): a good place as opposed to a bad place.
 
 
-File: docBXlh8y.info,  Node: Will you stop using the modus-themes?,  Next: Then why develop the ef-themes?,  Prev: What does Ef mean?,  Up: FAQ
+File: docBihTna.info,  Node: Will you stop using the modus-themes?,  Next: Then why develop the ef-themes?,  Prev: What does Ef mean?,  Up: FAQ
 
 13.2 Will you stop using the modus-themes?
 ==========================================
@@ -1710,7 +1707,7 @@ No.  For my workflow, accessibility is the most important quality.  The
 ‘modus-themes’ will remain my default choice.
 
 
-File: docBXlh8y.info,  Node: Then why develop the ef-themes?,  Next: Difference between ef-themes and modus-themes?,  Prev: Will you stop using the modus-themes?,  Up: FAQ
+File: docBihTna.info,  Node: Then why develop the ef-themes?,  Next: Difference between ef-themes and modus-themes?,  Prev: Will you stop using the modus-themes?,  Up: FAQ
 
 13.3 Then why develop the ef-themes?
 ====================================
@@ -1723,7 +1720,7 @@ considerations for legibility, and (ii) are not designed on a whimsy.
 fine with a bit more relaxed accessibility target.
 
 
-File: docBXlh8y.info,  Node: Difference between ef-themes and modus-themes?,  Next: Too many options what should I do?,  Prev: Then why develop the ef-themes?,  Up: FAQ
+File: docBihTna.info,  Node: Difference between ef-themes and modus-themes?,  Next: Too many options what should I do?,  Prev: Then why develop the ef-themes?,  Up: FAQ
 
 13.4 Difference between ef-themes and modus-themes?
 ===================================================
@@ -1787,7 +1784,7 @@ pay attention.  In short: I am not picking random colors and
 implementing them on a whimsy.  Theme development is not easy.
 
 
-File: docBXlh8y.info,  Node: Too many options what should I do?,  Next: Let Org tags inherit the heading color?,  Prev: Difference between ef-themes and modus-themes?,  Up: FAQ
+File: docBihTna.info,  Node: Too many options what should I do?,  Next: Let Org tags inherit the heading color?,  Prev: Difference between ef-themes and modus-themes?,  Up: FAQ
 
 13.5 Too many options, what should I do?
 ========================================
@@ -1800,7 +1797,7 @@ tweaks to toggle between those two and don’t worry anymore about the
 abundance of choice (*note Toggle between two Ef themes::).  Good luck!
 
 
-File: docBXlh8y.info,  Node: Let Org tags inherit the heading color?,  Next: Add something like Nord or Zenburn?,  Prev: Too many options what should I do?,  Up: FAQ
+File: docBihTna.info,  Node: Let Org tags inherit the heading color?,  Next: Add something like Nord or Zenburn?,  Prev: Too many options what should I do?,  Up: FAQ
 
 13.6 Let Org tags inherit the heading color?
 ============================================
@@ -1833,7 +1830,7 @@ Realigning tags by inserting spaces also creates noise in
 version-controlled files, which is undesirable.
 
 
-File: docBXlh8y.info,  Node: Add something like Nord or Zenburn?,  Prev: Let Org tags inherit the heading color?,  Up: FAQ
+File: docBihTna.info,  Node: Add something like Nord or Zenburn?,  Prev: Let Org tags inherit the heading color?,  Up: FAQ
 
 13.7 Add something like Nord or Zenburn?
 ========================================
@@ -1862,7 +1859,7 @@ compromises and sub-optimal choices, which make no sense for a project
 with opinionanted design principles.
 
 
-File: docBXlh8y.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: FAQ,  Up: Top
+File: docBihTna.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: FAQ,  Up: Top
 
 14 Acknowledgements
 *******************
@@ -1887,7 +1884,7 @@ Ideas and/or user feedback
      goldfita, marasenna, newhallroad.
 
 
-File: docBXlh8y.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docBihTna.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 15 GNU Free Documentation License
 *********************************
@@ -2369,7 +2366,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docBXlh8y.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docBihTna.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 16 Indices
 **********
@@ -2381,7 +2378,7 @@ File: docBXlh8y.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up
 * Concept index::
 
 
-File: docBXlh8y.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docBihTna.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 16.1 Function index
 ===================
@@ -2394,24 +2391,24 @@ File: docBXlh8y.info,  Node: Function index,  Next: Variable index,  Up: Indices
 * ef-themes-list-colors:                 Preview theme colors. (line 19)
 * ef-themes-list-colors-current:         Preview theme colors. (line 19)
 * ef-themes-load-random:                 Commands to load an Ef theme.
-                                                               (line 43)
+                                                               (line 42)
 * ef-themes-preview-colors:              Preview theme colors. (line  6)
 * ef-themes-preview-colors-current:      Preview theme colors. (line 12)
 * ef-themes-rotate:                      Rotate among a list of Ef themes.
-                                                               (line  8)
+                                                               (line  6)
 * ef-themes-select:                      Commands to load an Ef theme.
-                                                               (line 16)
+                                                               (line 15)
 * ef-themes-select-dark:                 Commands to load an Ef theme.
-                                                               (line 38)
+                                                               (line 37)
 * ef-themes-select-light:                Commands to load an Ef theme.
-                                                               (line 38)
+                                                               (line 37)
 * ef-themes-toggle:                      Toggle between two Ef themes.
                                                                (line  6)
 * ef-themes-with-colors:                 Use colors from the active Ef theme.
                                                                (line  6)
 
 
-File: docBXlh8y.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docBihTna.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 16.2 Variable index
 ===================
@@ -2455,7 +2452,7 @@ File: docBXlh8y.info,  Node: Variable index,  Next: Concept index,  Prev: Functi
 * ef-themes-post-load-hook:              Commands to load an Ef theme.
                                                                (line  6)
 * ef-themes-to-rotate:                   Rotate among a list of Ef themes.
-                                                               (line  8)
+                                                               (line  6)
 * ef-themes-to-toggle:                   Toggle between two Ef themes.
                                                                (line  6)
 * ef-themes-variable-pitch-ui:           UI typeface.          (line  6)
@@ -2466,7 +2463,7 @@ File: docBXlh8y.info,  Node: Variable index,  Next: Concept index,  Prev: Functi
 * ef-winter-palette-overrides:           Palette overrides.    (line 90)
 
 
-File: docBXlh8y.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docBihTna.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 16.3 Concept index
 ==================
@@ -2485,56 +2482,56 @@ File: docBXlh8y.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 Tag Table:
 Node: Top840
-Node: Installation4578
-Node: GNU ELPA package4760
-Node: Manual installation5324
-Node: Sample configuration6105
-Node: Themes for red-green or blue-yellow color deficiency8100
-Node: Customization options8964
-Node: Disable other themes9741
-Node: Toggle between two Ef themes10675
-Node: Rotate among a list of Ef themes11582
-Node: Enable mixed fonts12391
-Node: UI typeface13771
-Node: Option for headings14707
-Node: Palette overrides18383
-Node: Stylistic variants using palette overrides24084
-Node: Make the region more intense24663
-Node: Loading a theme26142
-Node: Commands to load an Ef theme27338
-Node: Preview theme colors30862
-Node: Use colors from the active Ef theme32372
-Node: Do-It-Yourself customizations33583
-Node: Get a single color from the palette34255
-Node: The general approach to advanced DIY changes36282
-Node: A theme-agnostic hook for theme loading40351
-Node: Do not extend the region background42897
-Node: Add support for hl-todo43602
-Node: Make the mode line like the modus-themes default45515
-Node: Configure bold and italic faces47085
-Node: Tweak org-modern timestamps49512
-Node: Tweak goto-address-mode faces50899
-Node: Faces defined by the Ef themes52000
-Node: Supported packages or face groups53270
-Node: Explicitly supported packages or face groups53876
-Node: Implicitly supported packages or face groups56814
-Node: Packages that are hard to support57667
-Node: Principles59804
-Node: Minimal VS maximal scope61814
-Node: FAQ62573
-Node: What does Ef mean?62999
-Node: Will you stop using the modus-themes?63387
-Node: Then why develop the ef-themes?63744
-Node: Difference between ef-themes and modus-themes?64333
-Node: Too many options what should I do?67849
-Node: Let Org tags inherit the heading color?68549
-Node: Add something like Nord or Zenburn?70372
-Node: Acknowledgements71666
-Node: GNU Free Documentation License72549
-Node: Indices97894
-Node: Function index98072
-Node: Variable index99681
-Node: Concept index103133
+Node: Installation4579
+Node: GNU ELPA package4761
+Node: Manual installation5325
+Node: Sample configuration6106
+Node: Themes for red-green or blue-yellow color deficiency8101
+Node: Customization options8965
+Node: Disable other themes9742
+Node: Toggle between two Ef themes10676
+Node: Rotate among a list of Ef themes11583
+Node: Enable mixed fonts12356
+Node: UI typeface13736
+Node: Option for headings14672
+Node: Palette overrides18348
+Node: Stylistic variants using palette overrides24049
+Node: Make the region more intense24628
+Node: Loading a theme26107
+Node: Commands to load an Ef theme27303
+Node: Preview theme colors30775
+Node: Use colors from the active Ef theme32285
+Node: Do-It-Yourself customizations33496
+Node: Get a single color from the palette34168
+Node: The general approach to advanced DIY changes36195
+Node: A theme-agnostic hook for theme loading40264
+Node: Do not extend the region background42810
+Node: Add support for hl-todo43515
+Node: Make the mode line like the modus-themes default45428
+Node: Configure bold and italic faces46998
+Node: Tweak org-modern timestamps49425
+Node: Tweak goto-address-mode faces50812
+Node: Faces defined by the Ef themes51913
+Node: Supported packages or face groups53183
+Node: Explicitly supported packages or face groups53789
+Node: Implicitly supported packages or face groups56631
+Node: Packages that are hard to support57484
+Node: Principles59621
+Node: Minimal VS maximal scope61631
+Node: FAQ62390
+Node: What does Ef mean?62816
+Node: Will you stop using the modus-themes?63204
+Node: Then why develop the ef-themes?63561
+Node: Difference between ef-themes and modus-themes?64150
+Node: Too many options what should I do?67666
+Node: Let Org tags inherit the heading color?68366
+Node: Add something like Nord or Zenburn?70189
+Node: Acknowledgements71483
+Node: GNU Free Documentation License72366
+Node: Indices97711
+Node: Function index97889
+Node: Variable index99498
+Node: Concept index102950
 
 End Tag Table
 
