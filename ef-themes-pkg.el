@@ -1,2 +1,2 @@
-;; Generated package description from mode: lisp-data; .el  -*- ef-themesno-byte-compile: t -*-
-(define-package "ef-themes" "1.9.0.0.20250406.102903" "Colorful and legible themes" '((emacs "28.1")) :commit "5f81c603157b8584740c1af2b744d2b9780affc8" :authors '(("Protesilaos Stavrou" . "info@protesilaos.com")) :maintainer '("Protesilaos Stavrou" . "info@protesilaos.com") :keywords '("faces" "theme" "accessibility") :url "https://github.com/protesilaos/ef-themes")
+;; Generated package description from ef-themes.el  -*- mode: lisp-data; no-byte-compile: t -*-
+(define-package "ef-themes" "1.9.0.0.20250418.103720" "Colorful and legible themes" '((emacs "28.1")) :commit "2b79ded6ac5f1805f7e4c10f64d58c2193152a41" :authors '(("Protesilaos Stavrou" . "info@protesilaos.com")) :maintainer '("Protesilaos Stavrou" . "info@protesilaos.com") :keywords '("faces" "theme" "accessibility") :url "https://github.com/protesilaos/ef-themes")
