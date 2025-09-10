@@ -1144,7 +1144,10 @@ text should not be underlined as well) yet still blend in."
     `(bookmark-menu-bookmark ((,c :inherit bold)))
 ;;;; calendar and diary
     `(calendar-month-header ((,c :inherit bold)))
-    `(calendar-today ((,c :inherit bold :underline t)))
+    `(calendar-today
+      ((default :foreground ,date-common :inverse-video t)
+       (((supports :box t))
+        :box (:line-width (-1 . -1) :color ,fg-main))))
     `(calendar-weekday-header ((,c :foreground ,date-weekday)))
     `(calendar-weekend-header ((,c :foreground ,date-weekend)))
     `(diary ((,c :foreground ,date-common)))
@@ -2146,7 +2149,7 @@ text should not be underlined as well) yet still blend in."
     `(org-column ((,c :inherit default :background ,bg-alt)))
     `(org-column-title ((,c :inherit (ef-themes-fixed-pitch bold default) :underline t :background ,bg-alt)))
     `(org-date ((,c :inherit ef-themes-fixed-pitch :foreground ,date-common)))
-    `(org-date-selected ((,c :foreground ,date-common :inverse-video t)))
+    `(org-date-selected ((,c :inherit calendar-today)))
     `(org-dispatcher-highlight ((,c :inherit warning :background ,bg-warning)))
     `(org-document-info ((,c :foreground ,prose-metadata-value)))
     `(org-document-info-keyword ((,c :inherit ef-themes-fixed-pitch :foreground ,prose-metadata)))
