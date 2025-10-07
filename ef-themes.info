@@ -1,4 +1,4 @@
-This is docrasDli.info, produced by makeinfo version 6.8 from
+This is docsnKJJ1.info, produced by makeinfo version 6.8 from
 ef-themes.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docrasDli.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docsnKJJ1.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 ef-themes: colorful and legible themes
 **************************************
@@ -89,7 +89,7 @@ Indices
 
 
 
-File: docrasDli.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docsnKJJ1.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -100,7 +100,7 @@ File: docrasDli.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: docrasDli.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docsnKJJ1.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -119,7 +119,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: docrasDli.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docsnKJJ1.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -146,7 +146,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: docrasDli.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
+File: docsnKJJ1.info,  Node: Sample configuration,  Next: Themes for red-green or blue-yellow color deficiency,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -181,7 +181,7 @@ and Modus into one collection).
        (modus-themes-load-theme 'ef-summer))
 
 
-File: docrasDli.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customisation options,  Prev: Sample configuration,  Up: Top
+File: docsnKJJ1.info,  Node: Themes for red-green or blue-yellow color deficiency,  Next: Customisation options,  Prev: Sample configuration,  Up: Top
 
 3 Themes for red-green or blue-yellow color deficiency
 ******************************************************
@@ -200,7 +200,7 @@ themes that are optimized for such cases.  The names of the themes are:
    *note Loading a theme::.
 
 
-File: docrasDli.info,  Node: Customisation options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
+File: docsnKJJ1.info,  Node: Customisation options,  Next: Loading a theme,  Prev: Themes for red-green or blue-yellow color deficiency,  Up: Top
 
 4 Customisation options
 ***********************
@@ -208,7 +208,7 @@ File: docrasDli.info,  Node: Customisation options,  Next: Loading a theme,  Pre
 Consult the Modus themes manual for all customisation options.
 
 
-File: docrasDli.info,  Node: Loading a theme,  Next: Acknowledgements,  Prev: Customisation options,  Up: Top
+File: docsnKJJ1.info,  Node: Loading a theme,  Next: Acknowledgements,  Prev: Customisation options,  Up: Top
 
 5 Loading a theme
 *****************
@@ -218,7 +218,7 @@ check the sample configuration to quickly get started (*note Sample
 configuration::).
 
 
-File: docrasDli.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Loading a theme,  Up: Top
+File: docsnKJJ1.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Loading a theme,  Up: Top
 
 6 Acknowledgements
 ******************
@@ -243,7 +243,7 @@ Ideas and/or user feedback
      goldfita, marasenna, newhallroad.
 
 
-File: docrasDli.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docsnKJJ1.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 7 GNU Free Documentation License
 ********************************
@@ -725,7 +725,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docrasDli.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docsnKJJ1.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 8 Indices
 *********
@@ -737,19 +737,19 @@ File: docrasDli.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up
 * Concept index::
 
 
-File: docrasDli.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docsnKJJ1.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 8.1 Function index
 ==================
 
 
-File: docrasDli.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docsnKJJ1.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 8.2 Variable index
 ==================
 
 
-File: docrasDli.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docsnKJJ1.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 8.3 Concept index
 =================
