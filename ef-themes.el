@@ -5,7 +5,7 @@
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Protesilaos Stavrou <info@protesilaos.com>
 ;; URL: https://github.com/protesilaos/ef-themes
-;; Version: 1.11.0
+;; Version: 2.0.0
 ;; Package-Requires: ((emacs "28.1") (modus-themes "5.0.0"))
 ;; Keywords: faces, theme, accessibility
 
@@ -248,19 +248,19 @@ Alternatively, use the commands `ef-themes-rotate', `ef-themes-select',
 `ef-themes-list-colors-current'.  They are all designed to only consider
 Ef themes." our-symbol modus-symbol)))))
 
-;; FIXME 2025-10-07: How best to handle a possible `ef-themes-toggle'?
-;; Should we keep the `ef-themes-to-toggle'? And how about the same
-;; for rotation?
 (defun ef-themes-define-option-aliases ()
   "Define aliases for the user options of the Modus themes."
   (unless ef-themes--aliased-p
     (dolist (suffix '( disable-other-themes to-toggle to-rotate after-load-theme-hook
-                       italic-constructs bold-constructs variable-pitch-ui mixed-fonts
+                       post-load-hook italic-constructs bold-constructs variable-pitch-ui mixed-fonts
                        headings completions prompts common-palette-overrides))
       (ef-themes-define-alias "ef-themes" suffix))
     (setq ef-themes--aliased-p t)))
 
 (ef-themes-define-option-aliases)
+
+(defalias 'ef-themes-load-theme 'modus-themes-load-theme
+  "Alias for `modus-themes-load-theme'.")
 
 (defalias 'ef-themes-with-colors 'modus-themes-with-colors
   "Alias for `modus-themes-with-colors.")
@@ -287,6 +287,9 @@ Ef themes."
     ef-themes-items))
 
 ;;;; Convenience commands
+
+;;;###autoload (autoload 'ef-themes-toggle "ef-themes")
+(modus-themes-define-derivative-command ef-themes toggle)
 
 ;;;###autoload (autoload 'ef-themes-rotate "ef-themes")
 (modus-themes-define-derivative-command ef-themes rotate)
