@@ -1,4 +1,4 @@
-This is docE14kAX.info, produced by makeinfo version 6.8 from
+This is docQKWZSH.info, produced by makeinfo version 6.8 from
 ef-themes.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docE14kAX.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docQKWZSH.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 ef-themes: colorful and legible themes
 **************************************
@@ -95,7 +95,7 @@ Indices
 
 
 
-File: docE14kAX.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docQKWZSH.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -106,7 +106,7 @@ File: docE14kAX.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: docE14kAX.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docQKWZSH.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -125,7 +125,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: docE14kAX.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docQKWZSH.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -152,7 +152,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: docE14kAX.info,  Node: Sample configuration,  Next: Working with other Modus themes or taking over Modus,  Prev: Installation,  Up: Top
+File: docQKWZSH.info,  Node: Sample configuration,  Next: Working with other Modus themes or taking over Modus,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -191,7 +191,7 @@ Modus::).
        (modus-themes-load-theme 'ef-summer))
 
 
-File: docE14kAX.info,  Node: Working with other Modus themes or taking over Modus,  Next: Loading a theme,  Prev: Sample configuration,  Up: Top
+File: docQKWZSH.info,  Node: Working with other Modus themes or taking over Modus,  Next: Loading a theme,  Prev: Sample configuration,  Up: Top
 
 3 Working with other Modus themes or taking over Modus
 ******************************************************
@@ -210,7 +210,7 @@ commands.
 * Customisation options for compatibility with Modus::
 
 
-File: docE14kAX.info,  Node: Loading only Ef themes with the convenience wrappers we provide,  Next: Combining core Modus themes with all their derivatives,  Up: Working with other Modus themes or taking over Modus
+File: docQKWZSH.info,  Node: Loading only Ef themes with the convenience wrappers we provide,  Next: Combining core Modus themes with all their derivatives,  Up: Working with other Modus themes or taking over Modus
 
 3.1 Loading only Ef themes with the convenience wrappers we provide
 ===================================================================
@@ -245,7 +245,7 @@ completely, instead of relying on these convenience wrapper commands
 (*note Taking over the Modus commands altogether::).
 
 
-File: docE14kAX.info,  Node: Combining core Modus themes with all their derivatives,  Next: Taking over the Modus commands altogether,  Prev: Loading only Ef themes with the convenience wrappers we provide,  Up: Working with other Modus themes or taking over Modus
+File: docQKWZSH.info,  Node: Combining core Modus themes with all their derivatives,  Next: Taking over the Modus commands altogether,  Prev: Loading only Ef themes with the convenience wrappers we provide,  Up: Working with other Modus themes or taking over Modus
 
 3.2 Combining core Modus themes with all their derivatives
 ==========================================================
@@ -285,7 +285,7 @@ read the documentation string of each command.  Evaluate ‘(info
 <https://protesilaos.com/emacs/modus-themes>.
 
 
-File: docE14kAX.info,  Node: Taking over the Modus commands altogether,  Next: Customisation options for compatibility with Modus,  Prev: Combining core Modus themes with all their derivatives,  Up: Working with other Modus themes or taking over Modus
+File: docQKWZSH.info,  Node: Taking over the Modus commands altogether,  Next: Customisation options for compatibility with Modus,  Prev: Combining core Modus themes with all their derivatives,  Up: Working with other Modus themes or taking over Modus
 
 3.3 Taking over the Modus commands altogether
 =============================================
@@ -310,7 +310,7 @@ disabled, that same key binding will revert to doing what it did before
 ‘modus-themes-include-derivatives-mode’ is enabled).
 
 
-File: docE14kAX.info,  Node: Customisation options for compatibility with Modus,  Prev: Taking over the Modus commands altogether,  Up: Working with other Modus themes or taking over Modus
+File: docQKWZSH.info,  Node: Customisation options for compatibility with Modus,  Prev: Taking over the Modus commands altogether,  Up: Working with other Modus themes or taking over Modus
 
 3.4 Customisation options for compatibility with Modus
 ======================================================
@@ -337,7 +337,7 @@ ef-themes-prompts                    modus-themes-prompts
 ef-themes-common-palette-overrides   modus-themes-common-palette-overrides
 
 
-File: docE14kAX.info,  Node: Loading a theme,  Next: Acknowledgements,  Prev: Working with other Modus themes or taking over Modus,  Up: Top
+File: docQKWZSH.info,  Node: Loading a theme,  Next: Acknowledgements,  Prev: Working with other Modus themes or taking over Modus,  Up: Top
 
 4 Loading a theme
 *****************
@@ -348,7 +348,7 @@ other Modus themes or taking over Modus::).  Or check the sample
 configuration to quickly get started (*note Sample configuration::).
 
 
-File: docE14kAX.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Loading a theme,  Up: Top
+File: docQKWZSH.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Loading a theme,  Up: Top
 
 5 Acknowledgements
 ******************
@@ -373,7 +373,7 @@ Ideas and/or user feedback
      goldfita, marasenna, newhallroad.
 
 
-File: docE14kAX.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docQKWZSH.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 6 GNU Free Documentation License
 ********************************
@@ -855,7 +855,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docE14kAX.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docQKWZSH.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 7 Indices
 *********
@@ -867,7 +867,7 @@ File: docE14kAX.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up
 * Concept index::
 
 
-File: docE14kAX.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docQKWZSH.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 7.1 Function index
 ==================
@@ -915,13 +915,13 @@ File: docE14kAX.info,  Node: Function index,  Next: Variable index,  Up: Indices
                                                                (line 18)
 
 
-File: docE14kAX.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docQKWZSH.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 7.2 Variable index
 ==================
 
 
-File: docE14kAX.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docQKWZSH.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 7.3 Concept index
 =================
