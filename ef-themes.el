@@ -206,6 +206,16 @@ and Modus into a single group, enable `modus-themes-include-derivatives-mode'."
     (bg-mark-other bg-warning)
     (fg-mark-other warning)
 
+    (fg-search-current fg-main)
+    (fg-search-lazy fg-main)
+    (fg-search-static fg-main)
+    (fg-search-replace fg-main)
+
+    (fg-search-rx-group-0 fg-main)
+    (fg-search-rx-group-1 fg-main)
+    (fg-search-rx-group-2 fg-main)
+    (fg-search-rx-group-3 fg-main)
+
     (fg-completion-match-0 accent-0)
     (fg-completion-match-1 accent-1)
     (fg-completion-match-2 accent-2)
@@ -303,6 +313,12 @@ Ef themes."
 
 ;;;###autoload (autoload 'ef-themes-select "ef-themes")
 (modus-themes-define-derivative-command ef-themes select)
+
+;;;###autoload (autoload 'ef-themes-select-dark "ef-themes")
+(modus-themes-define-derivative-command ef-themes select-dark)
+
+;;;###autoload (autoload 'ef-themes-select-light "ef-themes")
+(modus-themes-define-derivative-command ef-themes select-light)
 
 ;;;###autoload (autoload 'ef-themes-load-random "ef-themes")
 (modus-themes-define-derivative-command ef-themes load-random)
