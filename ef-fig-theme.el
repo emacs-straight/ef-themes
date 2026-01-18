@@ -36,7 +36,7 @@
 (require 'ef-themes)
 
 (defconst ef-fig-palette-partial
-  '((cursor "#cad45a")
+  '((cursor "#e0646a")
     (bg-main "#3b2043")
     (bg-dim "#432e4e")
     (bg-alt "#4a385e")
@@ -107,7 +107,7 @@
     (bg-hover "#7f5a60")
     (bg-hover-secondary "#6a4f6f")
     (bg-hl-line "#47275f")
-    (bg-paren-match "#5e5f54")
+    (bg-paren-match "#3e592f")
     (bg-err "#552407") ; check with err
     (bg-warning "#55421e") ; check with warning
     (bg-info "#3e4200") ; check with info
@@ -137,8 +137,8 @@
     (type red-cooler)
     (variable yellow-warmer)
     (variable-use yellow-faint)
-    (rx-backslash magenta-cooler) ; compare with `string'
-    (rx-construct magenta-warmer)
+    (rx-backslash yellow-cooler) ; compare with `string'
+    (rx-construct red-warmer)
 
     (accent-0 green-warmer)
     (accent-1 magenta-warmer)
@@ -178,13 +178,13 @@
     (mail-other red-cooler)
 
     (bg-search-static bg-warning)
-    (bg-search-current bg-magenta-intense)
-    (bg-search-lazy bg-green-subtle)
+    (bg-search-current bg-yellow-intense)
+    (bg-search-lazy bg-magenta-intense)
     (bg-search-replace bg-red-intense)
 
-    (bg-search-rx-group-0 bg-cyan-intense)
+    (bg-search-rx-group-0 bg-green-intense)
     (bg-search-rx-group-1 bg-yellow-intense)
-    (bg-search-rx-group-2 bg-red-subtle)
+    (bg-search-rx-group-2 bg-magenta-subtle)
     (bg-search-rx-group-3 bg-cyan-subtle)
 
     (bg-space-err bg-red-intense)
