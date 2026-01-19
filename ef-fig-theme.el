@@ -47,7 +47,7 @@
     (bg-inactive "#4a384e")
     (border "#796f6e")
 
-    (red "#ff707f")
+    (red "#ef797f")
     (red-warmer "#ff7f5f")
     (red-cooler "#e088af")
     (red-faint "#e89f84")
@@ -88,7 +88,7 @@
 
     (bg-added "#3a472f")
     (bg-added-faint "#37382f")
-    (bg-added-refine "#3d6014")
+    (bg-added-refine "#3d6034")
     (fg-added "#a0e0a0")
 
     (bg-changed "#51512f")
@@ -126,15 +126,15 @@
     (fg-prompt red-cooler)
 
     (builtin magenta)
-    (comment cyan-faint)
+    (comment fg-dim)
     (constant magenta-cooler)
     (fnname yellow-cooler)
     (fnname-call red-faint)
     (keyword green-warmer)
     (preprocessor red-warmer)
     (docstring magenta-faint)
-    (string green)
-    (type red-cooler)
+    (string red-cooler)
+    (type green-cooler)
     (variable yellow-warmer)
     (variable-use yellow-faint)
     (rx-backslash yellow-cooler) ; compare with `string'
@@ -155,9 +155,9 @@
     (date-scheduled yellow-warmer)
     (date-scheduled-subtle yellow-faint)
     (date-weekday yellow-cooler)
-    (date-weekend red-cooler)
+    (date-weekend red)
 
-    (fg-prose-code green)
+    (fg-prose-code green-cooler)
     (prose-done green)
     (fg-prose-macro red-cooler)
     (prose-metadata fg-dim)
@@ -173,9 +173,9 @@
     (mail-cite-2 cyan-faint)
     (mail-cite-3 magenta-warmer)
     (mail-part yellow-faint)
-    (mail-recipient magenta)
-    (mail-subject magenta-cooler)
-    (mail-other red-cooler)
+    (mail-recipient red-cooler)
+    (mail-subject green-cooler)
+    (mail-other magenta-cooler)
 
     (bg-search-static bg-warning)
     (bg-search-current bg-yellow-intense)
