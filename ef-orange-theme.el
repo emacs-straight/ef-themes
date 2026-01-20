@@ -41,7 +41,7 @@
     (bg-dim "#f7e5b6")
     (bg-alt "#e9d0a8")
     (fg-main "#6c4631")
-    (fg-dim "#6f6750")
+    (fg-dim "#6f6a70")
     (fg-alt "#8f5f4a")
     (bg-active "#c9b088")
     (bg-inactive "#efdbac")
@@ -123,7 +123,7 @@
     (name yellow)
     (keybind red-warmer)
     (identifier yellow-faint)
-    (fg-prompt yellow)
+    (fg-prompt green)
 
     (builtin red)
     (comment fg-dim)
