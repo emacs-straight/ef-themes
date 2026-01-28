@@ -13,7 +13,28 @@ the manual: <https://protesilaos.com/emacs/ef-themes>.
 Table of Contents
 ─────────────────
 
+Version 2.1.0 on 2026-01-27
 Version 2.0.0 on 2025-11-09
+
+
+Version 2.1.0 on 2026-01-27
+═══════════════════════════
+
+  This version introduces two carefully designed, legible and colourful
+  themes: `ef-orange' (light) and `ef-fig' (dark). Both draw inspiration
+  from the fruits they are name after.
+
+  The convenience commands `ef-themes-select-dark' and
+  `ef-themes-select-light' use the minibuffer to select+load an Ef theme
+  that is either dark or light, respectively. The more general command
+  is `ef-themes-select'.
+
+  All screen shots of the themes are updated to reflect their current
+  status: <https://protesilaos.com/emacs/ef-themes-pictures>.
+
+  Remember that since version `2.0.0', the `ef-themes' are built on top
+  of my `modus-themes'. This means that most of the changes happen to
+  Modus and are inherited by Ef.
 
 
 Version 2.0.0 on 2025-11-09
@@ -73,22 +94,5 @@ Old user options and hooks are mere aliases for Modus options
 Fewer bold and italic faces by default, more as an opt-in clause
 ────────────────────────────────────────────────────────────────
 
-  In the past, the Ef themes did not provide an option to disable the
-  extensive use of a bold font weight and italic font slant. Whereas now
-  those are controlled by the user options
-  `modus-themes-bold-constructs' and
-  `modus-themes-italic-constructs'. By default, when they are `nil',
-  bold and italics are used only when necessary. Set these user options
-  to `t' to have bold and italics in more places.
-
-
-Loading only Ef themes with the convenience wrappers we provide
-───────────────────────────────────────────────────────────────
-
-  All the old commands Ef provided for loading one of its themes will
-  still work as before, meaning that they will only ever show and load a
-  theme that belongs to the Ef collection.
-
-  Internally, these commands are now using the Modus infrastructure and
-  are then limiting the set of themes to the Ef collection. They are …
+  In the past, the Ef themes did not provide an option to disable the …
   …

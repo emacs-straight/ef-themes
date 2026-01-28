@@ -43,11 +43,11 @@ package called ‘ef-themes’, and provides every other piece of
 information pertinent to it.
 
    The documentation furnished herein corresponds to stable version
-2.0.0, released on 2025-11-09.  Any reference to a newer feature which
+2.1.0, released on 2026-01-27.  Any reference to a newer feature which
 does not yet form part of the latest tagged commit, is explicitly marked
 as such.
 
-   Current development target is 2.1.0-dev.
+   Current development target is 2.2.0-dev.
 
    • Package name (GNU ELPA): ‘ef-themes’
    • Official manual: <https://protesilaos.com/emacs/ef-themes>
@@ -230,9 +230,9 @@ convenience wrappers around the equivalent Modus commands.
 
    • ‘ef-themes-select’
 
-   • ‘ef-themes-select-dark’ [ Part of 2.1.0-dev.  ]
+   • ‘ef-themes-select-dark’
 
-   • ‘ef-themes-select-light’ [ Part of 2.1.0-dev.  ]
+   • ‘ef-themes-select-light’
 
    • ‘ef-themes-load-random’
 
@@ -950,16 +950,16 @@ Node: Manual installation4105
 Node: Sample configuration4886
 Node: Working with other Modus themes or taking over Modus6616
 Node: Loading only Ef themes with the convenience wrappers we provide7408
-Node: Combining core Modus themes with all their derivatives8922
-Node: Taking over the Modus commands altogether10566
-Node: Customisation options for compatibility with Modus12051
-Node: Loading a theme13576
-Node: Acknowledgements14036
-Node: GNU Free Documentation License14980
-Node: Indices40122
-Node: Function index40298
-Node: Variable index44090
-Node: Concept index44235
+Node: Combining core Modus themes with all their derivatives8874
+Node: Taking over the Modus commands altogether10518
+Node: Customisation options for compatibility with Modus12003
+Node: Loading a theme13528
+Node: Acknowledgements13988
+Node: GNU Free Documentation License14932
+Node: Indices40074
+Node: Function index40250
+Node: Variable index44042
+Node: Concept index44187
 
 End Tag Table
 
