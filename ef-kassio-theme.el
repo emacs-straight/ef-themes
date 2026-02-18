@@ -44,7 +44,7 @@
     (fg-dim "#776f79")
     (fg-alt "#af4988")
     (bg-active "#c0bbbb")
-    (bg-inactive "#f9eff3")
+    (bg-inactive "#f0e3e7")
     (border "#bab7bc")
 
     (red "#b00234")
@@ -230,7 +230,6 @@ further details)."
  'light
  'ef-kassio-palette
  nil
- 'ef-kassio-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-kassio-palette-overrides)
 
 ;;; ef-kassio-theme.el ends here

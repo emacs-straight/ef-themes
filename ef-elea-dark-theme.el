@@ -44,7 +44,7 @@
     (fg-dim "#969faf")
     (fg-alt "#8fcfbb")
     (bg-active "#5e6160")
-    (bg-inactive "#2b2e2d")
+    (bg-inactive "#3b3e3d")
     (border "#5d5f63")
 
     (red "#ff656a")
@@ -230,7 +230,6 @@ further details)."
  'dark
  'ef-elea-dark-palette
  nil
- 'ef-elea-dark-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-elea-dark-palette-overrides)
 
 ;;; ef-elea-dark-theme.el ends here

@@ -44,7 +44,7 @@
     (fg-dim "#68759f")
     (fg-alt "#397a70")
     (bg-active "#b3b3b3")
-    (bg-inactive "#f9f9f9")
+    (bg-inactive "#f0f0f0")
     (border "#bfc4da")
 
     (red "#d3303a")
@@ -230,7 +230,6 @@ further details)."
  'light
  'ef-light-palette
  nil
- 'ef-light-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-light-palette-overrides)
 
 ;;; ef-light-theme.el ends here

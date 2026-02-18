@@ -44,7 +44,7 @@
     (fg-dim "#63728f")
     (fg-alt "#8f5f4a")
     (bg-active "#c9c0b8")
-    (bg-inactive "#f7efe6")
+    (bg-inactive "#f0e6db")
     (border "#c8bdb6")
 
     (red "#ba2d2f")
@@ -230,7 +230,6 @@ further details)."
  'light
  'ef-day-palette
  nil
- 'ef-day-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-day-palette-overrides)
 
 ;;; ef-day-theme.el ends here

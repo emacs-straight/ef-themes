@@ -44,7 +44,7 @@
     (fg-dim "#90918a")
     (fg-alt "#ccaa70")
     (bg-active "#79665f")
-    (bg-inactive "#3d2e1f")
+    (bg-inactive "#4d3e2f")
     (border "#6f5f58")
 
     (red "#ff7f7f")
@@ -230,7 +230,6 @@ further details)."
  'dark
  'ef-melissa-dark-palette
  nil
- 'ef-melissa-dark-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-melissa-dark-palette-overrides)
 
 ;;; ef-melissa-dark-theme.el ends here

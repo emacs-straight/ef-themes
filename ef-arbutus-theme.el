@@ -44,7 +44,7 @@
     (fg-dim "#6e678f")
     (fg-alt "#8a5f4a")
     (bg-active "#c7b2ab")
-    (bg-inactive "#f7e2d2")
+    (bg-inactive "#f3daca")
     (border "#c0b4a6")
 
     (red "#b0000f")
@@ -230,7 +230,6 @@ further details)."
  'light
  'ef-arbutus-palette
  nil
- 'ef-arbutus-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-arbutus-palette-overrides)
 
 ;;; ef-arbutus-theme.el ends here

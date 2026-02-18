@@ -44,7 +44,7 @@
     (fg-dim "#887c8a")
     (fg-alt "#70a89f")
     (bg-active "#56524f")
-    (bg-inactive "#15140d")
+    (bg-inactive "#25241d")
     (border "#58514f")
 
     (red "#ef656a")
@@ -230,7 +230,6 @@ further details)."
  'dark
  'ef-autumn-palette
  nil
- 'ef-autumn-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-autumn-palette-overrides)
 
 ;;; ef-autumn-theme.el ends here

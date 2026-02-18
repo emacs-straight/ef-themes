@@ -44,7 +44,7 @@
     (fg-dim "#685f53")
     (fg-alt "#524874")
     (bg-active "#aea88e")
-    (bg-inactive "#e7e0ca")
+    (bg-inactive "#e0d8c3")
     (border "#7f785f")
 
     (red "#882000")
@@ -230,7 +230,6 @@ further details)."
  'light
  'ef-eagle-palette
  nil
- 'ef-eagle-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-eagle-palette-overrides)
 
 ;;; ef-eagle-theme.el ends here

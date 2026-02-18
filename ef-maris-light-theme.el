@@ -44,7 +44,7 @@
     (fg-dim "#676470")
     (fg-alt "#3f4f99")
     (bg-active "#afb8c3")
-    (bg-inactive "#e6ecf2")
+    (bg-inactive "#dbe4e6")
     (border "#a2a6af")
 
     (red "#c3303a")
@@ -230,7 +230,6 @@ further details)."
  'light
  'ef-maris-light-palette
  nil
- 'ef-maris-light-palette-overrides
- 'ef-themes-custom-faces)
+ 'ef-maris-light-palette-overrides)
 
 ;;; ef-maris-light-theme.el ends here
