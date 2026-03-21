@@ -371,9 +371,10 @@ Ideas and/or user feedback
      Adam Porter (alphapapa), Alan Schmitt, Amo DelBello, Anthony
      Chavez, Benjamin (zealotrush), Bruno Boal, Daniel Mendler, Federico
      Stilman, Filippo Argiolas, Iris Garcia, Jean-Philippe Gagné Guay,
-     Len Trigg, Jonas Collberg, Saša Janiška, Spike-Leung, Steve
-     Molitor, Summer Emacs, Sven Seebeck, Thanos Apollo, Zoltán Király,
-     aikrahguzar, goldfita, marasenna, newhallroad.
+     Len Trigg, Morten Kjeldgaard, Jonas Collberg, Saša Janiška,
+     Spike-Leung, Steve Molitor, Summer Emacs, Sven Seebeck, Thanos
+     Apollo, Zoltán Király, aikrahguzar, goldfita, marasenna,
+     newhallroad.
 
 
 File: ef-themes.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
@@ -953,11 +954,11 @@ Node: Taking over the Modus commands altogether10515
 Node: Customisation options for compatibility with Modus12000
 Node: Loading a theme13525
 Node: Acknowledgements13985
-Node: GNU Free Documentation License14942
-Node: Indices40084
-Node: Function index40260
-Node: Variable index44052
-Node: Concept index44197
+Node: GNU Free Documentation License14966
+Node: Indices40108
+Node: Function index40284
+Node: Variable index44076
+Node: Concept index44221
 
 End Tag Table
 
