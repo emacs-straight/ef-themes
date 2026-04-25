@@ -38,9 +38,9 @@ Copyright (C) 2022-2026 Free Software Foundation, Inc.
      (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
      modify this GNU manual.”
 
-   This manual, written by Protesilaos Stavrou, describes the Emacs
-package called ‘ef-themes’, and provides every other piece of
-information pertinent to it.
+   This manual, written by Protesilaos, describes the Emacs package
+called ‘ef-themes’, and provides every other piece of information
+pertinent to it.
 
    The documentation furnished herein corresponds to stable version
 2.1.0, released on 2026-01-27.  Any reference to a newer feature which
@@ -360,7 +360,7 @@ This project is meant to be a collective effort.  Every bit of help
 matters.
 
 Author/maintainer
-     Protesilaos Stavrou.
+     Protesilaos.
 
 Contributions to code or the manual
      Alex Lu, Christopher League, Eshel Yaron, Gautier Ponsinet, John
@@ -943,22 +943,22 @@ File: ef-themes.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 Tag Table:
 Node: Top840
-Node: Installation3356
-Node: GNU ELPA package3538
-Node: Manual installation4102
-Node: Sample configuration4883
-Node: Working with other Modus themes or taking over Modus6613
-Node: Loading only Ef themes with the convenience wrappers we provide7405
-Node: Combining core Modus themes with all their derivatives8871
-Node: Taking over the Modus commands altogether10515
-Node: Customisation options for compatibility with Modus12000
-Node: Loading a theme13525
-Node: Acknowledgements13985
-Node: GNU Free Documentation License14966
-Node: Indices40108
-Node: Function index40284
-Node: Variable index44076
-Node: Concept index44221
+Node: Installation3348
+Node: GNU ELPA package3530
+Node: Manual installation4094
+Node: Sample configuration4875
+Node: Working with other Modus themes or taking over Modus6605
+Node: Loading only Ef themes with the convenience wrappers we provide7397
+Node: Combining core Modus themes with all their derivatives8863
+Node: Taking over the Modus commands altogether10507
+Node: Customisation options for compatibility with Modus11992
+Node: Loading a theme13517
+Node: Acknowledgements13977
+Node: GNU Free Documentation License14950
+Node: Indices40092
+Node: Function index40268
+Node: Variable index44060
+Node: Concept index44205
 
 End Tag Table
 
