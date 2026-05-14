@@ -364,8 +364,9 @@ Author/maintainer
 
 Contributions to code or the manual
      Alex Lu, Christopher League, Eshel Yaron, Gautier Ponsinet, John
-     Haman, Kevin Fleming, Oleksii (Alex) Koval, Leilei332, Pedro Cunha,
-     Philip Kaludercic, Ryan Kaskel, Sean Devlin, Walheimat.
+     Haman, Kevin Fleming, Morten Kjeldgaard, Oleksii (Alex) Koval,
+     Leilei332, Pedro Cunha, Philip Kaludercic, Ryan Kaskel, Sean
+     Devlin, Walheimat.
 
 Ideas and/or user feedback
      Adam Porter (alphapapa), Alan Schmitt, Amo DelBello, Anthony
@@ -954,11 +955,11 @@ Node: Taking over the Modus commands altogether10507
 Node: Customisation options for compatibility with Modus11992
 Node: Loading a theme13517
 Node: Acknowledgements13977
-Node: GNU Free Documentation License14950
-Node: Indices40092
-Node: Function index40268
-Node: Variable index44060
-Node: Concept index44205
+Node: GNU Free Documentation License14974
+Node: Indices40116
+Node: Function index40292
+Node: Variable index44084
+Node: Concept index44229
 
 End Tag Table
 
