@@ -1,4 +1,4 @@
-This is ef-themes.info, produced by makeinfo version 7.2 from
+This is ef-themes.info, produced by makeinfo version 7.1.1 from
 ef-themes.texi.
 
 Copyright (C) 2022-2026 Free Software Foundation, Inc.
@@ -92,6 +92,7 @@ Indices
 * Function index::
 * Variable index::
 * Concept index::
+
 
 
 File: ef-themes.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
@@ -941,30 +942,30 @@ File: ef-themes.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 * Contributors:                          Acknowledgements.      (line 6)
 * Installation instructions:             Installation.          (line 6)
 
+
 
 Tag Table:
-Node: Top840
-Node: Installation3348
-Node: GNU ELPA package3530
-Node: Manual installation4094
-Node: Sample configuration4875
-Node: Working with other Modus themes or taking over Modus6605
-Node: Loading only Ef themes with the convenience wrappers we provide7397
-Node: Combining core Modus themes with all their derivatives8863
-Node: Taking over the Modus commands altogether10507
-Node: Customisation options for compatibility with Modus11992
-Node: Loading a theme13517
-Node: Acknowledgements13977
-Node: GNU Free Documentation License14974
-Node: Indices40116
-Node: Function index40292
-Node: Variable index44084
-Node: Concept index44229
+Node: Top842
+Node: Installation3351
+Node: GNU ELPA package3533
+Node: Manual installation4097
+Node: Sample configuration4878
+Node: Working with other Modus themes or taking over Modus6608
+Node: Loading only Ef themes with the convenience wrappers we provide7400
+Node: Combining core Modus themes with all their derivatives8866
+Node: Taking over the Modus commands altogether10510
+Node: Customisation options for compatibility with Modus11995
+Node: Loading a theme13520
+Node: Acknowledgements13980
+Node: GNU Free Documentation License14977
+Node: Indices40119
+Node: Function index40295
+Node: Variable index44087
+Node: Concept index44232
 
 End Tag Table
 
 
 Local Variables:
 coding: utf-8
-Info-documentlanguage: en
 End:
