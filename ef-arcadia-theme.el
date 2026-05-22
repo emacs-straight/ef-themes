@@ -39,12 +39,12 @@
   '((cursor "#495080")
     (bg-main "#d6e4d3")
     (bg-dim "#ced7c8")
-    (bg-alt "#b0b7aa")
+    (bg-alt "#c5c9c8")
     (fg-main "#40314e")
     (fg-dim "#646170")
     (fg-alt "#3f5f5f")
     (bg-active "#b0b7aa")
-    (bg-inactive "#c0c2b0")
+    (bg-inactive "#bfc2b0")
     (border "#a5aaaf")
 
     (red "#882000")
@@ -88,7 +88,7 @@
 
     (bg-added "#a0d7b0")
     (bg-added-faint "#c0d7b2")
-    (bg-added-refine "#9ad590")
+    (bg-added-refine "#8bc794")
     (fg-added "#005200")
 
     (bg-changed "#e5e690")
@@ -96,17 +96,17 @@
     (bg-changed-refine "#edd482")
     (fg-changed "#553d00")
 
-    (bg-removed "#f8c8a6")
+    (bg-removed "#f0c8a6")
     (bg-removed-faint "#e0c9ac")
-    (bg-removed-refine "#f0aa90")
+    (bg-removed-refine "#e4b492")
     (fg-removed "#8f1013")
 
     (bg-mode-line-active "#75b194")
     (fg-mode-line-active "#155239")
-    (bg-completion "#d5c8af")
-    (bg-popup "#d0d3c1")
+    (bg-completion "#b5b8c6")
+    (bg-popup "#dcdcd1")
     (bg-hover "#afbad0")
-    (bg-hover-secondary "#b5dfbf")
+    (bg-hover-secondary "#a5d2af")
     (bg-hl-line "#d0d0c0")
     (bg-paren-match "#a09e84")
     (bg-err "#e7c5a5") ; check with err
@@ -147,7 +147,7 @@
 
     (accent-0 cyan)
     (accent-1 magenta)
-    (accent-2 blue-cooler)
+    (accent-2 blue)
     (accent-3 green)
 
     (date-common green-cooler)
