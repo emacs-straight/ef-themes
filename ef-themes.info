@@ -43,11 +43,11 @@ called ‘ef-themes’, and provides every other piece of information
 pertinent to it.
 
    The documentation furnished herein corresponds to stable version
-2.1.0, released on 2026-01-27.  Any reference to a newer feature which
+2.2.0, released on 2026-06-21.  Any reference to a newer feature which
 does not yet form part of the latest tagged commit, is explicitly marked
 as such.
 
-   Current development target is 2.2.0-dev.
+   Current development target is 2.3.0-dev.
 
    • Package name (GNU ELPA): ‘ef-themes’
    • Official manual: <https://protesilaos.com/emacs/ef-themes>
