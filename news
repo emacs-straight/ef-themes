@@ -13,9 +13,27 @@ the manual: <https://protesilaos.com/emacs/ef-themes>.
 Table of Contents
 ─────────────────
 
+Version 2.3.0 on 2026-11-18
 Version 2.2.0 on 2026-06-21
 Version 2.1.0 on 2026-01-27
 Version 2.0.0 on 2025-11-09
+
+
+Version 2.3.0 on 2026-11-18
+═══════════════════════════
+
+  This version introduces a pair of new themes to the collection:
+  `ef-halloween-light' and `ef-halloween-dark'. I produced the prototype
+  of the dark theme during a livestream, if you are curious to learn
+  about the process:
+  <https://protesilaos.com/codelog/2026-10-31-emacs-live-ef-themes-halloween/>.
+
+  The two themes add to an already comprehensive collection that covers
+  a broad spectrum of styles. All themes are consistent with the spirit
+  of avoiding exaggerations while remaining legible.
+
+  Note that since version `2.0.0', the `ef-themes' are built on top of
+  my `modus-themes'. They benefit from all the changes I make there.
 
 
 Version 2.2.0 on 2026-06-21
@@ -90,26 +108,4 @@ Version 2.0.0 on 2025-11-09
   The Ef themes no longer provide any user options of their own. Each of
   the options we had before is now an alias for the Modus equivalent. As
   part of this transition, the Ef themes actually gain new customisation
-  options, which are documented herein.
-
-  Furthermore, the Ef themes do not define any commands to load a theme.
-  What we had before is once again an alias for the equivalent Modus
-  command.
-
-  The manual of the Ef themes describes these compatibility
-  arrangements. Further documentation and code samples are available in
-  the manual of the Modus themes:
-
-  Info page
-        Evaluate `(info "(modus-themes) Top")'.
-  Weg page
-        Visit <https://protesilaos.com/emacs/modus-themes>.
-
-
-Old user options and hooks are mere aliases for Modus options
-─────────────────────────────────────────────────────────────
-
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Old name  Is alias for CURRENT NAME 
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  …  …
+  options, which are documented herein.  …  …
